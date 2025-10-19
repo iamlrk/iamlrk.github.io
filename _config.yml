@@ -1,0 +1,49 @@
+# Site settings
+title: Ramkiran Lepakshi
+description: Aspiring Aerospace Engineer and Developer
+url: "https://dev.iamlrk.com" # Your custom domain
+baseurl: "" # Leave empty for custom domain
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# Collections
+collections:
+  timeline:
+    output: false
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - TIMELINE_GUIDE.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .asset-cache
+  - .bundle
+  - .jekyll-assets-cache
+  - .sass-cache
+  - assets/js/plugins
+  - assets/js/_main.js
+  - assets/js/vendor
+  - Capfile
+  - CHANGELOG
+  - config
+  - log
+  - rakefile
+  - tmp
+
+# Plugins removed for Cloudflare Pages compatibility
+
+# Force regeneration and prevent caching issues
+incremental: false
+
+# Default layout
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
