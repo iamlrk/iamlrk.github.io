@@ -14,6 +14,49 @@
 			<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
 		</head>
 		<body>
+		<!-- Mobile hamburger menu -->
+		<button class="hamburger-toggle" id="hamburger-toggle" onclick="toggleHamburgerMenu()" aria-label="Open menu and timeline">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>			<!-- Mobile menu overlay -->
+			<div class="mobile-menu-overlay" id="mobile-menu-overlay" onclick="closeHamburgerMenu()"></div>
+			
+			<!-- Mobile menu sidebar -->
+			<div class="mobile-menu" id="mobile-menu">
+				<div class="mobile-menu-header">
+					<h3>Menu & Timeline</h3>
+					<button class="mobile-menu-close" onclick="closeHamburgerMenu()">✕</button>
+				</div>
+				
+				<!-- Navigation Links -->
+				<div class="mobile-menu-section">
+					<h4>Navigation</h4>
+					<ul class="mobile-nav-links">
+						<li><a href="{{ '/' | relative_url }}" onclick="closeHamburgerMenu()">Home</a></li>
+						<li><a href="{{ '/about' | relative_url }}" onclick="closeHamburgerMenu()">About</a></li>
+						<li><a href="{{ '/cv' | relative_url }}" onclick="closeHamburgerMenu()">CV</a></li>
+						<!-- <li><a href="{{ '/blog' | relative_url }}" onclick="closeHamburgerMenu()">Blog</a></li> -->
+					</ul>
+				</div>
+				
+				<!-- Timeline Section (only shown on about page) -->
+				<div class="mobile-menu-section timeline-section" id="mobile-timeline-section" style="display: none;">
+					<h4>Timeline Navigation</h4>
+					<p class="timeline-hint">Jump to different periods:</p>
+					<div class="mobile-timeline-container" id="mobile-timeline-container">
+						<!-- Timeline items will be populated by JavaScript on about page -->
+					</div>
+				</div>
+				
+				<!-- Theme Toggle -->
+				<div class="mobile-menu-section">
+					<button class="mobile-theme-toggle" onclick="toggleTheme()">
+						<span id="mobile-theme-text">Dark Mode</span>
+					</button>
+				</div>
+			</div>
+			
 			<nav>
 	    		<ul>
 	        		<li><a href="{{ '/' | relative_url }}">Home</a></li>
@@ -35,6 +78,111 @@
 				</ul>
 			</footer>
 			<script>
+				// Hamburger menu functionality
+				function toggleHamburgerMenu() {
+					const menu = document.getElementById('mobile-menu');
+					const overlay = document.getElementById('mobile-menu-overlay');
+					const toggle = document.getElementById('hamburger-toggle');
+					
+					if (menu.classList.contains('active')) {
+						closeHamburgerMenu();
+					} else {
+						openHamburgerMenu();
+					}
+				}
+				
+				function openHamburgerMenu() {
+					const menu = document.getElementById('mobile-menu');
+					const overlay = document.getElementById('mobile-menu-overlay');
+					const toggle = document.getElementById('hamburger-toggle');
+					
+					menu.classList.add('active');
+					overlay.classList.add('active');
+					toggle.classList.add('active');
+					document.body.style.overflow = 'hidden';
+					
+					// Populate timeline if on about page
+					populateTimelineInMenu();
+				}
+				
+				function closeHamburgerMenu() {
+					const menu = document.getElementById('mobile-menu');
+					const overlay = document.getElementById('mobile-menu-overlay');
+					const toggle = document.getElementById('hamburger-toggle');
+					
+					menu.classList.remove('active');
+					overlay.classList.remove('active');
+					toggle.classList.remove('active');
+					document.body.style.overflow = '';
+				}
+				
+				function populateTimelineInMenu() {
+					const timelineSection = document.getElementById('mobile-timeline-section');
+					const timelineContainer = document.getElementById('mobile-timeline-container');
+					
+					// Check if we're on the about page and timeline items exist
+					const timelineItems = document.querySelectorAll('.timeline-item');
+					if (timelineItems.length > 0 && window.location.pathname.includes('about')) {
+						timelineSection.style.display = 'block';
+						timelineContainer.innerHTML = '';
+						
+						timelineItems.forEach(item => {
+							const period = item.getAttribute('data-period');
+							const dateText = item.querySelector('.timeline-date').textContent;
+							
+							const menuItem = document.createElement('div');
+							menuItem.className = 'mobile-timeline-item';
+							menuItem.innerHTML = `<span>${dateText}</span>`;
+							menuItem.onclick = () => {
+								if (window.showTimelineContent) {
+									window.showTimelineContent(period);
+								}
+								closeHamburgerMenu();
+							};
+							
+							// Add active class if timeline item is active
+							if (item.classList.contains('active')) {
+								menuItem.classList.add('active');
+							}
+							
+							timelineContainer.appendChild(menuItem);
+						});
+					} else {
+						timelineSection.style.display = 'none';
+					}
+				}
+				
+				function toggleTheme() {
+					const themeToggle = document.getElementById('theme-toggle');
+					if (themeToggle) {
+						themeToggle.click();
+					}
+					// Update mobile theme toggle text
+					updateMobileThemeToggle();
+				}
+				
+				function updateMobileThemeToggle() {
+					const mobileThemeText = document.getElementById('mobile-theme-text');
+					const currentTheme = document.body.getAttribute('data-theme');
+					if (mobileThemeText) {
+						mobileThemeText.textContent = currentTheme === 'dark' ? 'Light Mode' : 'Dark Mode';
+					}
+				}
+				
+				// Keyboard support
+				document.addEventListener('keydown', function(e) {
+					if (e.key === 'Escape') {
+						closeHamburgerMenu();
+					}
+				});
+				
+				// Initialize mobile theme toggle text
+				document.addEventListener('DOMContentLoaded', function() {
+					updateMobileThemeToggle();
+				});
+			</script>
+			
+			<script>
 				// Theme switching functionality
 				const themeToggle = document.getElementById('theme-toggle');
 				const body = document.body;
@@ -55,6 +203,7 @@
 				
 				function updateToggleButton(theme) {
 					themeToggle.textContent = theme === 'dark' ? 'Light' : 'Dark';
+					updateMobileThemeToggle();
 				}
 			</script>
 		</body>

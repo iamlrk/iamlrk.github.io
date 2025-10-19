@@ -7,7 +7,7 @@ title: About Ramkiran Lepakshi
 </div><!-- /.blurb -->
 
 <div class="timeline-container">
-	<div class="timeline-sidebar">
+	<div class="timeline-sidebar" id="timeline-sidebar">
 		{% assign timeline_entries = site.timeline | sort: 'period' | reverse %}
 		{% for entry in timeline_entries %}
 		<div class="timeline-item" data-period="{{ entry.period }}" onclick="showTimelineContent('{{ entry.period }}')">
@@ -162,6 +162,9 @@ function setupScrollNavigation() {
 
 // Set initial active state
 document.addEventListener('DOMContentLoaded', function() {
+	// Add timeline-page class to body to show timeline indicator on hamburger menu
+	document.body.classList.add('timeline-page');
+	
 	// Set up scroll navigation first
 	setupScrollNavigation();
 	// Then set initial content to first timeline entry
