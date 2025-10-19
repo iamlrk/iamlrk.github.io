@@ -4,5 +4,170 @@ title: About Ramkiran Lepakshi
 ---
 <div class="blurb">
 	<h1>More details about myself.</h1>
-	<!-- <p>I am a aspiring Aerospace Engineer and a developer.</p> -->
 </div><!-- /.blurb -->
+
+<div class="timeline-container">
+	<div class="timeline-sidebar">
+		{% assign timeline_entries = site.timeline | sort: 'period' | reverse %}
+		{% for entry in timeline_entries %}
+		<div class="timeline-item" data-period="{{ entry.period }}" onclick="showTimelineContent('{{ entry.period }}')">
+			<div class="timeline-date">{{ entry.period }}</div>
+			<div class="timeline-dot"></div>
+		</div>
+		{% endfor %}
+	</div>
+	
+	<div class="timeline-content">
+		{% for entry in timeline_entries %}
+		<div id="content-{{ entry.period }}" class="timeline-content-item{% if forloop.first %} active{% endif %}">
+			<h2>{{ entry.title }}</h2>
+			{{ entry.content | markdownify }}
+		</div>
+		{% endfor %}
+	</div>
+</div>
+
+<script>
+// Dynamically get all timeline periods from the DOM
+function getAllPeriods() {
+	return Array.from(document.querySelectorAll('.timeline-item')).map(item => 
+		item.getAttribute('data-period')
+	);
+}
+
+function showTimelineContent(period) {
+	// Hide all content items
+	const contentItems = document.querySelectorAll('.timeline-content-item');
+	contentItems.forEach(item => item.classList.remove('active'));
+	
+	// Remove active class from all timeline items
+	const timelineItems = document.querySelectorAll('.timeline-item');
+	timelineItems.forEach(item => item.classList.remove('active'));
+	
+	// Show selected content
+	const selectedContent = document.getElementById('content-' + period);
+	if (selectedContent) {
+		selectedContent.classList.add('active');
+	}
+	
+	// Add active class to selected timeline item and reorder
+	const selectedTimelineItem = document.querySelector(`[data-period="${period}"]`);
+	if (selectedTimelineItem) {
+		selectedTimelineItem.classList.add('active');
+		reorderTimelineItems(selectedTimelineItem);
+	}
+}
+
+function reorderTimelineItems(activeItem) {
+	const sidebar = document.querySelector('.timeline-sidebar');
+	const allPeriods = getAllPeriods();
+	const activePeriod = activeItem.getAttribute('data-period');
+	const activeIndex = allPeriods.indexOf(activePeriod);
+	
+	// Store all timeline items by their data-period
+	const itemsMap = {};
+	document.querySelectorAll('.timeline-item').forEach(item => {
+		itemsMap[item.getAttribute('data-period')] = item;
+	});
+	
+	// Clear sidebar
+	sidebar.innerHTML = '';
+	
+	// Create reordered array: put active item in center, others around it
+	const reorderedPeriods = [];
+	
+	// Add items before active (in reverse order)
+	for (let i = activeIndex - 1; i >= 0; i--) {
+		reorderedPeriods.push(allPeriods[i]);
+	}
+	
+	// Add active item
+	reorderedPeriods.push(activePeriod);
+	
+	// Add items after active (in normal order)
+	for (let i = activeIndex + 1; i < allPeriods.length; i++) {
+		reorderedPeriods.push(allPeriods[i]);
+	}
+	
+	// Append items in new order
+	reorderedPeriods.forEach(period => {
+		if (itemsMap[period]) {
+			sidebar.appendChild(itemsMap[period]);
+		}
+	});
+}
+
+function setupScrollNavigation() {
+	const sidebar = document.querySelector('.timeline-sidebar');
+	const allPeriods = getAllPeriods();
+	let currentPeriod = allPeriods[0]; // First (most recent) period
+	let isScrolling = false;
+	
+	function handleScroll(e) {
+		e.preventDefault(); // Prevent default scrolling
+		e.stopPropagation(); // Stop event from bubbling
+		
+		// Prevent rapid scrolling
+		if (isScrolling) return;
+		
+		isScrolling = true;
+		
+		// Get current index
+		const currentIndex = allPeriods.indexOf(currentPeriod);
+		let newIndex;
+		
+		if (e.deltaY > 0) {
+			// Scroll down - move to next (older) item
+			newIndex = Math.min(currentIndex + 1, allPeriods.length - 1);
+		} else {
+			// Scroll up - move to previous (newer) item
+			newIndex = Math.max(currentIndex - 1, 0);
+		}
+		
+		// Only change if we actually moved to a different item
+		if (newIndex !== currentIndex) {
+			currentPeriod = allPeriods[newIndex];
+			showTimelineContent(currentPeriod);
+		}
+		
+		// Allow next scroll after a delay
+		setTimeout(() => {
+			isScrolling = false;
+		}, 300);
+	}
+	
+	// Add scroll event to sidebar
+	sidebar.addEventListener('wheel', handleScroll);
+	
+	// Add scroll event to all timeline items (including dots and empty areas)
+	document.querySelectorAll('.timeline-item').forEach(item => {
+		item.addEventListener('wheel', handleScroll);
+	});
+	
+	// Keep track of current period when clicking
+	const originalShowContent = window.showTimelineContent || showTimelineContent;
+	window.showTimelineContent = function(period) {
+		currentPeriod = period;
+		originalShowContent(period);
+		
+		// Re-add scroll listeners to any new timeline items after reordering
+		setTimeout(() => {
+			document.querySelectorAll('.timeline-item').forEach(item => {
+				item.removeEventListener('wheel', handleScroll); // Remove existing listener
+				item.addEventListener('wheel', handleScroll); // Add fresh listener
+			});
+		}, 100);
+	};
+}
+
+// Set initial active state
+document.addEventListener('DOMContentLoaded', function() {
+	// Set up scroll navigation first
+	setupScrollNavigation();
+	// Then set initial content to first timeline entry
+	const firstPeriod = getAllPeriods()[0];
+	if (firstPeriod) {
+		showTimelineContent(firstPeriod);
+	}
+});
+</script>
