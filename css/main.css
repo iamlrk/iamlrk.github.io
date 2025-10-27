@@ -896,6 +896,11 @@ body.timeline-page .hamburger-toggle::after {
 
 /* Mobile First - Base styles for mobile (320px+) */
 @media (max-width: 480px) {
+    /* Add body padding for mobile */
+    body {
+        padding: 0 15px;
+    }
+    
     /* Show hamburger menu on mobile */
     .hamburger-toggle {
         display: flex;
@@ -922,9 +927,9 @@ body.timeline-page .hamburger-toggle::after {
     }
     
     .container {
-        width: 95%;
+        width: 90%;
         margin: 40px auto 40px auto;
-        padding: 0 10px;
+        padding: 0 20px;
     }
     
     /* Mobile navigation */
