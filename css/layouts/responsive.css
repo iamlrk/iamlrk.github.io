@@ -118,7 +118,7 @@
     
     .skill-tag {
         font-size: 0.7em;
-        padding: 3px 6px;
+        padding: 5px 10px;
     }
     
     .stats-row {
@@ -206,7 +206,7 @@
     
     /* Timeline content mobile */
     .timeline-content {
-        padding: 0;
+        padding: 15px 15px 80px 15px;
         width: 100%;
     }
     
@@ -215,6 +215,14 @@
         word-wrap: break-word;
         overflow-wrap: break-word;
     }
+    
+    /* Timeline skills mobile */
+    .timeline-skills {
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+    
+    /* Timeline skills now use the global mobile .skill-tag style */
     
     /* About Page Small Mobile Styles */
     .about-hero-title {

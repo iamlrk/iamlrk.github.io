@@ -174,3 +174,23 @@
     margin-right: auto;
 }
 
+/* Timeline Skills Styling */
+.timeline-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    border-top: 2px solid var(--border-color);
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    clear: both;
+    overflow: visible;
+    position: relative;
+}
+
+/* Timeline skill tags now use the global .skill-tag style */
+
