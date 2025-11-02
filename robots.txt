@@ -1,0 +1,13 @@
+# robots.txt for iamlrk.github.io
+
+# Allow all search engines
+User-agent: *
+Allow: /
+
+# Disallow specific directories
+Disallow: /css/
+Disallow: /js/
+
+# Sitemap location
+Sitemap: https://iamlrk.github.io/sitemap.xml
+
