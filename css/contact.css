@@ -1,0 +1,137 @@
+		.contact-container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 40px 20px;
+		}
+		
+		.contact-header {
+			text-align: center;
+			margin-bottom: 50px;
+		}
+		
+		.contact-header h1 {
+			font-size: 3em;
+			margin-bottom: 15px;
+			color: var(--text-heading);
+		}
+		
+		.contact-header p {
+			font-size: 1.2em;
+			color: var(--text-body);
+		}
+		
+		.contact-form-section {
+			background: var(--nav-bg-color);
+			border: var(--border-width) solid var(--border-color);
+			padding: 40px;
+			box-shadow: var(--shadow-brutal);
+			margin-bottom: 40px;
+		}
+		
+		.contact-form-section h2 {
+			font-size: 2em;
+			margin-bottom: 25px;
+			color: var(--text-heading);
+		}
+		
+		.form-group {
+			margin-bottom: 25px;
+		}
+		
+		.form-group label {
+			display: block;
+			font-weight: 700;
+			margin-bottom: 8px;
+			color: var(--text-heading);
+			font-size: 1em;
+		}
+		
+		.form-group input,
+		.form-group textarea {
+			width: 100%;
+			padding: 12px 16px;
+			font-family: 'Fira Code', monospace;
+			font-size: 1em;
+			background: var(--bg-color);
+			color: var(--text-body);
+			border: 3px solid var(--border-color);
+			box-shadow: 4px 4px 0px var(--border-color);
+			transition: all 0.2s ease;
+			box-sizing: border-box;
+		}
+		
+		.form-group input:focus,
+		.form-group textarea:focus {
+			outline: none;
+			border-color: var(--text-accent);
+			transform: translate(-2px, -2px);
+			box-shadow: 6px 6px 0px var(--border-color);
+		}
+		
+		.form-group textarea {
+			resize: vertical;
+			min-height: 150px;
+		}
+		
+		.form-group small {
+			display: block;
+			margin-top: 5px;
+			color: var(--text-muted);
+			font-size: 0.875em;
+		}
+		
+		.submit-button {
+			width: 100%;
+			padding: 15px 30px;
+			font-size: 1.1em;
+			font-weight: 900;
+			text-transform: uppercase;
+			background: var(--text-accent);
+			color: var(--bg-color);
+			border: 3px solid var(--border-color);
+			cursor: pointer;
+			box-shadow: 4px 4px 0px var(--border-color);
+			transition: all 0.2s ease;
+			font-family: 'Fira Code', monospace;
+		}
+		
+		.submit-button:hover:not(:disabled) {
+			transform: translate(-2px, -2px);
+			box-shadow: 6px 6px 0px var(--border-color);
+		}
+		
+		.submit-button:disabled {
+			opacity: 0.6;
+			cursor: not-allowed;
+		}
+		
+		.form-message {
+			padding: 15px;
+			margin-bottom: 20px;
+			border: 3px solid var(--border-color);
+			font-weight: 700;
+			display: none;
+		}
+		
+		.form-message.success {
+			background: #90EE90;
+			color: #006400;
+			display: block;
+		}
+		
+		.form-message.error {
+			background: #FFB6C1;
+			color: #8B0000;
+			display: block;
+		}
+		
+		@media (max-width: 768px) {
+			.contact-header h1 {
+				font-size: 2em;
+			}
+			
+			.contact-form-section {
+				padding: 25px 20px;
+			}
+			
+		}
