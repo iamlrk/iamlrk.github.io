@@ -1,0 +1,107 @@
+/* Button Components */
+
+/* Theme Toggle Button */
+#theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border: 3px solid var(--border-color);
+    background: var(--text-accent) !important;
+    color: var(--bg-color);
+    padding: 8px 16px !important;
+    box-shadow: 4px 4px 0px var(--border-color);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Courier New', 'JetBrains Mono', monospace;
+    font-size: var(--font-body);
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    outline: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+}
+
+#theme-toggle:hover {
+    background: var(--text-heading) !important;
+    color: var(--bg-color);
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px var(--border-color);
+}
+
+/* Carousel Buttons */
+.carousel-btn {
+    background: var(--text-accent);
+    color: var(--bg-color);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 0;
+    font-size: 1.5em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.carousel-btn:hover {
+    background: var(--text-heading);
+    transform: scale(1.1);
+}
+
+.carousel-btn:disabled {
+    background: var(--text-muted);
+    cursor: not-allowed;
+    opacity: 0.5;
+    transform: none;
+}
+
+/* Timeline Navigation Buttons */
+.timeline-nav-btn {
+    background: var(--text-accent);
+    color: var(--bg-color);
+    border: var(--border-width) solid var(--border-color);
+    padding: 8px 12px;
+    border-radius: 0;
+    font-family: 'Courier New', 'JetBrains Mono', monospace;
+    font-size: 1.2em;
+    font-weight: 900;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 3px 3px 0px var(--border-color);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+}
+
+.timeline-prev {
+    margin-left: 20px;
+}
+
+.timeline-next {
+    margin-right: 20px;
+}
+
+.timeline-nav-btn:hover:not(:disabled) {
+    background: var(--text-heading);
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0px var(--border-color);
+}
+
+.timeline-nav-btn:disabled {
+    background: var(--text-muted);
+    color: var(--nav-bg-color);
+    cursor: not-allowed;
+    opacity: 0.3;
+    transform: none;
+    box-shadow: 2px 2px 0px var(--border-color);
+}
+

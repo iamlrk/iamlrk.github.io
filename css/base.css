@@ -1,0 +1,24 @@
+/* 
+ * Base Styles for iamlrk Sites
+ * Shared foundation across all subdomains
+ * Host: https://iamlrk.github.io/css/base.css
+ */
+
+/* Core Variables & Theme System */
+@import 'base/variables.css';
+
+/* Base Reset & Body Styles */
+@import 'base/reset.css';
+
+/* Typography System */
+@import 'base/typography.css';
+
+/* Navigation Components */
+@import 'components/navigation.css';
+
+/* Button Components */
+@import 'components/buttons.css';
+
+/* Card Components - Essential for project displays */
+@import 'components/cards.css';
+

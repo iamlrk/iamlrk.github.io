@@ -1,0 +1,52 @@
+/* Brutalist Theme System - Bold, Raw, Unapologetic */
+:root {
+    /* Font Sizes */
+    --font-heading: 3.2em;          /* Main page titles */
+    --font-subheading: 2em;         /* Section headers */
+    --font-subtitle: 1.4em;         /* Subsection titles */
+    --font-body: 1em;               /* Normal body text */
+    --font-small: 0.875em;          /* Tags, captions */
+    --font-tiny: 0.75em;            /* Fine print, labels */
+    
+    /* Brutalist specific */
+    --shadow-brutal: 6px 6px 0px #1a1a1a;
+    --shadow-brutal-hover: 8px 8px 0px #1a1a1a;
+    --border-width: 4px;
+}
+
+[data-theme="light"] {
+    /* Core Colors - Light Brutalism */
+    --bg-color: #ffffff;
+    --nav-bg-color: #f8f8f8;
+    --border-color: #1a1a1a;
+    
+    /* Typography */
+    --text-heading: #1a1a1a;
+    --text-subheading: #2d2d2d;
+    --text-subtitle: #2d2d2d;        /* Subsection titles (h3) */
+    --text-body: #333333;
+    --text-muted: #666666;
+    --text-accent: #0066cc;
+    --text-tag: #4a4a4a;
+}
+
+[data-theme="dark"] {
+    /* Core Colors - Dark Brutalism */
+    --bg-color: #0d1117;
+    --nav-bg-color: #161b22;
+    --border-color: #30363d;
+    
+    /* Typography */
+    --text-heading: #f0f6fc;
+    --text-subheading: #e6edf3;
+    --text-subtitle: #e6edf3;        /* Subsection titles (h3) */
+    --text-body: #c9d1d9;
+    --text-muted: #8b949e;
+    --text-accent: #58a6ff;
+    --text-tag: #8b949e;
+    
+    /* Dark mode brutal shadows */
+    --shadow-brutal: 6px 6px 0px #21262d;
+    --shadow-brutal-hover: 8px 8px 0px #30363d;
+}
+

@@ -1,0 +1,67 @@
+/* Section Layouts */
+
+/* Skills Section */
+.skills {
+    padding-top: 60px;
+    margin-bottom: 60px;
+}
+
+.skills h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--text-subheading);
+    font-size: var(--font-subheading);
+    font-weight: bold;
+}
+
+.stats-row {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 40px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+/* Projects Section */
+.projects {
+    padding-top: 60px;
+    margin-bottom: 60px;
+}
+
+.projects h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--text-subheading);
+    font-size: var(--font-subheading);
+    font-weight: bold;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Quick Links Section */
+.quick-links {
+    padding-top: 60px;
+    margin-bottom: 60px;
+}
+
+.quick-links h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: var(--font-heading);
+    color: var(--text-heading);
+}
+
+.links-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+

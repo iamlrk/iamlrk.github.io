@@ -1,0 +1,215 @@
+/* Card Components */
+
+/* Project Cards */
+.project-card {
+    background: var(--bg-color);
+    border: var(--border-width) solid var(--border-color);
+    border-radius: 0;
+    box-shadow: var(--shadow-brutal);
+    padding: 25px;
+    transition: all 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-brutal-hover);
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.project-header h3 {
+    color: var(--text-subheading);
+    margin: 0;
+    font-size: var(--font-subtitle);
+    font-weight: bold;
+}
+
+.project-links {
+    display: flex;
+    gap: 10px;
+}
+
+.project-link {
+    font-size: var(--font-small);
+    padding: 5px 10px;
+    background: var(--text-accent);
+    color: var(--bg-color);
+    text-decoration: none;
+    border-radius: 0;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.project-link:hover {
+    background: var(--text-subheading);
+    transform: translateY(-1px);
+}
+
+.project-description {
+    color: var(--text-body);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.tech-tag {
+    background: var(--bg-color);
+    color: var(--text-accent);
+    padding: 4px 8px;
+    border-radius: 0;
+    font-size: var(--font-tiny);
+    border: 1px solid var(--border-color);
+}
+
+/* Link Cards */
+.link-card {
+    background: var(--bg-color);
+    border: var(--border-width) solid var(--border-color);
+    border-radius: 0;
+    box-shadow: var(--shadow-brutal);
+    padding: 6px 16px;
+    text-decoration: none;
+    color: var(--text-body);
+    transition: all 0.2s ease;
+    font-size: var(--font-tag);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.link-card:hover {
+    transform: translate(-2px, -2px);
+    background: var(--text-accent);
+    color: var(--bg-color);
+    box-shadow: var(--shadow-brutal-hover);
+    text-decoration: none;
+}
+
+.link-icon {
+    font-size: 1.8em;
+    margin-bottom: 8px;
+}
+
+.link-card h3 {
+    margin: 0 0 6px 0;
+    font-size: var(--font-body);
+    color: var(--text-subtitle);
+}
+
+.link-card p {
+    margin: 0;
+    font-size: 0.75em;
+    opacity: 0.8;
+    line-height: 1.3;
+}
+
+/* Skill Cards */
+.skill-category {
+    flex: 0 0 200px;
+    min-height: 120px;
+    background: var(--bg-color);
+    border: var(--border-width) solid var(--border-color);
+    border-radius: 0;
+    box-shadow: var(--shadow-brutal);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.2s ease;
+}
+
+.skill-category:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-brutal-hover);
+}
+
+.skill-category h3 {
+    color: var(--text-accent);
+    margin: 0 0 10px 0;
+    font-size: 1em;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    flex-grow: 1;
+    align-content: flex-start;
+}
+
+.skill-tag {
+    background: var(--text-accent);
+    color: var(--bg-color);
+    padding: 4px 8px;
+    border-radius: 0;
+    border: 3px solid var(--border-color);
+    box-shadow: 3px 3px 0px var(--border-color);
+    font-size: 0.75em;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.skill-tag:hover {
+    background: var(--text-heading);
+    color: var(--bg-color);
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0px var(--border-color);
+}
+
+/* About Stat Cards */
+.about-stat-card {
+    background: var(--nav-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 0;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.about-stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.stat-icon {
+    font-size: 3em;
+    margin-bottom: 15px;
+}
+
+.stat-number {
+    font-size: 2.2em;
+    font-weight: bold;
+    color: var(--text-accent);
+    margin-bottom: 8px;
+    display: block;
+}
+
+.stat-label {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: var(--text-heading);
+    margin-bottom: 8px;
+    display: block;
+}
+
+.stat-detail {
+    font-size: 0.9em;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+

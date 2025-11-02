@@ -1,244 +1,152 @@
----
-layout: default
-title: About Ramkiran Lepakshi
----
-<div class="blurb">
-	<h1>More details about myself.</h1>
-</div><!-- /.blurb -->
-
-<div class="timeline-container">
-	<div class="timeline-sidebar" id="timeline-sidebar">
-		{% assign timeline_entries = site.timeline | sort: 'period' | reverse %}
-		{% for entry in timeline_entries %}
-		<div class="timeline-item" data-period="{{ entry.period }}" onclick="showTimelineContent('{{ entry.period }}')">
-			<div class="timeline-date">{{ entry.period }}</div>
-			<div class="timeline-dot"></div>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="0">
+	<title>About Ramkiran Lepakshi</title>
+	<!-- Link to main stylesheet -->
+	<link rel="stylesheet" type="text/css" href="/css/main.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body class="timeline-page">
+	<!-- Mobile hamburger menu -->
+	<button class="hamburger-toggle" id="hamburger-toggle" onclick="toggleHamburgerMenu()" aria-label="Open menu and timeline">
+		<span></span>
+		<span></span>
+		<span></span>
+	</button>
+	
+	<!-- Mobile menu overlay -->
+	<div class="mobile-menu-overlay" id="mobile-menu-overlay" onclick="closeHamburgerMenu()"></div>
+	
+	<!-- Mobile menu sidebar -->
+	<div class="mobile-menu" id="mobile-menu">
+		<div class="mobile-menu-header">
+			<h3>Menu & Timeline</h3>
+			<button class="mobile-menu-close" onclick="closeHamburgerMenu()">✕</button>
 		</div>
-		{% endfor %}
+		
+		<!-- Navigation Links -->
+		<div class="mobile-menu-section">
+			<h4>Navigation</h4>
+			<ul class="mobile-nav-links">
+				<li><a href="/" onclick="closeHamburgerMenu()">Home</a></li>
+				<li><a href="/about" onclick="closeHamburgerMenu()">About</a></li>
+				<li><a href="/cv" onclick="closeHamburgerMenu()">CV</a></li>
+			</ul>
+		</div>
+		
+		<!-- Timeline Section -->
+		<div class="mobile-menu-section timeline-section" id="mobile-timeline-section" style="display: none;">
+			<h4>Timeline Navigation</h4>
+			<p class="timeline-hint">Jump to different periods:</p>
+			<div class="mobile-timeline-container" id="mobile-timeline-container"></div>
+		</div>
+		
+		<!-- Theme Toggle -->
+		<div class="mobile-menu-section">
+			<button class="mobile-theme-toggle" onclick="toggleTheme()">
+				<span id="mobile-theme-text">Dark Mode</span>
+			</button>
+		</div>
 	</div>
 	
-	<div class="timeline-content">
-		{% for entry in timeline_entries %}
-		<div id="content-{{ entry.period }}" class="timeline-content-item{% if forloop.first %} active{% endif %}">
-			<h2>{{ entry.title }}</h2>
-			{{ entry.content | markdownify }}
+	<nav>
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li><a href="/about">About</a></li>
+			<li><a href="/cv">CV</a></li>
+		</ul>
+	</nav>
+	
+	<button id="theme-toggle" aria-label="Toggle dark mode">Dark</button>
+	
+	<div class="container">
+		<div class="blurb">
+			<h1>More details about myself.</h1>
 		</div>
-		{% endfor %}
-		
-		<div class="timeline-navigation">
-			<button class="timeline-nav-btn timeline-prev" id="timeline-prev">‹</button>
-			<button class="timeline-nav-btn timeline-next" id="timeline-next">›</button>
+
+		<div class="timeline-container">
+			<div class="timeline-sidebar" id="timeline-sidebar">
+				<div class="timeline-item" data-period="2025-01" onclick="showTimelineContent('2025-01')">
+					<div class="timeline-date">2025-01</div>
+					<div class="timeline-dot"></div>
+				</div>
+				<div class="timeline-item" data-period="2024-01" onclick="showTimelineContent('2024-01')">
+					<div class="timeline-date">2024-01</div>
+					<div class="timeline-dot"></div>
+				</div>
+				<div class="timeline-item" data-period="2023-09" onclick="showTimelineContent('2023-09')">
+					<div class="timeline-date">2023-09</div>
+					<div class="timeline-dot"></div>
+				</div>
+				<div class="timeline-item" data-period="2023-06" onclick="showTimelineContent('2023-06')">
+					<div class="timeline-date">2023-06</div>
+					<div class="timeline-dot"></div>
+				</div>
+			</div>
+			
+			<div class="timeline-content">
+				<div id="content-2025-01" class="timeline-content-item active">
+					<h2>January 2025 | Flight Analysis Engineer</h2>
+					<p>Stepped into Flight Analysis Engineer Role at Manna Drones.</p>
+					<ul>
+						<li>Build and maintain Mathematical Models of the Flight systems</li>
+						<li>Built a Energy Model that predicts the energy requirement based on the Flight Route.</li>
+						<li>Build and Maintain a Post Flight Analytics that does various different analysis, and store them to analyse and dashboards.</li>
+					</ul>
+				</div>
+				
+				<div id="content-2024-01" class="timeline-content-item">
+					<h2>January 2024 | Graduate Engineer</h2>
+					<p>Continued working at Manna Drones into a Graduate Role.</p>
+					<ul>
+						<li>Working on Analysing the Flight Data to help engineers understand data more.</li>
+						<li>Build Dashboards in Metabase using PostgreSQL.</li>
+						<li>Build and Maintain a inhouse python utilities library for use by engineers across other teams.</li>
+					</ul>
+				</div>
+				
+				<div id="content-2023-09" class="timeline-content-item">
+					<h2>September 2023 | Graduated From University College Dublin</h2>
+					<p>Graduated with a MSc. in Space Science and Technology.</p>
+					<ul>
+						<li>Built a small satellite within a Tupperware box and launched it using a weather balloon.</li>
+						<li>Designed a Space Telescope Mission to study Active Galactic Nuclei</li>
+					</ul>
+				</div>
+				
+				<div id="content-2023-06" class="timeline-content-item">
+					<h2>June 2023 | Flight Analysis Intern</h2>
+					<p>Started as an Flight Analysis Intern at Manna Drones in Dublin Ireland</p>
+					<ul>
+						<li>Analysed Fleet of the Flight Data</li>
+						<li>Made Dashboards in Tableau</li>
+						<li>Used Python and SQL to analyse data recorded during flight.</li>
+					</ul>
+				</div>
+				
+				<div class="timeline-navigation">
+					<button class="timeline-nav-btn timeline-prev" id="timeline-prev">‹</button>
+					<button class="timeline-nav-btn timeline-next" id="timeline-next">›</button>
+				</div>
+			</div>
 		</div>
-	</div>
-</div>
-</section>
-
-<script>
-// Dynamically get all timeline periods from the DOM
-function getAllPeriods() {
-	return Array.from(document.querySelectorAll('.timeline-item')).map(item => 
-		item.getAttribute('data-period')
-	);
-}
-
-function showTimelineContent(period) {
-	// Hide all content items
-	const contentItems = document.querySelectorAll('.timeline-content-item');
-	contentItems.forEach(item => item.classList.remove('active'));
+	</div><!-- /.container -->
 	
-	// Remove active class from all timeline items
-	const timelineItems = document.querySelectorAll('.timeline-item');
-	timelineItems.forEach(item => item.classList.remove('active'));
+	<footer>
+		<ul>
+			<li><a href="mailto:lepakshiramkiran@duck.com">email: lepakshiramkiran@duck.com</a></li>
+			<li><a href="https://github.com/iamlrk">github.com/iamlrk</a></li>
+		</ul>
+	</footer>
 	
-	// Show selected content
-	const selectedContent = document.getElementById('content-' + period);
-	if (selectedContent) {
-		selectedContent.classList.add('active');
-	}
-	
-	// Add active class to selected timeline item and reorder
-	const selectedTimelineItem = document.querySelector(`[data-period="${period}"]`);
-	if (selectedTimelineItem) {
-		selectedTimelineItem.classList.add('active');
-		reorderTimelineItems(selectedTimelineItem);
-	}
-	
-	// Update navigation buttons and current period display
-	updateNavigationState(period);
-}
-
-function updateNavigationState(currentPeriod) {
-	const allPeriods = getAllPeriods();
-	const prevBtn = document.getElementById('timeline-prev');
-	const nextBtn = document.getElementById('timeline-next');
-	
-	if (prevBtn && nextBtn) {
-		// Enable both buttons for looping navigation
-		prevBtn.disabled = false;
-		nextBtn.disabled = false;
-	}
-}
-
-function navigateTimeline(direction) {
-	const allPeriods = getAllPeriods();
-	
-	// Use the global currentPeriod if available, otherwise fall back to active element
-	let currentPeriod;
-	if (window.getCurrentPeriod) {
-		currentPeriod = window.getCurrentPeriod();
-	} else {
-		const currentActive = document.querySelector('.timeline-item.active');
-		if (!currentActive) return;
-		currentPeriod = currentActive.getAttribute('data-period');
-	}
-	
-	const currentIndex = allPeriods.indexOf(currentPeriod);
-	let newIndex;
-	
-	if (direction === 'prev') {
-		// Loop to last item if at the beginning
-		newIndex = currentIndex === 0 ? allPeriods.length - 1 : currentIndex - 1;
-	} else if (direction === 'next') {
-		// Loop to first item if at the end
-		newIndex = currentIndex === allPeriods.length - 1 ? 0 : currentIndex + 1;
-	}
-	
-	const newPeriod = allPeriods[newIndex];
-	showTimelineContent(newPeriod);
-	
-	// Update the scroll navigation's current period
-	if (window.setCurrentPeriod) {
-		window.setCurrentPeriod(newPeriod);
-	}
-}
-
-function reorderTimelineItems(activeItem) {
-	const sidebar = document.querySelector('.timeline-sidebar');
-	const allPeriods = getAllPeriods();
-	const activePeriod = activeItem.getAttribute('data-period');
-	const activeIndex = allPeriods.indexOf(activePeriod);
-	
-	// Store all timeline items by their data-period
-	const itemsMap = {};
-	document.querySelectorAll('.timeline-item').forEach(item => {
-		itemsMap[item.getAttribute('data-period')] = item;
-	});
-	
-	// Clear sidebar
-	sidebar.innerHTML = '';
-	
-	// Create reordered array: put active item in center, others around it
-	const reorderedPeriods = [];
-	
-	// Add items before active (in reverse order)
-	for (let i = activeIndex - 1; i >= 0; i--) {
-		reorderedPeriods.push(allPeriods[i]);
-	}
-	
-	// Add active item
-	reorderedPeriods.push(activePeriod);
-	
-	// Add items after active (in normal order)
-	for (let i = activeIndex + 1; i < allPeriods.length; i++) {
-		reorderedPeriods.push(allPeriods[i]);
-	}
-	
-	// Append items in new order
-	reorderedPeriods.forEach(period => {
-		if (itemsMap[period]) {
-			sidebar.appendChild(itemsMap[period]);
-		}
-	});
-}
-
-function setupScrollNavigation() {
-	const sidebar = document.querySelector('.timeline-sidebar');
-	const allPeriods = getAllPeriods();
-	let currentPeriod = allPeriods[0]; // First (most recent) period
-	let isScrolling = false;
-	
-	function handleScroll(e) {
-		e.preventDefault(); // Prevent default scrolling
-		e.stopPropagation(); // Stop event from bubbling
-		
-		// Prevent rapid scrolling
-		if (isScrolling) return;
-		
-		isScrolling = true;
-		
-		// Get current index
-		const currentIndex = allPeriods.indexOf(currentPeriod);
-		let newIndex;
-		
-		if (e.deltaY > 0) {
-			// Scroll down - move to next (older) item
-			newIndex = Math.min(currentIndex + 1, allPeriods.length - 1);
-		} else {
-			// Scroll up - move to previous (newer) item
-			newIndex = Math.max(currentIndex - 1, 0);
-		}
-		
-		// Only change if we actually moved to a different item
-		if (newIndex !== currentIndex) {
-			currentPeriod = allPeriods[newIndex];
-			showTimelineContent(currentPeriod);
-		}
-		
-		// Allow next scroll after a delay
-		setTimeout(() => {
-			isScrolling = false;
-		}, 300);
-	}
-	
-	// Add scroll event to sidebar
-	sidebar.addEventListener('wheel', handleScroll);
-	
-	// Add scroll event to all timeline items (including dots and empty areas)
-	document.querySelectorAll('.timeline-item').forEach(item => {
-		item.addEventListener('wheel', handleScroll);
-	});
-	
-	// Keep track of current period when clicking
-	const originalShowContent = window.showTimelineContent || showTimelineContent;
-	window.showTimelineContent = function(period) {
-		currentPeriod = period;
-		originalShowContent(period);
-		
-		// Re-add scroll listeners to any new timeline items after reordering
-		setTimeout(() => {
-			document.querySelectorAll('.timeline-item').forEach(item => {
-				item.removeEventListener('wheel', handleScroll); // Remove existing listener
-				item.addEventListener('wheel', handleScroll); // Add fresh listener
-			});
-		}, 100);
-	};
-	
-	// Expose currentPeriod getter for navigation buttons
-	window.getCurrentPeriod = () => currentPeriod;
-	window.setCurrentPeriod = (period) => { currentPeriod = period; };
-}
-
-// Set initial active state
-document.addEventListener('DOMContentLoaded', function() {
-	// Add timeline-page class to body to show timeline indicator on hamburger menu
-	document.body.classList.add('timeline-page');
-	
-	// Set up scroll navigation first
-	setupScrollNavigation();
-	
-	// Set up navigation button event listeners
-	const prevBtn = document.getElementById('timeline-prev');
-	const nextBtn = document.getElementById('timeline-next');
-	
-	if (prevBtn && nextBtn) {
-		prevBtn.addEventListener('click', () => navigateTimeline('prev'));
-		nextBtn.addEventListener('click', () => navigateTimeline('next'));
-	}
-	
-	// Then set initial content to first timeline entry
-	const firstPeriod = getAllPeriods()[0];
-	if (firstPeriod) {
-		showTimelineContent(firstPeriod);
-	}
-});
-</script>
+	<script src="/js/main.js"></script>
+	<script src="/js/timeline.js"></script>
+</body>
+</html>

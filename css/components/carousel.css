@@ -1,0 +1,49 @@
+/* Skills Carousel Component */
+
+.skills-carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.skills-carousel {
+    flex: 1;
+    overflow: hidden;
+    border-radius: 0;
+    position: relative;
+}
+
+.skills-carousel-track {
+    display: flex;
+    gap: 20px;
+    /* Transition will be controlled by JavaScript for infinite scroll */
+}
+
+.carousel-clone {
+    /* Cloned items should look identical to originals */
+    opacity: 1;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 0;
+    background: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+    background: var(--text-accent);
+    transform: scale(1.3);
+}
+
