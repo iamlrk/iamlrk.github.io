@@ -24,8 +24,14 @@ title: About Ramkiran Lepakshi
 			{{ entry.content | markdownify }}
 		</div>
 		{% endfor %}
+		
+		<div class="timeline-navigation">
+			<button class="timeline-nav-btn timeline-prev" id="timeline-prev">‹</button>
+			<button class="timeline-nav-btn timeline-next" id="timeline-next">›</button>
+		</div>
 	</div>
 </div>
+</section>
 
 <script>
 // Dynamically get all timeline periods from the DOM
@@ -55,6 +61,54 @@ function showTimelineContent(period) {
 	if (selectedTimelineItem) {
 		selectedTimelineItem.classList.add('active');
 		reorderTimelineItems(selectedTimelineItem);
+	}
+	
+	// Update navigation buttons and current period display
+	updateNavigationState(period);
+}
+
+function updateNavigationState(currentPeriod) {
+	const allPeriods = getAllPeriods();
+	const prevBtn = document.getElementById('timeline-prev');
+	const nextBtn = document.getElementById('timeline-next');
+	
+	if (prevBtn && nextBtn) {
+		// Enable both buttons for looping navigation
+		prevBtn.disabled = false;
+		nextBtn.disabled = false;
+	}
+}
+
+function navigateTimeline(direction) {
+	const allPeriods = getAllPeriods();
+	
+	// Use the global currentPeriod if available, otherwise fall back to active element
+	let currentPeriod;
+	if (window.getCurrentPeriod) {
+		currentPeriod = window.getCurrentPeriod();
+	} else {
+		const currentActive = document.querySelector('.timeline-item.active');
+		if (!currentActive) return;
+		currentPeriod = currentActive.getAttribute('data-period');
+	}
+	
+	const currentIndex = allPeriods.indexOf(currentPeriod);
+	let newIndex;
+	
+	if (direction === 'prev') {
+		// Loop to last item if at the beginning
+		newIndex = currentIndex === 0 ? allPeriods.length - 1 : currentIndex - 1;
+	} else if (direction === 'next') {
+		// Loop to first item if at the end
+		newIndex = currentIndex === allPeriods.length - 1 ? 0 : currentIndex + 1;
+	}
+	
+	const newPeriod = allPeriods[newIndex];
+	showTimelineContent(newPeriod);
+	
+	// Update the scroll navigation's current period
+	if (window.setCurrentPeriod) {
+		window.setCurrentPeriod(newPeriod);
 	}
 }
 
@@ -158,6 +212,10 @@ function setupScrollNavigation() {
 			});
 		}, 100);
 	};
+	
+	// Expose currentPeriod getter for navigation buttons
+	window.getCurrentPeriod = () => currentPeriod;
+	window.setCurrentPeriod = (period) => { currentPeriod = period; };
 }
 
 // Set initial active state
@@ -167,6 +225,16 @@ document.addEventListener('DOMContentLoaded', function() {
 	
 	// Set up scroll navigation first
 	setupScrollNavigation();
+	
+	// Set up navigation button event listeners
+	const prevBtn = document.getElementById('timeline-prev');
+	const nextBtn = document.getElementById('timeline-next');
+	
+	if (prevBtn && nextBtn) {
+		prevBtn.addEventListener('click', () => navigateTimeline('prev'));
+		nextBtn.addEventListener('click', () => navigateTimeline('next'));
+	}
+	
 	// Then set initial content to first timeline entry
 	const firstPeriod = getAllPeriods()[0];
 	if (firstPeriod) {
