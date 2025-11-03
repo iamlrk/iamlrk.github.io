@@ -1,210 +1,118 @@
-// Timeline functionality for about page
+// Timeline navigation using left-hand sidebar anchors
 
-// Dynamically get all timeline periods from the DOM
-function getAllPeriods() {
-	return Array.from(document.querySelectorAll('.timeline-item')).map(item => 
-		item.getAttribute('data-period')
-	);
-}
+document.addEventListener('DOMContentLoaded', () => {
+	const navLinks = Array.from(document.querySelectorAll('.timeline-nav-link'));
+	const entries = Array.from(document.querySelectorAll('.timeline-entry'));
 
-function showTimelineContent(period) {
-	// Hide all content items
-	const contentItems = document.querySelectorAll('.timeline-content-item');
-	contentItems.forEach(item => item.classList.remove('active'));
-	
-	// Remove active class from all timeline items
-	const timelineItems = document.querySelectorAll('.timeline-item');
-	timelineItems.forEach(item => item.classList.remove('active'));
-	
-	// Show selected content
-	const selectedContent = document.getElementById('content-' + period);
-	if (selectedContent) {
-		selectedContent.classList.add('active');
+	if (!navLinks.length || !entries.length) {
+		return;
 	}
-	
-	// Add active class to selected timeline item and reorder
-	const selectedTimelineItem = document.querySelector(`[data-period="${period}"]`);
-	if (selectedTimelineItem) {
-		selectedTimelineItem.classList.add('active');
-		reorderTimelineItems(selectedTimelineItem);
-	}
-	
-	// Update navigation buttons and current period display
-	updateNavigationState(period);
-}
 
-function updateNavigationState(currentPeriod) {
-	const allPeriods = getAllPeriods();
-	const prevBtn = document.getElementById('timeline-prev');
-	const nextBtn = document.getElementById('timeline-next');
-	
-	if (prevBtn && nextBtn) {
-		// Enable both buttons for looping navigation
-		prevBtn.disabled = false;
-		nextBtn.disabled = false;
-	}
-}
+	const entryIdByPeriod = new Map();
+	const periodByEntryId = new Map();
 
-function navigateTimeline(direction) {
-	const allPeriods = getAllPeriods();
-	
-	// Use the global currentPeriod if available, otherwise fall back to active element
-	let currentPeriod;
-	if (window.getCurrentPeriod) {
-		currentPeriod = window.getCurrentPeriod();
-	} else {
-		const currentActive = document.querySelector('.timeline-item.active');
-		if (!currentActive) return;
-		currentPeriod = currentActive.getAttribute('data-period');
-	}
-	
-	const currentIndex = allPeriods.indexOf(currentPeriod);
-	let newIndex;
-	
-	if (direction === 'prev') {
-		// Loop to last item if at the beginning
-		newIndex = currentIndex === 0 ? allPeriods.length - 1 : currentIndex - 1;
-	} else if (direction === 'next') {
-		// Loop to first item if at the end
-		newIndex = currentIndex === allPeriods.length - 1 ? 0 : currentIndex + 1;
-	}
-	
-	const newPeriod = allPeriods[newIndex];
-	showTimelineContent(newPeriod);
-	
-	// Update the scroll navigation's current period
-	if (window.setCurrentPeriod) {
-		window.setCurrentPeriod(newPeriod);
-	}
-}
-
-function reorderTimelineItems(activeItem) {
-	const sidebar = document.querySelector('.timeline-sidebar');
-	const allPeriods = getAllPeriods();
-	const activePeriod = activeItem.getAttribute('data-period');
-	const activeIndex = allPeriods.indexOf(activePeriod);
-	
-	// Store all timeline items by their data-period
-	const itemsMap = {};
-	document.querySelectorAll('.timeline-item').forEach(item => {
-		itemsMap[item.getAttribute('data-period')] = item;
-	});
-	
-	// Clear sidebar
-	sidebar.innerHTML = '';
-	
-	// Create reordered array: put active item in center, others around it
-	const reorderedPeriods = [];
-	
-	// Add items before active (in reverse order)
-	for (let i = activeIndex - 1; i >= 0; i--) {
-		reorderedPeriods.push(allPeriods[i]);
-	}
-	
-	// Add active item
-	reorderedPeriods.push(activePeriod);
-	
-	// Add items after active (in normal order)
-	for (let i = activeIndex + 1; i < allPeriods.length; i++) {
-		reorderedPeriods.push(allPeriods[i]);
-	}
-	
-	// Append items in new order
-	reorderedPeriods.forEach(period => {
-		if (itemsMap[period]) {
-			sidebar.appendChild(itemsMap[period]);
+	navLinks.forEach(link => {
+		const period = link.getAttribute('data-period');
+		const entryId = link.getAttribute('href').replace('#', '');
+		if (period) {
+			entryIdByPeriod.set(period, entryId);
 		}
+		periodByEntryId.set(entryId, period);
 	});
-}
 
-function setupScrollNavigation() {
-	const sidebar = document.querySelector('.timeline-sidebar');
-	const allPeriods = getAllPeriods();
-	let currentPeriod = allPeriods[0]; // First (most recent) period
-	let isScrolling = false;
-	
-	function handleScroll(e) {
-		e.preventDefault(); // Prevent default scrolling
-		e.stopPropagation(); // Stop event from bubbling
-		
-		// Prevent rapid scrolling
-		if (isScrolling) return;
-		
-		isScrolling = true;
-		
-		// Get current index
-		const currentIndex = allPeriods.indexOf(currentPeriod);
-		let newIndex;
-		
-		if (e.deltaY > 0) {
-			// Scroll down - move to next (older) item
-			newIndex = Math.min(currentIndex + 1, allPeriods.length - 1);
+	let currentEntryId = null;
+
+	function updateNavState(entryId, { updateHash = true } = {}) {
+		if (!entryId) return;
+
+		navLinks.forEach(link => {
+			const linkTarget = link.getAttribute('href').replace('#', '');
+			const isActive = linkTarget === entryId;
+			link.classList.toggle('active', isActive);
+			if (isActive) {
+				link.setAttribute('aria-current', 'true');
+			} else {
+				link.removeAttribute('aria-current');
+			}
+		});
+
+		currentEntryId = entryId;
+		const activePeriod = periodByEntryId.get(entryId) || null;
+
+		if (typeof window.updateMobileTimelineActive === 'function') {
+			window.updateMobileTimelineActive(activePeriod);
+		}
+
+		if (updateHash) {
+			const desiredHash = `#${entryId}`;
+			if (window.location.hash !== desiredHash) {
+				history.replaceState(null, '', desiredHash);
+			}
+		}
+	}
+
+	function scrollToEntry(entryId, behavior = 'smooth') {
+		if (!entryId) return;
+		const target = document.getElementById(entryId);
+		if (!target) return;
+		target.scrollIntoView({ behavior, block: 'start' });
+		updateNavState(entryId);
+	}
+
+	navLinks.forEach(link => {
+		link.addEventListener('click', event => {
+			event.preventDefault();
+			const entryId = link.getAttribute('href').replace('#', '');
+			scrollToEntry(entryId);
+		});
+	});
+
+	const observer = new IntersectionObserver((observerEntries) => {
+		const visible = observerEntries
+			.filter(entry => entry.isIntersecting)
+			.sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+
+		if (!visible.length) return;
+
+		const topEntry = visible[0].target;
+		const entryId = topEntry.id;
+		if (entryId !== currentEntryId) {
+			updateNavState(entryId);
+		}
+	}, {
+		root: null,
+		threshold: 0.2,
+		rootMargin: '-35% 0px -50% 0px'
+	});
+
+	entries.forEach(entry => observer.observe(entry));
+
+	const initialHash = window.location.hash ? window.location.hash.substring(1) : null;
+	let initialEntryId = entries[0].id;
+	if (initialHash) {
+		if (document.getElementById(initialHash)) {
+			initialEntryId = initialHash;
 		} else {
-			// Scroll up - move to previous (newer) item
-			newIndex = Math.max(currentIndex - 1, 0);
+			const entryFromPeriod = entryIdByPeriod.get(initialHash);
+			if (entryFromPeriod) {
+				initialEntryId = entryFromPeriod;
+			}
 		}
-		
-		// Only change if we actually moved to a different item
-		if (newIndex !== currentIndex) {
-			currentPeriod = allPeriods[newIndex];
-			showTimelineContent(currentPeriod);
-		}
-		
-		// Allow next scroll after a delay
-		setTimeout(() => {
-			isScrolling = false;
-		}, 300);
 	}
-	
-	// Add scroll event to sidebar
-	sidebar.addEventListener('wheel', handleScroll);
-	
-	// Add scroll event to all timeline items (including dots and empty areas)
-	document.querySelectorAll('.timeline-item').forEach(item => {
-		item.addEventListener('wheel', handleScroll);
-	});
-	
-	// Keep track of current period when clicking
-	const originalShowContent = window.showTimelineContent || showTimelineContent;
-	window.showTimelineContent = function(period) {
-		currentPeriod = period;
-		originalShowContent(period);
-		
-		// Re-add scroll listeners to any new timeline items after reordering
-		setTimeout(() => {
-			document.querySelectorAll('.timeline-item').forEach(item => {
-				item.removeEventListener('wheel', handleScroll); // Remove existing listener
-				item.addEventListener('wheel', handleScroll); // Add fresh listener
-			});
-		}, 100);
-	};
-	
-	// Expose currentPeriod getter for navigation buttons
-	window.getCurrentPeriod = () => currentPeriod;
-	window.setCurrentPeriod = (period) => { currentPeriod = period; };
-}
 
-// Set initial active state
-document.addEventListener('DOMContentLoaded', function() {
-	// Add timeline-page class to body to show timeline indicator on hamburger menu
-	document.body.classList.add('timeline-page');
-	
-	// Set up scroll navigation first
-	setupScrollNavigation();
-	
-	// Set up navigation button event listeners
-	const prevBtn = document.getElementById('timeline-prev');
-	const nextBtn = document.getElementById('timeline-next');
-	
-	if (prevBtn && nextBtn) {
-		prevBtn.addEventListener('click', () => navigateTimeline('prev'));
-		nextBtn.addEventListener('click', () => navigateTimeline('next'));
-	}
-	
-	// Then set initial content to first timeline entry
-	const firstPeriod = getAllPeriods()[0];
-	if (firstPeriod) {
-		showTimelineContent(firstPeriod);
-	}
+	// Use auto behavior for initial positioning to avoid animated jump on load
+	setTimeout(() => {
+		const behavior = initialHash ? 'auto' : 'auto';
+		scrollToEntry(initialEntryId, behavior);
+	}, 0);
+
+	window.navigateTimelineTo = (period, behavior = 'smooth') => {
+		const entryId = entryIdByPeriod.get(period);
+		if (entryId) {
+			scrollToEntry(entryId, behavior);
+		}
+	};
+
+	window.getActiveTimelinePeriod = () => periodByEntryId.get(currentEntryId) || null;
 });
 

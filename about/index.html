@@ -102,33 +102,57 @@
 		</div>
 
 		<div class="timeline-container">
-			<div class="timeline-sidebar" id="timeline-sidebar">
-				<div class="timeline-item" data-period="2025-01" onclick="showTimelineContent('2025-01')">
-					<div class="timeline-date">2025-01</div>
-					<div class="timeline-dot"></div>
+			<aside class="timeline-sidebar" id="timeline-sidebar">
+				<div class="timeline-sidebar-header">
+					<p class="timeline-sidebar-eyebrow">Career timeline</p>
+					<h3>Follow my journey</h3>
+					<p class="timeline-sidebar-copy">Click a milestone to jump or scroll the story on the right.</p>
 				</div>
-				<div class="timeline-item" data-period="2024-01" onclick="showTimelineContent('2024-01')">
-					<div class="timeline-date">2024-01</div>
-					<div class="timeline-dot"></div>
+				<div class="timeline-nav" role="navigation" aria-label="Timeline milestones">
+					<ul class="timeline-nav-list">
+						<li class="timeline-nav-item">
+							<a class="timeline-nav-link active" href="#timeline-2025-01" data-period="2025-01" aria-current="true">
+								<span class="timeline-nav-period">Jan 2025</span>
+								<span class="timeline-nav-title">Flight Analysis Engineer</span>
+								<span class="timeline-nav-meta">Manna Drones</span>
+							</a>
+						</li>
+						<li class="timeline-nav-item">
+							<a class="timeline-nav-link" href="#timeline-2024-01" data-period="2024-01">
+								<span class="timeline-nav-period">Jan 2024</span>
+								<span class="timeline-nav-title">Graduate Engineer</span>
+								<span class="timeline-nav-meta">Manna Drones</span>
+							</a>
+						</li>
+						<li class="timeline-nav-item">
+							<a class="timeline-nav-link" href="#timeline-2023-09" data-period="2023-09">
+								<span class="timeline-nav-period">Sep 2023</span>
+								<span class="timeline-nav-title">Graduated MSc Space Science &amp; Technology</span>
+								<span class="timeline-nav-meta">University College Dublin</span>
+							</a>
+						</li>
+						<li class="timeline-nav-item">
+							<a class="timeline-nav-link" href="#timeline-2023-06" data-period="2023-06">
+								<span class="timeline-nav-period">Jun 2023</span>
+								<span class="timeline-nav-title">Flight Analysis Intern</span>
+								<span class="timeline-nav-meta">Manna Drones</span>
+							</a>
+						</li>
+					</ul>
 				</div>
-				<div class="timeline-item" data-period="2023-09" onclick="showTimelineContent('2023-09')">
-					<div class="timeline-date">2023-09</div>
-					<div class="timeline-dot"></div>
-				</div>
-				<div class="timeline-item" data-period="2023-06" onclick="showTimelineContent('2023-06')">
-					<div class="timeline-date">2023-06</div>
-					<div class="timeline-dot"></div>
-				</div>
-			</div>
+			</aside>
 			
-			<div class="timeline-content">
-				<div id="content-2025-01" class="timeline-content-item active">
-					<h2>January 2025 | Flight Analysis Engineer</h2>
-					<p>Stepped into Flight Analysis Engineer Role at Manna Drones.</p>
+			<section class="timeline-content" id="timeline-content">
+				<article id="timeline-2025-01" class="timeline-entry" data-period="2025-01">
+					<header class="timeline-entry-header">
+						<p class="timeline-entry-period">January 2025</p>
+						<h2>Flight Analysis Engineer · Manna Drones</h2>
+					</header>
+					<p>Stepped into the Flight Analysis Engineer role at Manna Drones.</p>
 					<ul>
-						<li>Build and maintain Mathematical Models of the Flight systems</li>
-						<li>Built a Energy Model that predicts the energy requirement based on the Flight Route.</li>
-						<li>Build and Maintain a Post Flight Analytics that does various different analysis, and store them to analyse and dashboards.</li>
+						<li>Build and maintain mathematical models of the flight systems.</li>
+						<li>Develop energy models that predict requirements based on route, weather, and payload.</li>
+						<li>Maintain post-flight analytics pipelines that feed dashboards and operational insights.</li>
 					</ul>
 					<div class="timeline-skills">
 						<span class="skill-tag">Python</span>
@@ -139,15 +163,18 @@
 						<span class="skill-tag">Data Analysis</span>
 						<span class="skill-tag">FastAPI</span>
 					</div>
-				</div>
+				</article>
 				
-				<div id="content-2024-01" class="timeline-content-item">
-					<h2>January 2024 | Graduate Engineer</h2>
-					<p>Continued working at Manna Drones into a Graduate Role.</p>
+				<article id="timeline-2024-01" class="timeline-entry" data-period="2024-01">
+					<header class="timeline-entry-header">
+						<p class="timeline-entry-period">January 2024</p>
+						<h2>Graduate Engineer · Manna Drones</h2>
+					</header>
+					<p>Continued my journey at Manna Drones into a Graduate Engineer role.</p>
 					<ul>
-						<li>Working on Analysing the Flight Data to help engineers understand data more.</li>
-						<li>Build Dashboards in Metabase using PostgreSQL.</li>
-						<li>Build and Maintain a inhouse python utilities library for use by engineers across other teams.</li>
+						<li>Help engineers interpret fleet data with bespoke analysis and reporting.</li>
+						<li>Build dashboards in Metabase backed by PostgreSQL.</li>
+						<li>Develop and maintain an in-house Python utilities library for cross-team use.</li>
 					</ul>
 					<div class="timeline-skills">
 						<span class="skill-tag">Python</span>
@@ -158,14 +185,17 @@
 						<span class="skill-tag">Library Development</span>
 						<span class="skill-tag">SQLAlchemy</span>
 					</div>
-				</div>
+				</article>
 				
-				<div id="content-2023-09" class="timeline-content-item">
-					<h2>September 2023 | Graduated From University College Dublin</h2>
-					<p>Graduated with a MSc. in Space Science and Technology.</p>
+				<article id="timeline-2023-09" class="timeline-entry" data-period="2023-09">
+					<header class="timeline-entry-header">
+						<p class="timeline-entry-period">September 2023</p>
+						<h2>Graduated · MSc Space Science &amp; Technology</h2>
+					</header>
+					<p>Completed my MSc at University College Dublin.</p>
 					<ul>
-						<li>Built a small satellite within a Tupperware box and launched it using a weather balloon.</li>
-						<li>Designed a Space Telescope Mission to study Active Galactic Nuclei</li>
+						<li>Built a small satellite within a tupperware enclosure and launched it via weather balloon.</li>
+						<li>Designed a space telescope mission to study active galactic nuclei.</li>
 					</ul>
 					<div class="timeline-skills">
 						<span class="skill-tag">MicroPython</span>
@@ -176,15 +206,18 @@
 						<span class="skill-tag">Matplotlib</span>
 						<span class="skill-tag">MATLAB</span>
 					</div>
-				</div>
+				</article>
 				
-				<div id="content-2023-06" class="timeline-content-item">
-					<h2>June 2023 | Flight Analysis Intern</h2>
-					<p>Started as an Flight Analysis Intern at Manna Drones in Dublin Ireland</p>
+				<article id="timeline-2023-06" class="timeline-entry" data-period="2023-06">
+					<header class="timeline-entry-header">
+						<p class="timeline-entry-period">June 2023</p>
+						<h2>Flight Analysis Intern · Manna Drones</h2>
+					</header>
+					<p>Started as a Flight Analysis Intern at Manna Drones in Dublin, Ireland.</p>
 					<ul>
-						<li>Analysed Fleet of the Flight Data</li>
-						<li>Made Dashboards in Tableau</li>
-						<li>Used Python and SQL to analyse data recorded during flight.</li>
+						<li>Analysed fleet flight data for operational improvements.</li>
+						<li>Developed dashboards in Tableau to communicate insights.</li>
+						<li>Used Python and SQL to explore flight telemetry.</li>
 					</ul>
 					<div class="timeline-skills">
 						<span class="skill-tag">Python</span>
@@ -194,13 +227,8 @@
 						<span class="skill-tag">Flight Data Analysis</span>
 						<span class="skill-tag">Pandas</span>
 					</div>
-				</div>
-				
-				<div class="timeline-navigation">
-					<button class="timeline-nav-btn timeline-prev" id="timeline-prev">&lt;</button>
-					<button class="timeline-nav-btn timeline-next" id="timeline-next">&gt;</button>
-				</div>
-			</div>
+				</article>
+			</section>
 		</div>
 	</div><!-- /.container -->
 	

@@ -1,7 +1,7 @@
 /* Navigation Components */
 
 /* Desktop Navigation */
-nav {
+body > nav {
     background-color: var(--nav-bg-color);
     padding: 8px 0 3px 0;
     width: 100%;
@@ -14,11 +14,11 @@ nav {
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-nav::after {
+body > nav::after {
     display: none;
 }
 
-nav ul {
+body > nav ul {
     font-family: 'Courier New', 'JetBrains Mono', monospace;
     padding: 0px;
     list-style: none;
@@ -32,12 +32,12 @@ nav ul {
     flex-wrap: wrap;
 }
 
-nav ul li {
+body > nav ul li {
     display: inline;
     margin: 0 10px;
 }
 
-nav ul li a {
+body > nav ul li a {
     color: var(--text-body);
     text-decoration: none;
     font-weight: 900;
@@ -50,7 +50,7 @@ nav ul li a {
     transition: all 0.2s ease;
 }
 
-nav ul li a:hover {
+body > nav ul li a:hover {
     background-color: var(--text-accent);
     color: var(--bg-color);
     transform: translate(-1px, -1px);
@@ -257,6 +257,11 @@ body.timeline-page .hamburger-toggle::after {
     border-radius: 0;
     cursor: pointer;
     transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    text-align: left;
 }
 
 .mobile-timeline-item:hover,
@@ -267,9 +272,24 @@ body.timeline-page .hamburger-toggle::after {
     transform: translateX(5px);
 }
 
-.mobile-timeline-item span {
-    font-weight: bold;
+.mobile-timeline-period {
+    font-size: var(--font-tiny);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.mobile-timeline-title {
     font-size: var(--font-body);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.mobile-timeline-item.active .mobile-timeline-period,
+.mobile-timeline-item:hover .mobile-timeline-period {
+    color: inherit;
 }
 
 .mobile-theme-toggle {

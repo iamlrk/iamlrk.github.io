@@ -54,25 +54,25 @@
     transform: translate(-50%, -50%);
     font-size: 1.1em;
     font-weight: 900;
-    color: #ffffff;
+    color: var(--palette-white);
     text-shadow: 2px 2px 0px rgba(0,0,0,0.8);
 }
 
 /* Color option specific backgrounds - No text, just colors */
 .color-option[data-color="blue"] {
-    background: #1c7ed6;
+    background: var(--palette-blue-primary);
 }
 
 .color-option[data-color="orange"] {
-    background: #ff6b35;
+    background: var(--palette-orange-primary);
 }
 
 .color-option[data-color="green"] {
-    background: #37b24d;
+    background: var(--palette-green-primary);
 }
 
 .color-option[data-color="purple"] {
-    background: #7c3aed;
+    background: var(--palette-purple-primary);
 }
 
 /* Mobile responsiveness - Hide fixed controls and show in hamburger menu */
@@ -157,25 +157,25 @@
         transform: translate(-50%, -50%);
         font-size: 1.1em;
         font-weight: 900;
-        color: #ffffff;
+        color: var(--palette-white);
         text-shadow: 2px 2px 0px rgba(0,0,0,0.8);
     }
     
     /* Mobile color option backgrounds */
     .mobile-color-option[data-color="blue"] {
-        background: #1c7ed6;
+        background: var(--palette-blue-primary);
     }
     
     .mobile-color-option[data-color="orange"] {
-        background: #ff6b35;
+        background: var(--palette-orange-primary);
     }
     
     .mobile-color-option[data-color="green"] {
-        background: #37b24d;
+        background: var(--palette-green-primary);
     }
     
     .mobile-color-option[data-color="purple"] {
-        background: #7c3aed;
+        background: var(--palette-purple-primary);
     }
 }
 

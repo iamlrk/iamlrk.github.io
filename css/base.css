@@ -5,6 +5,7 @@
  */
 
 /* Core Variables & Theme System */
+@import 'palette.css';
 @import 'base/variables.css';
 
 /* Base Reset & Body Styles */

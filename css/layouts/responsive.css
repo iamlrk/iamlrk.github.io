@@ -13,23 +13,8 @@
     }
     
     /* Hide desktop navigation on mobile */
-    nav {
+    body > nav {
         display: none;
-    }
-    
-    /* Hide desktop timeline toggle */
-    .timeline-toggle {
-        display: none !important;
-    }
-    
-    /* Hide desktop timeline overlay */
-    .timeline-overlay {
-        display: none !important;
-    }
-    
-    /* Hide desktop timeline sidebar */
-    .timeline-sidebar {
-        display: none !important;
     }
     
     .container {
@@ -39,22 +24,22 @@
     }
     
     /* Mobile navigation */
-    nav {
+    body > nav {
         height: 30px;
         padding: 8px 0;
     }
     
-    nav ul {
+    body > nav ul {
         width: 95%;
         gap: 5px;
     }
     
-    nav ul li {
+    body > nav ul li {
         margin: 0 5px;
         font-size: 0.9em;
     }
     
-    nav::after {
+    body > nav::after {
         width: 90%;
     }
     
@@ -204,26 +189,6 @@
         font-size: 0.8em;
     }
     
-    /* Timeline content mobile */
-    .timeline-content {
-        padding: 15px 15px 80px 15px;
-        width: 100%;
-    }
-    
-    .timeline-content-item h2 {
-        font-size: 1.4em;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-    }
-    
-    /* Timeline skills mobile */
-    .timeline-skills {
-        gap: 10px;
-        margin-bottom: 15px;
-    }
-    
-    /* Timeline skills now use the global mobile .skill-tag style */
-    
     /* About Page Small Mobile Styles */
     .about-hero-title {
         font-size: 2.2em;
@@ -280,82 +245,10 @@
     }
     
     /* Show regular navigation on desktop */
-    nav {
+    body > nav {
         display: block !important;
     }
     
-    .timeline-toggle {
-        display: none !important;
-    }
-    
-    .timeline-overlay {
-        display: none !important;
-    }
-    
-    .timeline-sidebar {
-        position: static !important;
-        transform: none !important;
-        width: 220px !important;
-        height: auto !important;
-        padding: 0 20px 0 20px !important;
-        background: transparent !important;
-        border: none !important;
-        border-right: 2px solid var(--border-color) !important;
-        margin-bottom: 0 !important;
-        box-shadow: none !important;
-        z-index: auto !important;
-        display: flex !important;
-        flex-direction: column !important;
-    }
-    
-    .timeline-sidebar::before {
-        display: none !important;
-    }
-    
-    .timeline-item {
-        padding: 8px 30px 8px 0 !important;
-        margin: 2px 0 !important;
-        background: transparent !important;
-        border: none !important;
-        border-left: 2px solid transparent !important;
-    }
-    
-    .timeline-date {
-        font-size: 0.9em !important;
-        white-space: nowrap !important;
-        overflow: visible !important;
-        min-width: fit-content !important;
-    }
-    
-    .timeline-item:hover,
-    .timeline-item.active {
-        transform: scale(1.2) !important;
-        padding: 15px 30px 15px 10px !important;
-        margin: 10px 0 !important;
-        border-left: 3px solid var(--text-accent) !important;
-        background: var(--text-accent) !important;
-        color: var(--bg-color) !important;
-    }
-    
-    .timeline-item.active .timeline-date {
-        font-size: 1.1em !important;
-    }
-    
-    /* Timeline Navigation Responsive */
-    .timeline-nav-btn {
-        width: 35px !important;
-        height: 35px !important;
-        font-size: 1em !important;
-        padding: 6px 8px !important;
-    }
-    
-    .timeline-prev {
-        margin-left: 10px !important;
-    }
-
-    .timeline-next {
-        margin-right: 10px !important;
-    }
 }
 
 /* Tablets and small laptops (481px - 768px) */
@@ -395,30 +288,6 @@
         gap: 10px;
     }
     
-    /* Timeline for tablets */
-    .timeline-container {
-        height: 50vh;
-    }
-    
-    .timeline-sidebar {
-        width: 200px;
-    }
-    
-    /* Timeline Navigation for tablets */
-    .timeline-nav-btn {
-        width: 38px !important;
-        height: 38px !important;
-        font-size: 1.1em !important;
-        padding: 8px 10px !important;
-    }
-    
-    .timeline-prev {
-        margin-left: 15px !important;
-    }
-
-    .timeline-next {
-        margin-right: 15px !important;
-    }
 }
 
 /* Large tablets and small desktops (769px - 1024px) */

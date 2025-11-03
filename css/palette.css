@@ -1,0 +1,116 @@
+/*
+ * Global Color Palette
+ * ------------------------------------------------------------
+ * Central store for the brand color system used across iamlrk.github.io.
+ * Define base neutrals and each thematic accent family here so other
+ * stylesheets can consume a single source of truth.
+ */
+
+:root {
+    /* Neutrals */
+    --palette-white: #ffffff;
+    --palette-off-white: #fafafa;
+    --palette-very-light-gray: #f5f5f5;
+    --palette-soft-white: #f0f0f0;
+    --palette-light-gray: #cccccc;
+    --palette-mid-gray: #4a4a4a;
+    --palette-dark-gray: #1a1a1a;
+    --palette-black: #000000;
+    --palette-rich-black: #0f0f0f;
+    --palette-charcoal: #333333;
+    --palette-gunmetal: #444444;
+
+    /* Utility feedback colors */
+    --palette-success: #51cf66;
+    --palette-warning: #f03e3e;
+    --color-success: var(--palette-success);
+    --color-warning: var(--palette-warning);
+
+    /* Blue family (default theme) */
+    --palette-blue-primary: #1c7ed6;
+    --palette-blue-secondary: #4dabf7;
+    --palette-blue-accent: #0c8599;
+    --palette-blue-info: #339af0;
+
+    /* Orange family */
+    --palette-orange-primary: #ff6b35;
+    --palette-orange-secondary: #ff8c42;
+    --palette-orange-accent: #e55100;
+    --palette-orange-info: #ff9800;
+
+    /* Green family */
+    --palette-green-primary: #37b24d;
+    --palette-green-secondary: #51cf66;
+    --palette-green-accent: #087f5b;
+    --palette-green-info: #20c997;
+
+    /* Purple family */
+    --palette-purple-primary: #7c3aed;
+    --palette-purple-secondary: #a78bfa;
+    --palette-purple-accent: #5b21b6;
+    --palette-purple-info: #8b5cf6;
+}
+
+/* Light theme mappings */
+[data-theme="light"] {
+    --bg-color: var(--palette-white);
+    --nav-bg-color: var(--palette-very-light-gray);
+    --border-color: var(--palette-black);
+    --card-bg-color: var(--palette-off-white);
+    --text-heading: var(--palette-black);
+    --text-subheading: var(--palette-black);
+    --text-subtitle: var(--palette-black);
+    --text-body: var(--palette-dark-gray);
+    --text-muted: var(--palette-mid-gray);
+    --text-tag: var(--palette-white);
+    --btn-primary-text: var(--palette-white);
+    --btn-secondary-text: var(--palette-white);
+    --btn-outline-text: var(--palette-black);
+}
+
+/* Dark theme mappings */
+[data-theme="dark"] {
+    --bg-color: var(--palette-black);
+    --nav-bg-color: var(--palette-rich-black);
+    --border-color: var(--palette-white);
+    --card-bg-color: var(--palette-dark-gray);
+    --text-heading: var(--palette-white);
+    --text-subheading: var(--palette-white);
+    --text-subtitle: var(--palette-white);
+    --text-body: var(--palette-soft-white);
+    --text-muted: var(--palette-light-gray);
+    --text-tag: var(--palette-black);
+    --btn-primary-text: var(--palette-black);
+    --btn-secondary-text: var(--palette-black);
+    --btn-outline-text: var(--palette-white);
+}
+
+/* Color theme mappings */
+[data-color-theme="blue"] {
+    --color-primary: var(--palette-blue-primary);
+    --color-secondary: var(--palette-blue-secondary);
+    --color-accent: var(--palette-blue-accent);
+    --color-info: var(--palette-blue-info);
+}
+
+[data-color-theme="orange"] {
+    --color-primary: var(--palette-orange-primary);
+    --color-secondary: var(--palette-orange-secondary);
+    --color-accent: var(--palette-orange-accent);
+    --color-info: var(--palette-orange-info);
+}
+
+[data-color-theme="green"] {
+    --color-primary: var(--palette-green-primary);
+    --color-secondary: var(--palette-green-secondary);
+    --color-accent: var(--palette-green-accent);
+    --color-info: var(--palette-green-info);
+}
+
+[data-color-theme="purple"] {
+    --color-primary: var(--palette-purple-primary);
+    --color-secondary: var(--palette-purple-secondary);
+    --color-accent: var(--palette-purple-accent);
+    --color-info: var(--palette-purple-info);
+}
+

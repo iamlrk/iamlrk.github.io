@@ -114,14 +114,14 @@
 		}
 		
 		.form-message.success {
-			background: #90EE90;
-			color: #006400;
+			background: var(--color-success);
+			color: var(--palette-black);
 			display: block;
 		}
 		
 		.form-message.error {
-			background: #FFB6C1;
-			color: #8B0000;
+			background: var(--color-warning);
+			color: var(--palette-white);
 			display: block;
 		}
 		
