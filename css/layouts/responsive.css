@@ -1,0 +1,339 @@
+/* Responsive Design */
+
+/* Mobile First - Base styles for mobile (320px+) */
+@media (max-width: 480px) {
+    /* Add body padding for mobile */
+    body {
+        padding: 0 15px;
+    }
+    
+    /* Show hamburger menu on mobile */
+    .hamburger-toggle {
+        display: flex;
+    }
+    
+    /* Hide desktop navigation on mobile */
+    body > nav {
+        display: none;
+    }
+    
+    .container {
+        width: 90%;
+        margin: 40px auto 40px auto;
+        padding: 0 20px;
+    }
+    
+    /* Mobile navigation */
+    body > nav {
+        height: 30px;
+        padding: 8px 0;
+    }
+    
+    body > nav ul {
+        width: 95%;
+        gap: 5px;
+    }
+    
+    body > nav ul li {
+        margin: 0 5px;
+        font-size: 0.9em;
+    }
+    
+    body > nav::after {
+        width: 90%;
+    }
+    
+    .hero {
+        padding: 60px 0 20px 0;
+        margin-bottom: 40px;
+    }
+    
+    .hero-title {
+        font-size: 2em;
+        line-height: 1.1;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+    }
+    
+    .hero-status {
+        flex-direction: column;
+        text-align: center;
+        padding: 12px 15px;
+        gap: 8px;
+    }
+    
+    .status-text {
+        font-size: 0.9em;
+    }
+    
+    /* Skills section mobile */
+    .skills, .projects, .quick-links {
+        padding-top: 40px;
+    }
+    
+    .skills h2, .projects h2, .quick-links h2 {
+        font-size: 2em;
+        margin-bottom: 25px;
+    }
+    
+    /* Skills Carousel Mobile for Regular Themes */
+    .skills-carousel-container {
+        gap: 10px;
+    }
+    
+    .skill-category {
+        flex: 0 0 160px;
+        min-height: 100px;
+        padding: 12px;
+    }
+    
+    .skill-category h3 {
+        font-size: 0.9em;
+        margin-bottom: 8px;
+    }
+    
+    .carousel-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 1.2em;
+    }
+    
+    .skill-tag {
+        font-size: 0.7em;
+        padding: 5px 10px;
+    }
+    
+    .stats-row {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+    
+    /* About Page Mobile Styles */
+    .about-hero-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .about-hero-title {
+        font-size: 2.8em;
+    }
+    
+    .about-hero-subtitle {
+        font-size: 1.2em;
+    }
+    
+    .about-photo-placeholder {
+        width: 240px;
+        height: 240px;
+    }
+    
+    .about-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .about-current-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .about-hero, .about-stats, .about-current, .about-timeline {
+        padding: 60px 0;
+    }
+    
+    .about-stats h2, .about-current h2, .about-timeline h2 {
+        font-size: 2.2em;
+    }
+    
+    .stat-number {
+        font-size: 2em;
+    }
+    
+    /* Projects section mobile */
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .project-card {
+        padding: 20px 15px;
+    }
+    
+    .project-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .project-header h3 {
+        font-size: 1.2em;
+    }
+    
+    .project-links {
+        align-self: stretch;
+        justify-content: center;
+    }
+    
+    /* Quick links mobile */
+    .links-grid {
+        gap: 6px;
+    }
+    
+    .link-card {
+        padding: 5px 12px;
+        font-size: 0.8em;
+    }
+    
+    /* About Page Small Mobile Styles */
+    .about-hero-title {
+        font-size: 2.2em;
+    }
+    
+    .about-hero-subtitle {
+        font-size: 1.1em;
+    }
+    
+    .about-hero-description {
+        font-size: 1em;
+    }
+    
+    .about-hero-badges {
+        justify-content: center;
+    }
+    
+    .about-photo-placeholder {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .about-stats-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .about-stat-card, .current-role, .current-interests {
+        padding: 20px;
+    }
+    
+    .about-hero, .about-stats, .about-current, .about-timeline {
+        padding: 40px 0;
+    }
+    
+    .about-stats h2, .about-current h2, .about-timeline h2 {
+        font-size: 1.8em;
+    }
+}
+
+/* Reset mobile styles for larger screens */
+@media (min-width: 481px) {
+    /* Hide hamburger menu on desktop */
+    .hamburger-toggle {
+        display: none !important;
+    }
+    
+    .mobile-menu-overlay {
+        display: none !important;
+    }
+    
+    .mobile-menu {
+        display: none !important;
+    }
+    
+    /* Show regular navigation on desktop */
+    body > nav {
+        display: block !important;
+    }
+    
+}
+
+/* Tablets and small laptops (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .container {
+        width: 90%;
+        margin: 45px auto 45px auto;
+    }
+    
+    .hero-title {
+        font-size: 2.8em;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.5em;
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    
+    .stats-row {
+        gap: 40px;
+    }
+    
+    .stat-number {
+        font-size: 2.2em;
+    }
+    
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    
+    .links-grid {
+        gap: 10px;
+    }
+    
+}
+
+/* Large tablets and small desktops (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        width: 85%;
+    }
+    
+    .hero-title {
+        font-size: 3.2em;
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .links-grid {
+        gap: 12px;
+    }
+}
+
+/* Large desktops (1025px+) */
+@media (min-width: 1025px) {
+    .container {
+        width: 75%;
+        max-width: 1200px;
+    }
+    
+    .hero-title {
+        font-size: 3.8em;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .links-grid {
+        gap: 15px;
+    }
+}
+

@@ -1,0 +1,62 @@
+/* Base Reset and Body Styles */
+body {
+    margin: 0;
+    width: 100%;
+    font-family: 'Courier New', 'JetBrains Mono', monospace !important;
+    background-color: var(--bg-color);
+    background-image: 
+        repeating-linear-gradient(90deg, transparent, transparent 49px, rgba(0,0,0,0.03) 49px, rgba(0,0,0,0.03) 50px),
+        repeating-linear-gradient(0deg, transparent, transparent 49px, rgba(0,0,0,0.03) 49px, rgba(0,0,0,0.03) 50px);
+    color: var(--text-body);
+    font-size: var(--font-body);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    margin: 50px auto 50px auto;
+    width: 70%;
+    max-width: 800px;
+    padding-top: 25px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-accent);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: var(--text-accent);
+}
+
+footer {
+    border-top: 1px solid var(--border-color);
+    font-size: .8em;
+    margin: 0 auto;
+    width: 70%;
+    max-width: 800px;
+    transition: border-color 0.3s ease;
+}
+
+footer ul {
+    font-family: 'JetBrains Mono', monospace;
+    padding: 0px;
+    list-style: none;
+    font-weight: bold;
+}
+
+footer ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+ul.posts { 
+    margin: 20px auto 40px; 
+    font-size: 1.5em;
+}
+
+ul.posts li {
+    list-style: none;
+}
+

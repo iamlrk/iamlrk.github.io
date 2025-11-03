@@ -1,176 +1,246 @@
----
-layout: default
-title: About Ramkiran Lepakshi
----
+<!DOCTYPE html>
+<html data-color-theme="blue">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="0">
+	<title>About Ramkiran Lepakshi</title>
+	<!-- Link to main stylesheet -->
+	<link rel="stylesheet" type="text/css" href="/css/main.css?v=responsive-picker-1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body class="timeline-page">
+	<!-- Mobile hamburger menu -->
+	<button class="hamburger-toggle" id="hamburger-toggle" onclick="toggleHamburgerMenu()" aria-label="Open menu and timeline">
+		<span></span>
+		<span></span>
+		<span></span>
+	</button>
+	
+	<!-- Mobile menu overlay -->
+	<div class="mobile-menu-overlay" id="mobile-menu-overlay" onclick="closeHamburgerMenu()"></div>
+	
+	<!-- Mobile menu sidebar -->
+	<div class="mobile-menu" id="mobile-menu">
+		<div class="mobile-menu-header">
+			<h3>Menu & Timeline</h3>
+			<button class="mobile-menu-close" onclick="closeHamburgerMenu()">Close</button>
+		</div>
+		
+		<!-- Navigation Links -->
+		<div class="mobile-menu-section">
+			<h4>Navigation</h4>
+			<ul class="mobile-nav-links">
+				<li><a href="/" onclick="closeHamburgerMenu()">Home</a></li>
+				<li><a href="/about" onclick="closeHamburgerMenu()">About</a></li>
+				<li><a href="/now" onclick="closeHamburgerMenu()">Now</a></li>
+				<li><a href="/cv" onclick="closeHamburgerMenu()">CV</a></li>
+				<li><a href="/contact" onclick="closeHamburgerMenu()">Contact</a></li>
+			</ul>
+		</div>
+		
+		<!-- Timeline Section -->
+		<div class="mobile-menu-section timeline-section" id="mobile-timeline-section" style="display: none;">
+			<h4>Timeline Navigation</h4>
+			<p class="timeline-hint">Jump to different periods:</p>
+			<div class="mobile-timeline-container" id="mobile-timeline-container"></div>
+		</div>
+		
+		<!-- Theme & Color Controls -->
+		<div class="mobile-theme-controls">
+			<div class="mobile-theme-section">
+				<h4>Theme</h4>
+				<button class="mobile-theme-toggle" id="mobile-theme-toggle" onclick="toggleTheme()">
+					<span id="mobile-theme-text">Dark Mode</span>
+				</button>
+			</div>
+			
+			<div class="mobile-theme-section">
+				<h4>Colors</h4>
+				<div class="mobile-color-options" id="mobile-color-options">
+					<button class="mobile-color-option active" data-color="blue" aria-label="Blue theme"></button>
+					<button class="mobile-color-option" data-color="orange" aria-label="Orange theme"></button>
+					<button class="mobile-color-option" data-color="green" aria-label="Green theme"></button>
+					<button class="mobile-color-option" data-color="purple" aria-label="Purple theme"></button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<nav>
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li><a href="/about">About</a></li>
+			<li><a href="/now">Now</a></li>
+			<li><a href="/cv">CV</a></li>
+			<li><a href="/contact">Contact</a></li>
+		</ul>
+	</nav>
+	
+	<!-- Theme Toggle - Right Side -->
+	<div class="theme-controls">
+		<button id="theme-toggle" aria-label="Toggle dark mode">Dark</button>
+	</div>
+	
+	<!-- Color Picker - Left Side -->
+	<div class="color-picker" id="color-picker">
+		<div class="color-options" id="color-options">
+			<button class="color-option active" data-color="blue" aria-label="Blue theme"></button>
+			<button class="color-option" data-color="orange" aria-label="Orange theme"></button>
+			<button class="color-option" data-color="green" aria-label="Green theme"></button>
+			<button class="color-option" data-color="purple" aria-label="Purple theme"></button>
+		</div>
+	</div>
+	
+	<div class="container">
 <div class="blurb">
 	<h1>More details about myself.</h1>
-</div><!-- /.blurb -->
-
-<div class="timeline-container">
-	<div class="timeline-sidebar" id="timeline-sidebar">
-		{% assign timeline_entries = site.timeline | sort: 'period' | reverse %}
-		{% for entry in timeline_entries %}
-		<div class="timeline-item" data-period="{{ entry.period }}" onclick="showTimelineContent('{{ entry.period }}')">
-			<div class="timeline-date">{{ entry.period }}</div>
-			<div class="timeline-dot"></div>
 		</div>
-		{% endfor %}
-	</div>
-	
-	<div class="timeline-content">
-		{% for entry in timeline_entries %}
-		<div id="content-{{ entry.period }}" class="timeline-content-item{% if forloop.first %} active{% endif %}">
-			<h2>{{ entry.title }}</h2>
-			{{ entry.content | markdownify }}
+
+		<div class="timeline-container">
+			<aside class="timeline-sidebar" id="timeline-sidebar">
+				<div class="timeline-sidebar-header">
+					<p class="timeline-sidebar-eyebrow">Career timeline</p>
+					<h3>Follow my journey</h3>
+					<p class="timeline-sidebar-copy">Click a milestone to jump or scroll the story on the right.</p>
+				</div>
+				<div class="timeline-nav" role="navigation" aria-label="Timeline milestones">
+					<ul class="timeline-nav-list">
+						<li class="timeline-nav-item">
+							<a class="timeline-nav-link active" href="#timeline-2025-01" data-period="2025-01" aria-current="true">
+								<span class="timeline-nav-period">Jan 2025</span>
+								<span class="timeline-nav-title">Flight Analysis Engineer</span>
+								<span class="timeline-nav-meta">Manna Drones</span>
+							</a>
+						</li>
+						<li class="timeline-nav-item">
+							<a class="timeline-nav-link" href="#timeline-2024-01" data-period="2024-01">
+								<span class="timeline-nav-period">Jan 2024</span>
+								<span class="timeline-nav-title">Graduate Engineer</span>
+								<span class="timeline-nav-meta">Manna Drones</span>
+							</a>
+						</li>
+						<li class="timeline-nav-item">
+							<a class="timeline-nav-link" href="#timeline-2023-09" data-period="2023-09">
+								<span class="timeline-nav-period">Sep 2023</span>
+								<span class="timeline-nav-title">Graduated MSc Space Science &amp; Technology</span>
+								<span class="timeline-nav-meta">University College Dublin</span>
+							</a>
+						</li>
+						<li class="timeline-nav-item">
+							<a class="timeline-nav-link" href="#timeline-2023-06" data-period="2023-06">
+								<span class="timeline-nav-period">Jun 2023</span>
+								<span class="timeline-nav-title">Flight Analysis Intern</span>
+								<span class="timeline-nav-meta">Manna Drones</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</aside>
+			
+			<section class="timeline-content" id="timeline-content">
+				<article id="timeline-2025-01" class="timeline-entry" data-period="2025-01">
+					<header class="timeline-entry-header">
+						<p class="timeline-entry-period">January 2025</p>
+						<h2>Flight Analysis Engineer · Manna Drones</h2>
+					</header>
+					<p>Stepped into the Flight Analysis Engineer role at Manna Drones.</p>
+					<ul>
+						<li>Build and maintain mathematical models of the flight systems.</li>
+						<li>Develop energy models that predict requirements based on route, weather, and payload.</li>
+						<li>Maintain post-flight analytics pipelines that feed dashboards and operational insights.</li>
+					</ul>
+					<div class="timeline-skills">
+						<span class="skill-tag">Python</span>
+						<span class="skill-tag">Mathematical Modeling</span>
+						<span class="skill-tag">Energy Modeling</span>
+						<span class="skill-tag">Flight Analytics</span>
+						<span class="skill-tag">PostgreSQL</span>
+						<span class="skill-tag">Data Analysis</span>
+						<span class="skill-tag">FastAPI</span>
+					</div>
+				</article>
+				
+				<article id="timeline-2024-01" class="timeline-entry" data-period="2024-01">
+					<header class="timeline-entry-header">
+						<p class="timeline-entry-period">January 2024</p>
+						<h2>Graduate Engineer · Manna Drones</h2>
+					</header>
+					<p>Continued my journey at Manna Drones into a Graduate Engineer role.</p>
+					<ul>
+						<li>Help engineers interpret fleet data with bespoke analysis and reporting.</li>
+						<li>Build dashboards in Metabase backed by PostgreSQL.</li>
+						<li>Develop and maintain an in-house Python utilities library for cross-team use.</li>
+					</ul>
+					<div class="timeline-skills">
+						<span class="skill-tag">Python</span>
+						<span class="skill-tag">PostgreSQL</span>
+						<span class="skill-tag">Metabase</span>
+						<span class="skill-tag">Data Analysis</span>
+						<span class="skill-tag">Dashboard Development</span>
+						<span class="skill-tag">Library Development</span>
+						<span class="skill-tag">SQLAlchemy</span>
+					</div>
+				</article>
+				
+				<article id="timeline-2023-09" class="timeline-entry" data-period="2023-09">
+					<header class="timeline-entry-header">
+						<p class="timeline-entry-period">September 2023</p>
+						<h2>Graduated · MSc Space Science &amp; Technology</h2>
+					</header>
+					<p>Completed my MSc at University College Dublin.</p>
+					<ul>
+						<li>Built a small satellite within a tupperware enclosure and launched it via weather balloon.</li>
+						<li>Designed a space telescope mission to study active galactic nuclei.</li>
+					</ul>
+					<div class="timeline-skills">
+						<span class="skill-tag">MicroPython</span>
+						<span class="skill-tag">Space Technology</span>
+						<span class="skill-tag">Satellite Design</span>
+						<span class="skill-tag">Mission Design</span>
+						<span class="skill-tag">NumPy</span>
+						<span class="skill-tag">Matplotlib</span>
+						<span class="skill-tag">MATLAB</span>
+					</div>
+				</article>
+				
+				<article id="timeline-2023-06" class="timeline-entry" data-period="2023-06">
+					<header class="timeline-entry-header">
+						<p class="timeline-entry-period">June 2023</p>
+						<h2>Flight Analysis Intern · Manna Drones</h2>
+					</header>
+					<p>Started as a Flight Analysis Intern at Manna Drones in Dublin, Ireland.</p>
+					<ul>
+						<li>Analysed fleet flight data for operational improvements.</li>
+						<li>Developed dashboards in Tableau to communicate insights.</li>
+						<li>Used Python and SQL to explore flight telemetry.</li>
+					</ul>
+					<div class="timeline-skills">
+						<span class="skill-tag">Python</span>
+						<span class="skill-tag">SQL</span>
+						<span class="skill-tag">Tableau</span>
+						<span class="skill-tag">Data Analysis</span>
+						<span class="skill-tag">Flight Data Analysis</span>
+						<span class="skill-tag">Pandas</span>
+					</div>
+				</article>
+			</section>
 		</div>
-		{% endfor %}
-	</div>
-</div>
-
-<script>
-// Dynamically get all timeline periods from the DOM
-function getAllPeriods() {
-	return Array.from(document.querySelectorAll('.timeline-item')).map(item => 
-		item.getAttribute('data-period')
-	);
-}
-
-function showTimelineContent(period) {
-	// Hide all content items
-	const contentItems = document.querySelectorAll('.timeline-content-item');
-	contentItems.forEach(item => item.classList.remove('active'));
+	</div><!-- /.container -->
 	
-	// Remove active class from all timeline items
-	const timelineItems = document.querySelectorAll('.timeline-item');
-	timelineItems.forEach(item => item.classList.remove('active'));
+	<footer>
+		<ul>
+			<li><a href="mailto:lepakshiramkiran@duck.com">email: lepakshiramkiran@duck.com</a></li>
+			<li><a href="https://github.com/iamlrk">github.com/iamlrk</a></li>
+		</ul>
+	</footer>
 	
-	// Show selected content
-	const selectedContent = document.getElementById('content-' + period);
-	if (selectedContent) {
-		selectedContent.classList.add('active');
-	}
-	
-	// Add active class to selected timeline item and reorder
-	const selectedTimelineItem = document.querySelector(`[data-period="${period}"]`);
-	if (selectedTimelineItem) {
-		selectedTimelineItem.classList.add('active');
-		reorderTimelineItems(selectedTimelineItem);
-	}
-}
-
-function reorderTimelineItems(activeItem) {
-	const sidebar = document.querySelector('.timeline-sidebar');
-	const allPeriods = getAllPeriods();
-	const activePeriod = activeItem.getAttribute('data-period');
-	const activeIndex = allPeriods.indexOf(activePeriod);
-	
-	// Store all timeline items by their data-period
-	const itemsMap = {};
-	document.querySelectorAll('.timeline-item').forEach(item => {
-		itemsMap[item.getAttribute('data-period')] = item;
-	});
-	
-	// Clear sidebar
-	sidebar.innerHTML = '';
-	
-	// Create reordered array: put active item in center, others around it
-	const reorderedPeriods = [];
-	
-	// Add items before active (in reverse order)
-	for (let i = activeIndex - 1; i >= 0; i--) {
-		reorderedPeriods.push(allPeriods[i]);
-	}
-	
-	// Add active item
-	reorderedPeriods.push(activePeriod);
-	
-	// Add items after active (in normal order)
-	for (let i = activeIndex + 1; i < allPeriods.length; i++) {
-		reorderedPeriods.push(allPeriods[i]);
-	}
-	
-	// Append items in new order
-	reorderedPeriods.forEach(period => {
-		if (itemsMap[period]) {
-			sidebar.appendChild(itemsMap[period]);
-		}
-	});
-}
-
-function setupScrollNavigation() {
-	const sidebar = document.querySelector('.timeline-sidebar');
-	const allPeriods = getAllPeriods();
-	let currentPeriod = allPeriods[0]; // First (most recent) period
-	let isScrolling = false;
-	
-	function handleScroll(e) {
-		e.preventDefault(); // Prevent default scrolling
-		e.stopPropagation(); // Stop event from bubbling
-		
-		// Prevent rapid scrolling
-		if (isScrolling) return;
-		
-		isScrolling = true;
-		
-		// Get current index
-		const currentIndex = allPeriods.indexOf(currentPeriod);
-		let newIndex;
-		
-		if (e.deltaY > 0) {
-			// Scroll down - move to next (older) item
-			newIndex = Math.min(currentIndex + 1, allPeriods.length - 1);
-		} else {
-			// Scroll up - move to previous (newer) item
-			newIndex = Math.max(currentIndex - 1, 0);
-		}
-		
-		// Only change if we actually moved to a different item
-		if (newIndex !== currentIndex) {
-			currentPeriod = allPeriods[newIndex];
-			showTimelineContent(currentPeriod);
-		}
-		
-		// Allow next scroll after a delay
-		setTimeout(() => {
-			isScrolling = false;
-		}, 300);
-	}
-	
-	// Add scroll event to sidebar
-	sidebar.addEventListener('wheel', handleScroll);
-	
-	// Add scroll event to all timeline items (including dots and empty areas)
-	document.querySelectorAll('.timeline-item').forEach(item => {
-		item.addEventListener('wheel', handleScroll);
-	});
-	
-	// Keep track of current period when clicking
-	const originalShowContent = window.showTimelineContent || showTimelineContent;
-	window.showTimelineContent = function(period) {
-		currentPeriod = period;
-		originalShowContent(period);
-		
-		// Re-add scroll listeners to any new timeline items after reordering
-		setTimeout(() => {
-			document.querySelectorAll('.timeline-item').forEach(item => {
-				item.removeEventListener('wheel', handleScroll); // Remove existing listener
-				item.addEventListener('wheel', handleScroll); // Add fresh listener
-			});
-		}, 100);
-	};
-}
-
-// Set initial active state
-document.addEventListener('DOMContentLoaded', function() {
-	// Add timeline-page class to body to show timeline indicator on hamburger menu
-	document.body.classList.add('timeline-page');
-	
-	// Set up scroll navigation first
-	setupScrollNavigation();
-	// Then set initial content to first timeline entry
-	const firstPeriod = getAllPeriods()[0];
-	if (firstPeriod) {
-		showTimelineContent(firstPeriod);
-	}
-});
-</script>
+	<script src="/js/main.js"></script>
+	<script src="/js/color-themes.js"></script>
+	<script src="/js/timeline.js"></script>
+</body>
+</html>

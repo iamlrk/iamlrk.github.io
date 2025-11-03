@@ -1,162 +1,269 @@
----
-layout: default
-title: Ramkiran Lepakshi
----
-
-<section class="hero">
-	<div class="hero-content">
-		<h1 class="hero-title">Hi there, I'm <span class="highlight">Ramkiran Lepakshi</span>!</h1>
-		<p class="hero-subtitle">Aspiring Aerospace Engineer & Developer</p>
-		<div class="hero-status">
-			<span class="status-text">Currently Working at <a href="https://manna.aero" target="_blank">Manna Drones</a></span>
+<!DOCTYPE html>
+<html data-color-theme="blue">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="0">
+	<meta name="cache-buster" content="blue-theme-v2.1-2025">
+	<title>Ramkiran Lepakshi</title>
+	<!-- Link to main stylesheet -->
+	<link rel="stylesheet" type="text/css" href="/css/main.css?v=responsive-picker-1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+	<!-- Mobile hamburger menu -->
+	<button class="hamburger-toggle" id="hamburger-toggle" onclick="toggleHamburgerMenu()" aria-label="Open menu and timeline">
+		<span></span>
+		<span></span>
+		<span></span>
+	</button>
+	
+	<!-- Mobile menu overlay -->
+	<div class="mobile-menu-overlay" id="mobile-menu-overlay" onclick="closeHamburgerMenu()"></div>
+	
+	<!-- Mobile menu sidebar -->
+	<div class="mobile-menu" id="mobile-menu">
+		<div class="mobile-menu-header">
+			<h3>Menu & Timeline</h3>
+			<button class="mobile-menu-close" onclick="closeHamburgerMenu()">Close</button>
 		</div>
-	</div>
-</section>
-
-<section class="skills">
-	<h2>Tech Stack & Skills</h2>
-	<div class="skills-grid">
-		<div class="skill-category">
-			<h3>Languages</h3>
-			<div class="skill-tags">
-				<span class="skill-tag">Python</span>
-				<span class="skill-tag">PostgreSQL</span>
+		
+		<!-- Navigation Links -->
+		<div class="mobile-menu-section">
+			<h4>Navigation</h4>
+			<ul class="mobile-nav-links">
+				<li><a href="/" onclick="closeHamburgerMenu()">Home</a></li>
+				<li><a href="/about" onclick="closeHamburgerMenu()">About</a></li>
+				<li><a href="/now" onclick="closeHamburgerMenu()">Now</a></li>
+				<li><a href="/cv" onclick="closeHamburgerMenu()">CV</a></li>
+				<li><a href="/contact" onclick="closeHamburgerMenu()">Contact</a></li>
+			</ul>
+		</div>
+		
+		<!-- Theme & Color Controls -->
+		<div class="mobile-theme-controls">
+			<div class="mobile-theme-section">
+				<h4>Theme</h4>
+				<button class="mobile-theme-toggle" id="mobile-theme-toggle" onclick="toggleTheme()">
+					<span id="mobile-theme-text">Dark Mode</span>
+				</button>
 			</div>
-		</div>
-		<div class="skill-category">
-			<h3>Development Tools</h3>
-			<div class="skill-tags">
-				<span class="skill-tag">Git</span>
-				<span class="skill-tag">Docker</span>
-			</div>
-		</div>
-		<div class="skill-category">
-			<h3>Frameworks</h3>
-			<div class="skill-tags">
-				<span class="skill-tag">FastAPI</span>
-
-			</div>
-		</div>
-		<div class="skill-category">
-			<h3>Python Libraries</h3>
-			<div class="skill-tags">
-				<span class="skill-tag">NumPy</span>
-				<span class="skill-tag">SciPy</span>
-				<span class="skill-tag">Pandas</span>
-				<span class="skill-tag">SQLAlchemy</span>
-				<span class="skill-tag">Pytest</span>
-				<span class="skill-tag">Pandas</span>
-				<span class="skill-tag">Matplotlib</span>
-				<span class="skill-tag">Requests</span>
-				<span class="skill-tag">Scikit-learn</span>
-			</div>
-		</div>
-		<div class="skill-category">
-			<h3>Focus Areas</h3>
-			<div class="skill-tags">
-				<span class="skill-tag">Flight Modelling</span>
-				<span class="skill-tag">Flight Analytics</span>
-				<span class="skill-tag">API Development</span>
-				<span class="skill-tag">Data Engineering</span>
-			</div>
-		</div>
-		<div class="skill-category">
-			<h3>Softwares</h3>
-			<div class="skill-tags">
-				<span class="skill-tag">VS Code</span>
-				<span class="skill-tag">Jupyter Notebook</span>
-				<span class="skill-tag">MATLAB</span>
-				<span class="skill-tag">Solidworks</span>
-				<span class="skill-tag">Catia Part Design and Assembly</span>
-				<span class="skill-tag">STK - Level 1 (Systems Took Kit)</span>
-				<span class="skill-tag">Solidworks</span>
-				<span class="skill-tag">Solidworks</span>
-			</div>
-		</div>
-	</div>
-	<div class="stats-row">
-		<div class="stat-item">
-			<span class="stat-number">3+</span>
-			<span class="stat-label">Years Experience</span>
-		</div>
-		<div class="stat-item">
-			<span class="stat-number">5+</span>
-			<span class="stat-label">Projects Built</span>
-		</div>
-		<div class="stat-item">
-			<span class="stat-number">10+</span>
-			<span class="stat-label">Technologies</span>
-		</div>
-	</div>
-</section>
-
-<section class="projects">
-	<h2>Featured Projects</h2>
-	<div class="projects-grid">
-		<div class="project-card">
-			<div class="project-header">
-				<h3>Personal Website</h3>
-				<div class="project-links">
-					<a href="https://github.com/iamlrk/iamlrk.github.io" target="_blank" class="project-link">GitHub</a>
-					<a href="{{ '/' | relative_url }}" class="project-link">Demo</a>
+			
+			<div class="mobile-theme-section">
+				<h4>Colors</h4>
+				<div class="mobile-color-options" id="mobile-color-options">
+					<button class="mobile-color-option active" data-color="blue" aria-label="Blue theme"></button>
+					<button class="mobile-color-option" data-color="orange" aria-label="Orange theme"></button>
+					<button class="mobile-color-option" data-color="green" aria-label="Green theme"></button>
+					<button class="mobile-color-option" data-color="purple" aria-label="Purple theme"></button>
 				</div>
 			</div>
-			<p class="project-description">
-				Personal Websiete with my skills, projects and CV.
-			</p>
-			<div class="project-tech">
-				<span class="tech-tag">Jekyll</span>
-				<span class="tech-tag">CSS3</span>
-				<span class="tech-tag">HTML5</span>
-			</div>
-		</div>
-
-		<div class="project-card">
-			<div class="project-header">
-				<h3>Tuppersat - A Satellite in Tupperware | R2D1</h3>
-				<div class="project-links">
-					<a href="https://github.com/iamlrk/tuppersat23-r2d1" class="project-link">GitHub</a>
-				</div>
-			</div>
-			<p class="project-description">
-				A satellite project designed to fit within a Tupperware container. 
-				The project has sensors like temperature, humidity, and GPS to monitor environmental conditions 
-				during high-altitude balloon flights.
-			</p>
-			<div class="project-tech">
-				<span class="tech-tag">MicroPython</span>
-				<span class="tech-tag">NumPy</span>
-				<span class="tech-tag">Matplotlib</span>
-			</div>
-		</div>
-
-		<div class="project-card">
-			<div class="project-header">
-				<h3>Mechanics of Orbit using Python</h3>
-				<div class="project-links">
-					<a href="https://github.com/Mechanics-of-Orbit/MOPy" class="project-link">GitHub</a>
-				</div>
-			</div>
-			<p class="project-description">
-				An interactive python library and desktop app that explains orbital mechanics' concepts.
-			</p>
-			<div class="project-tech">
-				<span class="tech-tag">Python</span>
-				<span class="tech-tag">PyQt5</span>
-				<span class="tech-tag">PySide6</span>
-				<span class="tech-tag">SQLite</span>
 		</div>
 	</div>
-</section>
-
-<section class="quick-links">
-	<h2>Quick Links</h2>
-	<div class="links-grid">
-		<a href="{{ '/about' | relative_url }}" class="link-card">About Me</a>
-		<a href="{{ '/cv' | relative_url }}" class="link-card">Resume/CV</a>
-		<a href="https://github.com/iamlrk" target="_blank" class="link-card">GitHub</a>
-		<!-- <a href="{{ '/blog' | relative_url }}" class="link-card">Blog</a> -->
-		<a href="mailto:lepakshiramkiran@duck.com" class="link-card">Contact</a>
-		<a href="{{ '/projects' | relative_url }}" class="link-card">All Projects</a>
+	
+	<nav>
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li><a href="/about">About</a></li>
+			<li><a href="/now">Now</a></li>
+			<li><a href="/cv">CV</a></li>
+			<li><a href="/contact">Contact</a></li>
+		</ul>
+	</nav>
+	
+	<!-- Theme Toggle - Right Side -->
+	<div class="theme-controls">
+		<button id="theme-toggle" aria-label="Toggle dark mode">Dark</button>
 	</div>
-</section>
+	
+	<!-- Color Picker - Left Side -->
+	<div class="color-picker" id="color-picker">
+		<div class="color-options" id="color-options">
+			<button class="color-option active" data-color="blue" aria-label="Blue theme"></button>
+			<button class="color-option" data-color="orange" aria-label="Orange theme"></button>
+			<button class="color-option" data-color="green" aria-label="Green theme"></button>
+			<button class="color-option" data-color="purple" aria-label="Purple theme"></button>
+		</div>
+	</div>
+	
+	<div class="container">
+		<section class="hero">
+			<div class="hero-content">
+				<h1 class="hero-title">Hi there, I'm <span class="highlight">Ramkiran Lepakshi</span>!</h1>
+				<p class="hero-subtitle">Aspiring Aerospace Engineer & Developer</p>
+				<div class="hero-status">
+					<span class="status-text">Currently Working at <a href="https://manna.aero" target="_blank">Manna Drones</a></span>
+				</div>
+			</div>
+		</section>
+
+		<section class="skills">
+			<h2>Tech Stack & Skills</h2>
+			<div class="skills-carousel-container">
+				<button class="carousel-btn carousel-btn-prev" id="skills-prev">&laquo;</button>
+				<div class="skills-carousel">
+					<div class="skills-carousel-track" id="skills-track">
+						<div class="skill-category">
+							<h3>Languages</h3>
+							<div class="skill-tags">
+								<span class="skill-tag">Python</span>
+								<span class="skill-tag">PostgreSQL</span>
+								<span class="skill-tag">MATLAB</span>
+								<span class="skill-tag">LaTeX</span>
+								<span class="skill-tag">HTML/CSS</span>
+							</div>
+						</div>
+						<div class="skill-category">
+							<h3>Development Tools</h3>
+							<div class="skill-tags">
+								<span class="skill-tag">Git</span>
+								<span class="skill-tag">Docker</span>
+							</div>
+						</div>
+						<div class="skill-category">
+							<h3>Frameworks</h3>
+							<div class="skill-tags">
+								<span class="skill-tag">FastAPI</span>
+							</div>
+						</div>
+						<div class="skill-category">
+							<h3>Python Libraries</h3>
+							<div class="skill-tags">
+								<span class="skill-tag">NumPy</span>
+								<span class="skill-tag">SciPy</span>
+								<span class="skill-tag">Pandas</span>
+								<span class="skill-tag">SQLAlchemy</span>
+								<span class="skill-tag">Pytest</span>
+								<span class="skill-tag">Matplotlib</span>
+								<span class="skill-tag">Requests</span>
+								<span class="skill-tag">Scikit-learn</span>
+							</div>
+						</div>
+						<div class="skill-category">
+							<h3>Focus Areas</h3>
+							<div class="skill-tags">
+								<span class="skill-tag">Flight Modelling</span>
+								<span class="skill-tag">Flight Analytics</span>
+								<span class="skill-tag">API Development</span>
+								<span class="skill-tag">Data Engineering</span>
+							</div>
+						</div>
+						<div class="skill-category">
+							<h3>Softwares</h3>
+							<div class="skill-tags">
+								<span class="skill-tag">VS Code</span>
+								<span class="skill-tag">Jupyter Notebook</span>
+								<span class="skill-tag">MATLAB</span>
+								<span class="skill-tag">Solidworks</span>
+								<span class="skill-tag">Catia Part Design and Assembly</span>
+								<span class="skill-tag">STK - Level 1 (Systems Took Kit)</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<button class="carousel-btn carousel-btn-next" id="skills-next">&raquo;</button>
+			</div>
+			<div class="carousel-dots" id="skills-dots"></div>
+			<div class="stats-row">
+				<div class="stat-item">
+					<span class="stat-number">3+</span>
+					<span class="stat-label">Years Experience</span>
+				</div>
+				<div class="stat-item">
+					<span class="stat-number">5+</span>
+					<span class="stat-label">Projects Built</span>
+				</div>
+				<div class="stat-item">
+					<span class="stat-number">10+</span>
+					<span class="stat-label">Technologies</span>
+				</div>
+			</div>
+		</section>
+
+		<section class="projects">
+			<h2>Featured Projects</h2>
+			<div class="projects-grid grid-brutal">
+				<div class="project-card card-brutal-hover">
+					<div class="project-header">
+						<h3>Personal Website</h3>
+						<div class="project-links">
+							<a href="https://github.com/iamlrk/iamlrk.github.io" target="_blank" class="project-link shadow-brutal-hover">GitHub</a>
+							<a href="/" class="project-link shadow-brutal-hover">Demo</a>
+						</div>
+					</div>
+					<p class="project-description">
+						Personal Website with my skills, projects and CV.
+					</p>
+					<div class="project-tech">
+						<span class="tech-tag tag-brutal">HTML5</span>
+						<span class="tech-tag tag-brutal-secondary">CSS3</span>
+						<span class="tech-tag tag-brutal-accent">JavaScript</span>
+					</div>
+				</div>
+
+				<div class="project-card card-brutal-hover">
+					<div class="project-header">
+						<h3>Tuppersat - A Satellite in Tupperware | R2D1</h3>
+						<div class="project-links">
+							<a href="https://github.com/iamlrk/tuppersat23-r2d1" class="project-link shadow-brutal-hover">GitHub</a>
+						</div>
+					</div>
+					<p class="project-description">
+						A satellite project designed to fit within a Tupperware container. 
+						The project has sensors like temperature, humidity, and GPS to monitor environmental conditions 
+						during high-altitude balloon flights.
+					</p>
+					<div class="project-tech">
+						<span class="tech-tag tag-brutal">MicroPython</span>
+						<span class="tech-tag tag-brutal-info">NumPy</span>
+						<span class="tech-tag tag-brutal-accent">Matplotlib</span>
+					</div>
+				</div>
+
+				<div class="project-card card-brutal-hover">
+					<div class="project-header">
+						<h3>Mechanics of Orbit using Python</h3>
+						<div class="project-links">
+							<a href="https://github.com/Mechanics-of-Orbit/MOPy" class="project-link shadow-brutal-hover">GitHub</a>
+						</div>
+					</div>
+					<p class="project-description">
+						An interactive python library and desktop app that explains orbital mechanics' concepts.
+					</p>
+					<div class="project-tech">
+						<span class="tech-tag tag-brutal">Python</span>
+						<span class="tech-tag tag-brutal-secondary">PyQt5</span>
+						<span class="tech-tag tag-brutal-accent">PySide6</span>
+						<span class="tech-tag tag-brutal-info">SQLite</span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="quick-links">
+			<h2>Quick Links</h2>
+			<div class="links-grid grid-brutal grid-brutal-2">
+				<a href="/about" class="link-card card-brutal-hover">About Me</a>
+				<a href="/now" class="link-card card-brutal-hover">What I'm Doing Now</a>
+				<a href="/cv" class="link-card card-brutal-hover">Resume/CV</a>
+				<a href="https://github.com/iamlrk" target="_blank" class="link-card card-brutal-hover">GitHub</a>
+				<a href="mailto:lepakshiramkiran@duck.com" class="link-card card-brutal-hover">Contact</a>
+			</div>
+		</section>
+	</div><!-- /.container -->
+	
+	<footer>
+		<ul>
+			<li><a href="mailto:lepakshiramkiran@duck.com">email: lepakshiramkiran@duck.com</a></li>
+			<li><a href="https://github.com/iamlrk">github.com/iamlrk</a></li>
+		</ul>
+	</footer>
+	
+	<script src="/js/main.js"></script>
+	<script src="/js/color-themes.js"></script>
+</body>
+</html>

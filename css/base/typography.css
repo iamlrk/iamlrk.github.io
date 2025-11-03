@@ -1,0 +1,103 @@
+/* Typography System */
+
+/* Brutalist Typography for All Themes */
+h1, h2, h3, h4, p, a, span, li {
+    font-family: 'Courier New', 'JetBrains Mono', monospace !important;
+}
+
+h1, h2 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 900;
+}
+
+h3 {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 900;
+}
+
+h1 {
+    font-size: var(--font-heading);
+    color: var(--text-heading);
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: var(--font-subheading);
+    color: var(--text-subheading);
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: var(--font-subtitle);
+    color: var(--text-subtitle);
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: bold;
+}
+
+p {
+    font-size: var(--font-body);
+    color: var(--text-body);
+    line-height: 1.6em;
+}
+
+/* Typography Utility Classes */
+.text-heading {
+    color: var(--text-heading);
+    font-size: var(--font-heading);
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.text-subheading {
+    color: var(--text-subheading);
+    font-size: var(--font-subheading);
+    font-weight: bold;
+    line-height: 1.3;
+}
+
+.text-subtitle {
+    color: var(--text-subheading);
+    font-size: var(--font-subtitle);
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+.text-body {
+    color: var(--text-body);
+    font-size: var(--font-body);
+    line-height: 1.6;
+}
+
+.text-muted {
+    color: var(--text-muted);
+    font-size: var(--font-body);
+    line-height: 1.5;
+}
+
+.text-accent {
+    color: var(--text-accent);
+    font-weight: bold;
+}
+
+.text-tag {
+    color: var(--text-tag);
+    font-size: var(--font-small);
+    font-weight: normal;
+}
+
+.text-small {
+    color: var(--text-muted);
+    font-size: var(--font-small);
+    line-height: 1.4;
+}
+
+.text-tiny {
+    color: var(--text-muted);
+    font-size: var(--font-tiny);
+    line-height: 1.3;
+}
+

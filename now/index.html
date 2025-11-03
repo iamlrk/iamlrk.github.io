@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html data-color-theme="blue">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="0">
+	<title>What I'm Doing Now - Ramkiran Lepakshi</title>
+	<!-- Link to main stylesheet -->
+	<link rel="stylesheet" type="text/css" href="/css/main.css?v=responsive-picker-1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+	<!-- Mobile hamburger menu -->
+	<button class="hamburger-toggle" id="hamburger-toggle" onclick="toggleHamburgerMenu()" aria-label="Open menu and timeline">
+		<span></span>
+		<span></span>
+		<span></span>
+	</button>
+	
+	<!-- Mobile menu overlay -->
+	<div class="mobile-menu-overlay" id="mobile-menu-overlay" onclick="closeHamburgerMenu()"></div>
+	
+	<!-- Mobile menu sidebar -->
+	<div class="mobile-menu" id="mobile-menu">
+		<div class="mobile-menu-header">
+			<h3>Menu & Timeline</h3>
+			<button class="mobile-menu-close" onclick="closeHamburgerMenu()">Close</button>
+		</div>
+		
+		<!-- Navigation Links -->
+		<div class="mobile-menu-section">
+			<h4>Navigation</h4>
+			<ul class="mobile-nav-links">
+				<li><a href="/" onclick="closeHamburgerMenu()">Home</a></li>
+				<li><a href="/about" onclick="closeHamburgerMenu()">About</a></li>
+				<li><a href="/now" onclick="closeHamburgerMenu()">Now</a></li>
+				<li><a href="/cv" onclick="closeHamburgerMenu()">CV</a></li>
+				<li><a href="/contact" onclick="closeHamburgerMenu()">Contact</a></li>
+			</ul>
+		</div>
+		
+		<!-- Theme & Color Controls -->
+		<div class="mobile-theme-controls">
+			<div class="mobile-theme-section">
+				<h4>Theme</h4>
+				<button class="mobile-theme-toggle" id="mobile-theme-toggle" onclick="toggleTheme()">
+					<span id="mobile-theme-text">Dark Mode</span>
+				</button>
+			</div>
+			
+			<div class="mobile-theme-section">
+				<h4>Colors</h4>
+				<div class="mobile-color-options" id="mobile-color-options">
+					<button class="mobile-color-option active" data-color="blue" aria-label="Blue theme"></button>
+					<button class="mobile-color-option" data-color="orange" aria-label="Orange theme"></button>
+					<button class="mobile-color-option" data-color="green" aria-label="Green theme"></button>
+					<button class="mobile-color-option" data-color="purple" aria-label="Purple theme"></button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<nav>
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li><a href="/about">About</a></li>
+			<li><a href="/now">Now</a></li>
+			<li><a href="/cv">CV</a></li>
+			<li><a href="/contact">Contact</a></li>
+		</ul>
+	</nav>
+	
+	<!-- Theme Toggle - Right Side -->
+	<div class="theme-controls">
+		<button id="theme-toggle" aria-label="Toggle dark mode">Dark</button>
+	</div>
+	
+	<!-- Color Picker - Left Side -->
+	<div class="color-picker" id="color-picker">
+		<div class="color-options" id="color-options">
+			<button class="color-option active" data-color="blue" aria-label="Blue theme"></button>
+			<button class="color-option" data-color="orange" aria-label="Orange theme"></button>
+			<button class="color-option" data-color="green" aria-label="Green theme"></button>
+			<button class="color-option" data-color="purple" aria-label="Purple theme"></button>
+		</div>
+	</div>
+	
+	<div class="container">
+		<div class="blurb">
+			<h1>What I'm Doing Now</h1>
+			<p class="last-updated">Last updated: <strong>November 2025</strong></p>
+		</div>
+
+		<section class="now-section">
+			<h2>Current Work Focus</h2>
+			<div class="focus-card card-brutal shadow-brutal-hover">
+				<h3>Flight Modeling  and Analysisat Manna Drones</h3>
+				<p>I'm currently deep in the world of autonomous drone delivery , working as a Flight Analysis Engineer. My main focus areas include:</p>
+				<ul>
+					<li><strong>Energy Prediction Models:</strong> Building mathematical models that predict energy requirements based on flight routes, weather conditions, and payload specifications</li>
+					<li><strong>Flight Analytics System:</strong> Developing comprehensive analysis pipelines that process flight data to generate insights for performance and operational improvements</li>
+				</ul>
+				<div class="skill-tags">
+					<span class="skill-tag tag-brutal">Python</span>
+					<span class="skill-tag tag-brutal">Flight Science</span>
+					<span class="skill-tag tag-brutal">Flight Mechanics</span>
+					<span class="skill-tag tag-brutal">PostgreSQL</span>
+					<span class="skill-tag tag-brutal">FastAPI</span>
+					<span class="skill-tag tag-brutal">Energy Modeling</span>
+					<span class="skill-tag tag-brutal">Metabase</span>
+					<span class="skill-tag tag-brutal">Data Engineering</span>
+					<span class="skill-tag tag-brutal">Data Visualization</span>
+				</div>
+			</div>
+		</section>
+
+		<section class="now-section">
+			<h2>Learning Goals</h2>
+			<div class="learning-grid grid-brutal grid-brutal-3">
+				<div class="learning-card card-brutal card-brutal-hover">
+					<h3>C++</h3>
+					<p>Learning C++ to improve my skills in low-level programming and system programming.</p>
+					<div class="progress-indicator">
+						<span class="progress-text tag-brutal-accent">In Progress</span>
+					</div>
+				</div>
+				
+				<div class="learning-card card-brutal card-brutal-hover">
+					<h3>Flight Control Systems</h3>
+					<p>Improving my understanding of flight control systems.</p>
+					<div class="progress-indicator">
+						<span class="progress-text tag-brutal-secondary">In Progress</span>
+					</div>
+				</div>
+				
+				<div class="learning-card card-brutal card-brutal-hover">
+					<h3>Embedded Programming</h3>
+					<p>Using my knowledge of C++ to program embedded systems for myriad of applications.</p>
+					<div class="progress-indicator">
+						<span class="progress-text tag-brutal-info">Starting Soon.</span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="now-section">
+			<h2>Currently Reading & Resources</h2>
+			<div class="resources-grid grid-brutal grid-brutal-3">
+				<div class="resource-card card-brutal card-brutal-hover book">
+					<div class="resource-type tag-brutal">Book</div>
+					<h3>The Pragmatic Programmer</h3>
+					<p class="author">by Andrew Hunt and Dave Thomas</p>
+					<p>Expanding my understanding of the software development process and best practices.</p>
+				</div>
+				
+				<div class="resource-card card-brutal card-brutal-hover course">
+					<div class="resource-type tag-brutal">Book</div>
+					<h3>The Wheel of Time - Book 2</h3>
+					<p class="author">by Robert Jordan</p>
+					<p>Reading the second book in the Wheel of Time series.</p>
+				</div>
+				
+				<div class="resource-card card-brutal card-brutal-hover paper">
+					<div class="resource-type tag-brutal">Research</div>
+					<h3>Memory Efficient Algorithms to calculate Flight Intent Error</h3>
+					<p class="author">Various Sources</p>
+					<p>Studying algorithms for calculating flight intent error for scalable application.</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="now-section">
+			<h2>Personal Projects</h2>
+			<div class="projects-list">	
+				<div class="project-item card-brutal card-brutal-hover">
+					<h3>Using Cloudflare R2 buckets and D1 SQL database</h3>
+					<p>Building a simple web application to store and host my notes and bookmarks.</p>
+					<div class="skill-tags">
+						<span class="skill-tag tag-brutal">HTML</span>
+						<span class="skill-tag tag-brutal">CSS</span>
+						<span class="skill-tag tag-brutal">TypeScript</span>
+						<span class="skill-tag tag-brutal">Cloudflare</span>
+						<span class="skill-tag tag-brutal">D1 SQL</span>
+						<span class="skill-tag tag-brutal">R2 Buckets</span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="now-section">
+			<h2>Life Beyond Code</h2>
+			<div class="life-activities grid-brutal grid-brutal-2">
+				<div class="activity-item card-brutal card-brutal-hover">
+					<h3>Coffee and Tea Nerd</h3>
+					<p>I have the collection of coffee and tea gear in my apartment.
+						I own a Aeropress, V60, V60 Switch, Venus Moka Pot and a KingGrinder for coffee beans. 
+						I get my coffee from a local roaster called - <a href="https://www.eighty9.ie/" target="_blank">JJ Darboven</a>. 
+					</p>
+				</div>
+
+				<div class="activity-item card-brutal card-brutal-hover">
+					<h3>Air Dryed Clay Modeling</h3>
+					<p>I love to model in air dryed clay. 
+						I am currently working on a house modelled after my own house.
+						Pics to come soon.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<div class="now-footer">
+			<p>This page is updated regularly to reflect my current focus and activities. The concept is inspired by Derek Sivers' <a href="https://nownownow.com/about" target="_blank">"Now" page movement</a>.</p>
+		</div>
+	</div><!-- /.container -->
+	
+	<footer>
+		<ul>
+			<li><a href="mailto:lepakshiramkiran@duck.com">email: lepakshiramkiran@duck.com</a></li>
+			<li><a href="https://github.com/iamlrk">github.com/iamlrk</a></li>
+		</ul>
+	</footer>
+	
+	<script src="/js/main.js"></script>
+	<script src="/js/color-themes.js"></script>
+</body>
+</html>

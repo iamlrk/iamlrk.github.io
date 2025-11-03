@@ -1,0 +1,122 @@
+/* Neobrutalist Theme System - Bold, Raw, Unapologetic - Blue Accent v2.0 */
+:root {
+    /* Font Sizes - Neobrutalist emphasis on strong hierarchy */
+    --font-heading: 3.5em;          /* Main page titles - larger for impact */
+    --font-subheading: 2.2em;       /* Section headers - more pronounced */
+    --font-subtitle: 1.6em;         /* Subsection titles - stronger presence */
+    --font-body: 1.1em;             /* Normal body text - more readable */
+    --font-small: 0.9em;            /* Tags, captions - slightly larger */
+    --font-tiny: 0.8em;             /* Fine print, labels */
+    
+    /* Neobrutalist specific - stronger shadows and borders */
+    --shadow-brutal: 8px 8px 0px var(--palette-black);
+    --shadow-brutal-hover: 12px 12px 0px var(--palette-black);
+    --shadow-brutal-small: 4px 4px 0px var(--palette-black);
+    --border-width: 5px;
+    --border-width-thick: 8px;
+    
+    /* Neobrutalist spacing system */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
+    --space-xxl: 4rem;
+    
+    /* Neobrutalist color themes - Dynamic color system */
+    --color-warning: var(--palette-warning);       /* Bold red */
+    --color-success: var(--palette-success);       /* Success green */
+}
+
+/* ================================
+   COLOR THEME SYSTEM
+   ================================ */
+
+/* Blue Theme (Default) */
+[data-color-theme="blue"] {
+    --color-primary: var(--palette-blue-primary);       /* Bold blue */
+    --color-secondary: var(--palette-blue-secondary);   /* Light blue */
+    --color-accent: var(--palette-blue-accent);         /* Dark teal blue */
+    --color-info: var(--palette-blue-info);             /* Info blue */
+}
+
+/* Orange Theme */
+[data-color-theme="orange"] {
+    --color-primary: var(--palette-orange-primary);       /* Bold orange */
+    --color-secondary: var(--palette-orange-secondary);   /* Light orange */
+    --color-accent: var(--palette-orange-accent);         /* Dark orange */
+    --color-info: var(--palette-orange-info);             /* Info orange */
+}
+
+/* Green Theme */
+[data-color-theme="green"] {
+    --color-primary: var(--palette-green-primary);       /* Bold green */
+    --color-secondary: var(--palette-green-secondary);   /* Light green */
+    --color-accent: var(--palette-green-accent);         /* Dark green */
+    --color-info: var(--palette-green-info);             /* Info green */
+}
+
+/* Purple Theme */
+[data-color-theme="purple"] {
+    --color-primary: var(--palette-purple-primary);       /* Bold purple */
+    --color-secondary: var(--palette-purple-secondary);   /* Light purple */
+    --color-accent: var(--palette-purple-accent);         /* Dark purple */
+    --color-info: var(--palette-purple-info);             /* Info purple */
+}
+
+[data-theme="light"] {
+    /* Core Colors - Light Neobrutalism */
+    --bg-color: var(--palette-white);
+    --nav-bg-color: var(--palette-very-light-gray);
+    --border-color: var(--palette-black);         /* Pure black borders for maximum contrast */
+    --card-bg-color: var(--palette-off-white);
+    
+    /* Typography - High contrast for readability */
+    --text-heading: var(--palette-black);         /* Pure black for maximum impact */
+    --text-subheading: var(--palette-black);
+    --text-subtitle: var(--palette-black);        /* All headings pure black */
+    --text-body: var(--palette-dark-gray);        /* Very dark gray for body text */
+    --text-muted: var(--palette-mid-gray);        /* Less muted than before */
+    --text-accent: var(--color-primary);
+    --text-tag: var(--palette-white);            /* White text on colored backgrounds */
+    
+    /* Button and interaction colors */
+    --btn-primary-bg: var(--color-primary);
+    --btn-primary-text: var(--palette-white);
+    --btn-secondary-bg: var(--color-accent);
+    --btn-secondary-text: var(--palette-white);
+    --btn-outline-bg: transparent;
+    --btn-outline-text: var(--palette-black);
+}
+
+[data-theme="dark"] {
+    /* Core Colors - Dark Neobrutalism */
+    --bg-color: var(--palette-black);
+    --nav-bg-color: var(--palette-rich-black);
+    --border-color: var(--palette-white);         /* White borders on dark background */
+    --card-bg-color: var(--palette-dark-gray);
+    
+    /* Typography - High contrast for dark mode */
+    --text-heading: var(--palette-white);         /* Pure white for maximum impact */
+    --text-subheading: var(--palette-white);
+    --text-subtitle: var(--palette-white);        /* All headings pure white */
+    --text-body: var(--palette-soft-white);       /* Very light gray for body text */
+    --text-muted: var(--palette-light-gray);      /* Less muted than before */
+    --text-accent: var(--color-secondary);
+    --text-tag: var(--palette-black);            /* Black text on colored backgrounds */
+    
+    /* Button and interaction colors */
+    --btn-primary-bg: var(--color-primary);
+    --btn-primary-text: var(--palette-black);
+    --btn-secondary-bg: var(--color-accent);
+    --btn-secondary-text: var(--palette-black);
+    --btn-outline-bg: transparent;
+    --btn-outline-text: var(--palette-white);
+    
+    /* Dark mode brutal shadows - now with white/light colors */
+    --shadow-brutal: 8px 8px 0px var(--palette-charcoal);
+    --shadow-brutal-hover: 12px 12px 0px var(--palette-gunmetal);
+    --shadow-brutal-small: 4px 4px 0px var(--palette-charcoal);
+}
+
+/* Blue v2.1 - Sun Nov  2 21:15:11 GMT 2025 */

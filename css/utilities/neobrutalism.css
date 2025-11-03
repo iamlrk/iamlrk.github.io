@@ -1,0 +1,396 @@
+/* 
+ * Neobrutalism Utility Classes
+ * Inspired by https://www.neobrutalism.dev/
+ * Provides Tailwind-like utility classes for neobrutalist design
+ */
+
+/* ================================
+   SHADOW UTILITIES
+   ================================ */
+
+.shadow-brutal {
+    box-shadow: var(--shadow-brutal);
+}
+
+.shadow-brutal-hover {
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.shadow-brutal-hover:hover {
+    box-shadow: var(--shadow-brutal-hover);
+    transform: translate(-2px, -2px);
+}
+
+.shadow-brutal-small {
+    box-shadow: var(--shadow-brutal-small);
+}
+
+.shadow-none {
+    box-shadow: none;
+}
+
+/* ================================
+   BORDER UTILITIES
+   ================================ */
+
+.border-brutal {
+    border: var(--border-width) solid var(--border-color);
+}
+
+.border-brutal-thick {
+    border: var(--border-width-thick) solid var(--border-color);
+}
+
+.border-top-brutal {
+    border-top: var(--border-width) solid var(--border-color);
+}
+
+.border-bottom-brutal {
+    border-bottom: var(--border-width) solid var(--border-color);
+}
+
+.border-left-brutal {
+    border-left: var(--border-width) solid var(--border-color);
+}
+
+.border-right-brutal {
+    border-right: var(--border-width) solid var(--border-color);
+}
+
+/* ================================
+   SPACING UTILITIES
+   ================================ */
+
+.p-xs { padding: var(--space-xs); }
+.p-sm { padding: var(--space-sm); }
+.p-md { padding: var(--space-md); }
+.p-lg { padding: var(--space-lg); }
+.p-xl { padding: var(--space-xl); }
+.p-xxl { padding: var(--space-xxl); }
+
+.px-xs { padding-left: var(--space-xs); padding-right: var(--space-xs); }
+.px-sm { padding-left: var(--space-sm); padding-right: var(--space-sm); }
+.px-md { padding-left: var(--space-md); padding-right: var(--space-md); }
+.px-lg { padding-left: var(--space-lg); padding-right: var(--space-lg); }
+.px-xl { padding-left: var(--space-xl); padding-right: var(--space-xl); }
+
+.py-xs { padding-top: var(--space-xs); padding-bottom: var(--space-xs); }
+.py-sm { padding-top: var(--space-sm); padding-bottom: var(--space-sm); }
+.py-md { padding-top: var(--space-md); padding-bottom: var(--space-md); }
+.py-lg { padding-top: var(--space-lg); padding-bottom: var(--space-lg); }
+.py-xl { padding-top: var(--space-xl); padding-bottom: var(--space-xl); }
+
+.m-xs { margin: var(--space-xs); }
+.m-sm { margin: var(--space-sm); }
+.m-md { margin: var(--space-md); }
+.m-lg { margin: var(--space-lg); }
+.m-xl { margin: var(--space-xl); }
+.m-xxl { margin: var(--space-xxl); }
+
+.mx-xs { margin-left: var(--space-xs); margin-right: var(--space-xs); }
+.mx-sm { margin-left: var(--space-sm); margin-right: var(--space-sm); }
+.mx-md { margin-left: var(--space-md); margin-right: var(--space-md); }
+.mx-lg { margin-left: var(--space-lg); margin-right: var(--space-lg); }
+.mx-xl { margin-left: var(--space-xl); margin-right: var(--space-xl); }
+
+.my-xs { margin-top: var(--space-xs); margin-bottom: var(--space-xs); }
+.my-sm { margin-top: var(--space-sm); margin-bottom: var(--space-sm); }
+.my-md { margin-top: var(--space-md); margin-bottom: var(--space-md); }
+.my-lg { margin-top: var(--space-lg); margin-bottom: var(--space-lg); }
+.my-xl { margin-top: var(--space-xl); margin-bottom: var(--space-xl); }
+
+/* ================================
+   BACKGROUND COLOR UTILITIES
+   ================================ */
+
+.bg-primary {
+    background-color: var(--color-primary);
+    color: var(--btn-primary-text);
+}
+
+.bg-secondary {
+    background-color: var(--color-secondary);
+    color: var(--btn-secondary-text);
+}
+
+.bg-accent {
+    background-color: var(--color-accent);
+    color: var(--btn-secondary-text);
+}
+
+.bg-warning {
+    background-color: var(--color-warning);
+    color: var(--palette-white);
+}
+
+.bg-info {
+    background-color: var(--color-info);
+    color: var(--palette-white);
+}
+
+.bg-success {
+    background-color: var(--color-success);
+    color: var(--palette-black);
+}
+
+.bg-white {
+    background-color: var(--palette-white);
+    color: var(--palette-black);
+}
+
+.bg-black {
+    background-color: var(--palette-black);
+    color: var(--palette-white);
+}
+
+/* ================================
+   TEXT COLOR UTILITIES
+   ================================ */
+
+.text-primary { color: var(--color-primary); }
+.text-secondary { color: var(--color-secondary); }
+.text-accent { color: var(--color-accent); }
+.text-warning { color: var(--color-warning); }
+.text-info { color: var(--color-info); }
+.text-success { color: var(--color-success); }
+.text-white { color: var(--palette-white); }
+.text-black { color: var(--palette-black); }
+.text-heading { color: var(--text-heading); }
+.text-body { color: var(--text-body); }
+.text-muted { color: var(--text-muted); }
+
+/* ================================
+   BUTTON UTILITIES
+   ================================ */
+
+.btn-brutal {
+    display: inline-block;
+    padding: var(--space-sm) var(--space-lg);
+    border: var(--border-width) solid var(--border-color);
+    background-color: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: var(--font-body);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: var(--shadow-brutal-small);
+    text-align: center;
+}
+
+.btn-brutal:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-brutal);
+}
+
+.btn-brutal:active {
+    transform: translate(0, 0);
+    box-shadow: var(--shadow-brutal-small);
+}
+
+.btn-brutal-secondary {
+    background-color: var(--btn-secondary-bg);
+    color: var(--btn-secondary-text);
+}
+
+.btn-brutal-outline {
+    background-color: var(--btn-outline-bg);
+    color: var(--btn-outline-text);
+}
+
+.btn-brutal-large {
+    padding: var(--space-md) var(--space-xl);
+    font-size: var(--font-subtitle);
+}
+
+.btn-brutal-small {
+    padding: var(--space-xs) var(--space-md);
+    font-size: var(--font-small);
+}
+
+/* ================================
+   CARD UTILITIES
+   ================================ */
+
+.card-brutal {
+    background-color: var(--card-bg-color);
+    border: var(--border-width) solid var(--border-color);
+    box-shadow: var(--shadow-brutal);
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
+}
+
+.card-brutal-hover {
+    transition: all 0.2s ease;
+}
+
+.card-brutal-hover:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-brutal-hover);
+}
+
+.card-brutal-small {
+    padding: var(--space-md);
+    box-shadow: var(--shadow-brutal-small);
+}
+
+/* ================================
+   LAYOUT UTILITIES
+   ================================ */
+
+.container-brutal {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-lg);
+}
+
+.grid-brutal {
+    display: grid;
+    gap: var(--space-lg);
+}
+
+.grid-brutal-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-brutal-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-brutal-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.flex-brutal {
+    display: flex;
+    gap: var(--space-md);
+}
+
+.flex-brutal-center {
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-brutal-between {
+    justify-content: space-between;
+}
+
+.flex-brutal-column {
+    flex-direction: column;
+}
+
+/* ================================
+   FORM UTILITIES
+   ================================ */
+
+.input-brutal {
+    padding: var(--space-sm) var(--space-md);
+    border: var(--border-width) solid var(--border-color);
+    background-color: var(--bg-color);
+    color: var(--text-body);
+    font-size: var(--font-body);
+    font-family: inherit;
+    box-shadow: var(--shadow-brutal-small);
+    transition: all 0.2s ease;
+}
+
+.input-brutal:focus {
+    outline: none;
+    transform: translate(-1px, -1px);
+    box-shadow: var(--shadow-brutal);
+}
+
+.textarea-brutal {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* ================================
+   TAG/BADGE UTILITIES
+   ================================ */
+
+.tag-brutal {
+    display: inline-block;
+    padding: var(--space-xs) var(--space-sm);
+    background-color: var(--color-primary);
+    color: var(--text-tag);
+    border: 2px solid var(--border-color);
+    font-size: var(--font-small);
+    font-weight: 600;
+    margin: 2px;
+    box-shadow: 2px 2px 0px var(--border-color);
+}
+
+.tag-brutal-secondary {
+    background-color: var(--color-secondary);
+}
+
+.tag-brutal-accent {
+    background-color: var(--color-accent);
+}
+
+.tag-brutal-info {
+    background-color: var(--color-info);
+}
+
+/* ================================
+   ALERT/NOTIFICATION UTILITIES
+   ================================ */
+
+.alert-brutal {
+    padding: var(--space-md);
+    border: var(--border-width) solid var(--border-color);
+    margin-bottom: var(--space-md);
+    box-shadow: var(--shadow-brutal-small);
+    font-weight: 600;
+}
+
+.alert-brutal-success {
+    background-color: var(--color-success);
+    color: var(--palette-black);
+}
+
+.alert-brutal-warning {
+    background-color: var(--color-warning);
+    color: var(--palette-white);
+}
+
+.alert-brutal-info {
+    background-color: var(--color-info);
+    color: var(--palette-white);
+}
+
+/* ================================
+   RESPONSIVE UTILITIES
+   ================================ */
+
+@media (max-width: 768px) {
+    .grid-brutal-2,
+    .grid-brutal-3,
+    .grid-brutal-4 {
+        grid-template-columns: 1fr;
+    }
+    
+    .container-brutal {
+        padding: var(--space-md);
+    }
+    
+    .btn-brutal-large {
+        padding: var(--space-sm) var(--space-lg);
+        font-size: var(--font-body);
+    }
+    
+    .flex-brutal {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-brutal {
+        padding: var(--space-md);
+    }
+    
+    .container-brutal {
+        padding: var(--space-sm);
+    }
+}

@@ -1,0 +1,187 @@
+/* Color Theme Picker Component - Left Side Positioning */
+
+.theme-controls {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.color-picker {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.color-options {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.color-option {
+    width: 40px;
+    height: 40px;
+    border: var(--border-width) solid var(--border-color);
+    box-shadow: var(--shadow-brutal-small);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.color-option:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-brutal);
+}
+
+.color-option.active {
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-brutal);
+}
+
+.color-option.active::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.1em;
+    font-weight: 900;
+    color: var(--palette-white);
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.8);
+}
+
+/* Color option specific backgrounds - No text, just colors */
+.color-option[data-color="blue"] {
+    background: var(--palette-blue-primary);
+}
+
+.color-option[data-color="orange"] {
+    background: var(--palette-orange-primary);
+}
+
+.color-option[data-color="green"] {
+    background: var(--palette-green-primary);
+}
+
+.color-option[data-color="purple"] {
+    background: var(--palette-purple-primary);
+}
+
+/* Mobile responsiveness - Hide fixed controls and show in hamburger menu */
+@media (max-width: 768px) {
+    .theme-controls,
+    .color-picker {
+        display: none; /* Hide fixed positioned controls on mobile */
+    }
+    
+    /* Mobile menu versions */
+    .mobile-theme-controls {
+        display: block;
+        padding: var(--space-md);
+        border-top: 2px solid var(--border-color);
+        margin-top: var(--space-md);
+    }
+    
+    .mobile-theme-section h4 {
+        color: var(--text-subheading);
+        margin: 0 0 var(--space-sm) 0;
+        font-size: var(--font-body);
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    
+    .mobile-theme-toggle {
+        width: 100%;
+        margin-bottom: var(--space-md);
+        padding: var(--space-sm) var(--space-md);
+        background: var(--btn-primary-bg);
+        color: var(--btn-primary-text);
+        border: var(--border-width) solid var(--border-color);
+        box-shadow: var(--shadow-brutal-small);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+    
+    .mobile-theme-toggle:hover {
+        background: var(--btn-secondary-bg);
+        color: var(--btn-secondary-text);
+        transform: translate(-1px, -1px);
+        box-shadow: var(--shadow-brutal);
+    }
+    
+    .mobile-color-options {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-sm);
+    }
+    
+    .mobile-color-option {
+        aspect-ratio: 1;
+        border: var(--border-width) solid var(--border-color);
+        box-shadow: var(--shadow-brutal-small);
+        cursor: pointer;
+        transition: all 0.2s ease;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .mobile-color-option:hover {
+        transform: translate(-1px, -1px);
+        box-shadow: var(--shadow-brutal);
+    }
+    
+    .mobile-color-option.active {
+        transform: translate(-1px, -1px);
+        box-shadow: var(--shadow-brutal);
+    }
+    
+    .mobile-color-option.active::after {
+        content: '✓';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 1.1em;
+        font-weight: 900;
+        color: var(--palette-white);
+        text-shadow: 2px 2px 0px rgba(0,0,0,0.8);
+    }
+    
+    /* Mobile color option backgrounds */
+    .mobile-color-option[data-color="blue"] {
+        background: var(--palette-blue-primary);
+    }
+    
+    .mobile-color-option[data-color="orange"] {
+        background: var(--palette-orange-primary);
+    }
+    
+    .mobile-color-option[data-color="green"] {
+        background: var(--palette-green-primary);
+    }
+    
+    .mobile-color-option[data-color="purple"] {
+        background: var(--palette-purple-primary);
+    }
+}
+
+/* Desktop - show fixed controls */
+@media (min-width: 769px) {
+    .mobile-theme-controls {
+        display: none;
+    }
+}

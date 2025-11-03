@@ -1,0 +1,19 @@
+/* Home Page Specific Styles */
+
+/* Typewriter Animation */
+.typewriter::after {
+    content: '';
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    background-color: var(--text-accent);
+    margin-left: 2px;
+    animation: blink 1s infinite;
+}
+
+.typewriter {
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: 'Fira Code', monospace;
+}
+
