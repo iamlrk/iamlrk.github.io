@@ -16,6 +16,8 @@
 /* Additional Components */
 @import 'components/carousel.css';
 @import 'components/timeline.css';
+@import 'components/sync-ui.css';
+@import 'components/color-picker.css';
 
 /* Layout Structures */
 @import 'layouts/hero.css';
@@ -24,9 +26,11 @@
 /* Page-Specific Styles */
 @import 'pages/home.css';
 @import 'pages/about.css';
+@import 'pages/now.css';
 
 /* Utilities */
 @import 'utilities/animations.css';
+@import 'utilities/neobrutalism.css';
 
 /* Responsive Design - Must be last to override */
 @import 'layouts/responsive.css';

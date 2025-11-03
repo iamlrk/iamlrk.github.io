@@ -1,0 +1,311 @@
+/* Now Page Styling */
+
+/* Last updated styling */
+.last-updated {
+    font-size: 1rem;
+    color: var(--text-muted);
+    font-weight: 400;
+    margin-top: 0.5rem;
+}
+
+/* Now sections */
+.now-section {
+    margin-bottom: 3rem;
+}
+
+.now-section h2 {
+    color: var(--text-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-shadow: var(--text-shadow);
+}
+
+/* Focus card */
+.focus-card {
+    background: var(--nav-bg-color);
+    border: 3px solid var(--border-color);
+    box-shadow: var(--shadow-brutal);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.focus-card h3 {
+    color: var(--text-subheading);
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.focus-card p {
+    color: var(--text-body);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.focus-card ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.focus-card li {
+    color: var(--text-body);
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+}
+
+.focus-card li strong {
+    color: var(--text-accent);
+    font-weight: 600;
+}
+
+/* Learning goals grid */
+.learning-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.learning-card {
+    background: var(--nav-bg-color);
+    border: 3px solid var(--border-color);
+    box-shadow: var(--shadow-brutal);
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.learning-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-brutal-hover);
+}
+
+.learning-card h3 {
+    color: var(--text-subheading);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.learning-card p {
+    color: var(--text-body);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.progress-indicator {
+    margin-top: 1rem;
+}
+
+.progress-text {
+    background: var(--border-color);
+    color: var(--bg-color);
+    padding: 0.3rem 0.8rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Resources grid */
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.resource-card {
+    background: var(--nav-bg-color);
+    border: 3px solid var(--border-color);
+    box-shadow: var(--shadow-brutal);
+    padding: 1.5rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.resource-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-brutal-hover);
+}
+
+.resource-type {
+    position: absolute;
+    top: -10px;
+    right: 1rem;
+    background: var(--text-accent);
+    color: var(--bg-color);
+    padding: 0.3rem 0.8rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.resource-card h3 {
+    color: var(--text-subheading);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.resource-card .author {
+    color: var(--text-muted);
+    font-style: italic;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.resource-card p:last-child {
+    color: var(--text-body);
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+/* Projects list */
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.project-item {
+    background: var(--nav-bg-color);
+    border: 3px solid var(--border-color);
+    box-shadow: var(--shadow-brutal);
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.project-item:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-brutal-hover);
+}
+
+.project-item h3 {
+    color: var(--text-subheading);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.project-item p {
+    color: var(--text-body);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+/* Life activities */
+.life-activities {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.activity-item {
+    background: var(--nav-bg-color);
+    border: 3px solid var(--border-color);
+    box-shadow: var(--shadow-brutal);
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.activity-item:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-brutal-hover);
+}
+
+.activity-item h3 {
+    color: var(--text-subheading);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.activity-item p {
+    color: var(--text-body);
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Now footer */
+.now-footer {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: var(--nav-bg-color);
+    border: 3px solid var(--border-color);
+    box-shadow: var(--shadow-brutal);
+    text-align: center;
+}
+
+.now-footer p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.now-footer a {
+    color: var(--text-accent);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.now-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .learning-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .resources-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .focus-card,
+    .learning-card,
+    .resource-card,
+    .project-item,
+    .activity-item {
+        padding: 1.5rem;
+    }
+    
+    .now-section {
+        margin-bottom: 2rem;
+    }
+    
+    .now-section h2 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .focus-card,
+    .learning-card,
+    .resource-card,
+    .project-item,
+    .activity-item,
+    .now-footer {
+        padding: 1rem;
+    }
+    
+    .learning-grid,
+    .resources-grid {
+        gap: 1rem;
+    }
+    
+    .projects-list,
+    .life-activities {
+        gap: 1rem;
+    }
+    
+    .now-section h2 {
+        font-size: 1.4rem;
+    }
+}

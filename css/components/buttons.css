@@ -1,22 +1,18 @@
-/* Button Components */
+/* Neobrutalist Button Components */
 
-/* Theme Toggle Button */
+/* Theme Toggle Button - Right side positioning */
 #theme-toggle {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    border: 3px solid var(--border-color);
-    background: var(--text-accent) !important;
-    color: var(--bg-color);
-    padding: 8px 16px !important;
-    box-shadow: 4px 4px 0px var(--border-color);
-    font-weight: 900;
+    border: var(--border-width) solid var(--border-color);
+    background: var(--btn-primary-bg) !important;
+    color: var(--btn-primary-text);
+    padding: var(--space-sm) var(--space-md) !important;
+    box-shadow: var(--shadow-brutal-small);
+    font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    font-family: 'Courier New', 'JetBrains Mono', monospace;
-    font-size: var(--font-body);
+    letter-spacing: 2px;
+    font-family: 'Fira Code', 'Courier New', monospace;
+    font-size: var(--font-small);
     cursor: pointer;
-    z-index: 1000;
     transition: all 0.2s ease;
     text-decoration: none;
     outline: none !important;
@@ -26,56 +22,60 @@
 }
 
 #theme-toggle:hover {
-    background: var(--text-heading) !important;
-    color: var(--bg-color);
-    transform: translate(-2px, -2px);
-    box-shadow: 6px 6px 0px var(--border-color);
+    background: var(--color-secondary) !important;
+    color: var(--btn-secondary-text);
+    transform: translate(-3px, -3px);
+    box-shadow: var(--shadow-brutal);
 }
 
 /* Carousel Buttons */
 .carousel-btn {
-    background: var(--text-accent);
-    color: var(--bg-color);
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 0;
-    font-size: 1.5em;
+    background: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+    border: var(--border-width) solid var(--border-color);
+    width: 50px;
+    height: 50px;
+    font-size: 1.8em;
+    font-weight: 900;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
     flex-shrink: 0;
+    box-shadow: var(--shadow-brutal-small);
 }
 
 .carousel-btn:hover {
-    background: var(--text-heading);
-    transform: scale(1.1);
+    background: var(--btn-secondary-bg);
+    color: var(--btn-secondary-text);
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-brutal);
 }
 
 .carousel-btn:disabled {
     background: var(--text-muted);
+    color: var(--card-bg-color);
     cursor: not-allowed;
-    opacity: 0.5;
+    opacity: 0.6;
     transform: none;
+    box-shadow: 2px 2px 0px var(--border-color);
 }
 
 /* Timeline Navigation Buttons */
 .timeline-nav-btn {
-    background: var(--text-accent);
-    color: var(--bg-color);
+    background: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
     border: var(--border-width) solid var(--border-color);
-    padding: 8px 12px;
-    border-radius: 0;
-    font-family: 'Courier New', 'JetBrains Mono', monospace;
-    font-size: 1.2em;
+    padding: var(--space-sm);
+    font-family: 'Fira Code', 'Courier New', monospace;
+    font-size: 1.4em;
     font-weight: 900;
     cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 3px 3px 0px var(--border-color);
-    width: 40px;
-    height: 40px;
+    transition: all 0.2s ease;
+    box-shadow: var(--shadow-brutal-small);
+    width: 50px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -83,25 +83,26 @@
 }
 
 .timeline-prev {
-    margin-left: 20px;
+    margin-left: var(--space-lg);
 }
 
 .timeline-next {
-    margin-right: 20px;
+    margin-right: var(--space-lg);
 }
 
 .timeline-nav-btn:hover:not(:disabled) {
-    background: var(--text-heading);
-    transform: translate(-2px, -2px);
-    box-shadow: 5px 5px 0px var(--border-color);
+    background: var(--btn-secondary-bg);
+    color: var(--btn-secondary-text);
+    transform: translate(-3px, -3px);
+    box-shadow: var(--shadow-brutal);
 }
 
 .timeline-nav-btn:disabled {
     background: var(--text-muted);
-    color: var(--nav-bg-color);
+    color: var(--card-bg-color);
     cursor: not-allowed;
-    opacity: 0.3;
+    opacity: 0.5;
     transform: none;
-    box-shadow: 2px 2px 0px var(--border-color);
+    box-shadow: var(--shadow-brutal-small);
 }
 

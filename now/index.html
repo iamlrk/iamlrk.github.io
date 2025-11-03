@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html data-color-theme="blue">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="0">
+	<title>What I'm Doing Now - Ramkiran Lepakshi</title>
+	<!-- Link to main stylesheet -->
+	<link rel="stylesheet" type="text/css" href="/css/main.css?v=responsive-picker-1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+	<!-- Mobile hamburger menu -->
+	<button class="hamburger-toggle" id="hamburger-toggle" onclick="toggleHamburgerMenu()" aria-label="Open menu and timeline">
+		<span></span>
+		<span></span>
+		<span></span>
+	</button>
+	
+	<!-- Mobile menu overlay -->
+	<div class="mobile-menu-overlay" id="mobile-menu-overlay" onclick="closeHamburgerMenu()"></div>
+	
+	<!-- Mobile menu sidebar -->
+	<div class="mobile-menu" id="mobile-menu">
+		<div class="mobile-menu-header">
+			<h3>Menu & Timeline</h3>
+			<button class="mobile-menu-close" onclick="closeHamburgerMenu()">Close</button>
+		</div>
+		
+		<!-- Navigation Links -->
+		<div class="mobile-menu-section">
+			<h4>Navigation</h4>
+			<ul class="mobile-nav-links">
+				<li><a href="/" onclick="closeHamburgerMenu()">Home</a></li>
+				<li><a href="/about" onclick="closeHamburgerMenu()">About</a></li>
+				<li><a href="/now" onclick="closeHamburgerMenu()">Now</a></li>
+				<li><a href="/cv" onclick="closeHamburgerMenu()">CV</a></li>
+				<li><a href="/contact" onclick="closeHamburgerMenu()">Contact</a></li>
+			</ul>
+		</div>
+		
+		<!-- Theme & Color Controls -->
+		<div class="mobile-theme-controls">
+			<div class="mobile-theme-section">
+				<h4>Theme</h4>
+				<button class="mobile-theme-toggle" id="mobile-theme-toggle" onclick="toggleTheme()">
+					<span id="mobile-theme-text">Dark Mode</span>
+				</button>
+			</div>
+			
+			<div class="mobile-theme-section">
+				<h4>Colors</h4>
+				<div class="mobile-color-options" id="mobile-color-options">
+					<button class="mobile-color-option active" data-color="blue" aria-label="Blue theme"></button>
+					<button class="mobile-color-option" data-color="orange" aria-label="Orange theme"></button>
+					<button class="mobile-color-option" data-color="green" aria-label="Green theme"></button>
+					<button class="mobile-color-option" data-color="purple" aria-label="Purple theme"></button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<nav>
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li><a href="/about">About</a></li>
+			<li><a href="/now">Now</a></li>
+			<li><a href="/cv">CV</a></li>
+			<li><a href="/contact">Contact</a></li>
+		</ul>
+	</nav>
+	
+	<!-- Theme Toggle - Right Side -->
+	<div class="theme-controls">
+		<button id="theme-toggle" aria-label="Toggle dark mode">Dark</button>
+	</div>
+	
+	<!-- Color Picker - Left Side -->
+	<div class="color-picker" id="color-picker">
+		<div class="color-options" id="color-options">
+			<button class="color-option active" data-color="blue" aria-label="Blue theme"></button>
+			<button class="color-option" data-color="orange" aria-label="Orange theme"></button>
+			<button class="color-option" data-color="green" aria-label="Green theme"></button>
+			<button class="color-option" data-color="purple" aria-label="Purple theme"></button>
+		</div>
+	</div>
+	
+	<div class="container">
+		<div class="blurb">
+			<h1>What I'm Doing Now</h1>
+			<p class="last-updated">Last updated: <strong>November 2025</strong></p>
+		</div>
+
+		<section class="now-section">
+			<h2>Current Work Focus</h2>
+			<div class="focus-card card-brutal shadow-brutal-hover">
+				<h3>Flight Analysis & Energy Modeling at Manna Drones</h3>
+				<p>I'm currently deep in the world of autonomous drone delivery systems, working as a Flight Analysis Engineer. My main focus areas include:</p>
+				<ul>
+					<li><strong>Energy Prediction Models:</strong> Building mathematical models that predict energy requirements based on flight routes, weather conditions, and payload specifications</li>
+					<li><strong>Post-Flight Analytics:</strong> Developing comprehensive analysis pipelines that process flight data to generate insights for operational improvements</li>
+					<li><strong>Mathematical Flight Modeling:</strong> Creating and maintaining complex models that simulate various flight system behaviors</li>
+				</ul>
+				<div class="skill-tags">
+					<span class="skill-tag tag-brutal">Python</span>
+					<span class="skill-tag tag-brutal-secondary">Mathematical Modeling</span>
+					<span class="skill-tag tag-brutal-info">PostgreSQL</span>
+					<span class="skill-tag tag-brutal-accent">FastAPI</span>
+					<span class="skill-tag tag-brutal">Energy Systems</span>
+				</div>
+			</div>
+		</section>
+
+		<section class="now-section">
+			<h2>Learning Goals</h2>
+			<div class="learning-grid grid-brutal grid-brutal-3">
+				<div class="learning-card card-brutal card-brutal-hover">
+					<h3>Advanced Flight Dynamics</h3>
+					<p>Diving deeper into aerodynamics and control systems to improve flight prediction models.</p>
+					<div class="progress-indicator">
+						<span class="progress-text tag-brutal-accent">In Progress</span>
+					</div>
+				</div>
+				
+				<div class="learning-card card-brutal card-brutal-hover">
+					<h3>Machine Learning for Aerospace</h3>
+					<p>Exploring ML techniques for predictive maintenance and flight optimization in drone systems.</p>
+					<div class="progress-indicator">
+						<span class="progress-text tag-brutal-secondary">Starting Soon</span>
+					</div>
+				</div>
+				
+				<div class="learning-card card-brutal card-brutal-hover">
+					<h3>Real-Time Data Processing</h3>
+					<p>Learning streaming data architectures for live flight monitoring and analysis systems.</p>
+					<div class="progress-indicator">
+						<span class="progress-text tag-brutal-info">Research Phase</span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="now-section">
+			<h2>Currently Reading & Resources</h2>
+			<div class="resources-grid grid-brutal grid-brutal-3">
+				<div class="resource-card card-brutal card-brutal-hover book">
+					<div class="resource-type tag-brutal">Book</div>
+					<h3>Introduction to Flight Test Engineering</h3>
+					<p class="author">by James W. Gregory</p>
+					<p>Expanding my understanding of systematic flight testing methodologies and data analysis techniques.</p>
+				</div>
+				
+				<div class="resource-card card-brutal card-brutal-hover course">
+					<div class="resource-type tag-brutal-info">Course</div>
+					<h3>Advanced PostgreSQL Performance Tuning</h3>
+					<p class="author">PostgreSQL Training</p>
+					<p>Optimizing database queries for large-scale flight data analytics systems.</p>
+				</div>
+				
+				<div class="resource-card card-brutal card-brutal-hover paper">
+					<div class="resource-type tag-brutal-accent">Research</div>
+					<h3>Energy-Efficient Path Planning for UAVs</h3>
+					<p class="author">IEEE Transactions on Aerospace</p>
+					<p>Studying cutting-edge algorithms for optimizing drone energy consumption during autonomous flights.</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="now-section">
+			<h2>Side Projects</h2>
+			<div class="projects-list">
+				<div class="project-item card-brutal card-brutal-hover">
+					<h3>Personal Website Enhancement</h3>
+					<p>Continuously improving this site with better neobrutalist design, performance optimizations, and new features like this "Now" page!</p>
+					<div class="skill-tags">
+						<span class="skill-tag tag-brutal">HTML/CSS</span>
+						<span class="skill-tag tag-brutal-secondary">JavaScript</span>
+						<span class="skill-tag tag-brutal-accent">Web Design</span>
+					</div>
+				</div>
+				
+				<div class="project-item card-brutal card-brutal-hover">
+					<h3>Flight Data Visualization Tools</h3>
+					<p>Building interactive dashboards for personal flight data analysis and visualization experiments.</p>
+					<div class="skill-tags">
+						<span class="skill-tag tag-brutal">Python</span>
+						<span class="skill-tag tag-brutal-info">Matplotlib</span>
+						<span class="skill-tag tag-brutal-accent">Plotly</span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="now-section">
+			<h2>Life Beyond Code</h2>
+			<div class="life-activities grid-brutal grid-brutal-2">
+				<div class="activity-item card-brutal card-brutal-hover">
+					<h3>Aviation Enthusiasm</h3>
+					<p>Staying up-to-date with the latest developments in commercial aviation, space technology, and drone innovations. Following SpaceX missions and industry news.</p>
+				</div>
+				
+				<div class="activity-item card-brutal card-brutal-hover">
+					<h3>Technical Writing</h3>
+					<p>Working on improving my technical communication skills by documenting complex flight analysis processes and sharing insights with the engineering team.</p>
+				</div>
+			</div>
+		</section>
+
+		<div class="now-footer">
+			<p>This page is updated monthly to reflect my current focus and activities. The concept is inspired by Derek Sivers' <a href="https://nownownow.com/about" target="_blank">"Now" page movement</a>.</p>
+		</div>
+	</div><!-- /.container -->
+	
+	<footer>
+		<ul>
+			<li><a href="mailto:lepakshiramkiran@duck.com">email: lepakshiramkiran@duck.com</a></li>
+			<li><a href="https://github.com/iamlrk">github.com/iamlrk</a></li>
+		</ul>
+	</footer>
+	
+	<script src="/js/main.js"></script>
+	<script src="/js/color-themes.js"></script>
+</body>
+</html>

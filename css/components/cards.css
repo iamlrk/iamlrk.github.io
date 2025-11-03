@@ -1,17 +1,17 @@
-/* Card Components */
+/* Neobrutalist Card Components */
 
 /* Project Cards */
 .project-card {
-    background: var(--bg-color);
+    background: var(--card-bg-color);
     border: var(--border-width) solid var(--border-color);
-    border-radius: 0;
     box-shadow: var(--shadow-brutal);
-    padding: 25px;
+    padding: var(--space-lg);
     transition: all 0.2s ease;
+    margin-bottom: var(--space-lg);
 }
 
 .project-card:hover {
-    transform: translate(-2px, -2px);
+    transform: translate(-3px, -3px);
     box-shadow: var(--shadow-brutal-hover);
 }
 
@@ -19,79 +19,89 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: var(--space-md);
 }
 
 .project-header h3 {
     color: var(--text-subheading);
     margin: 0;
     font-size: var(--font-subtitle);
-    font-weight: bold;
+    font-weight: 800;
 }
 
 .project-links {
     display: flex;
-    gap: 10px;
+    gap: var(--space-sm);
 }
 
 .project-link {
     font-size: var(--font-small);
-    padding: 5px 10px;
-    background: var(--text-accent);
-    color: var(--bg-color);
+    padding: var(--space-xs) var(--space-md);
+    background: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
     text-decoration: none;
-    border-radius: 0;
-    font-weight: bold;
-    transition: all 0.3s ease;
+    font-weight: 700;
+    border: 3px solid var(--border-color);
+    box-shadow: 3px 3px 0px var(--border-color);
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .project-link:hover {
-    background: var(--text-subheading);
-    transform: translateY(-1px);
+    background: var(--btn-secondary-bg);
+    color: var(--btn-secondary-text);
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0px var(--border-color);
 }
 
 .project-description {
     color: var(--text-body);
-    margin-bottom: 20px;
-    line-height: 1.6;
+    margin-bottom: var(--space-md);
+    line-height: 1.7;
+    font-size: var(--font-body);
 }
 
 .project-tech {
     display: flex;
     flex-wrap: wrap;
-    gap: 6px;
+    gap: var(--space-xs);
 }
 
 .tech-tag {
-    background: var(--bg-color);
-    color: var(--text-accent);
-    padding: 4px 8px;
-    border-radius: 0;
+    background: var(--color-accent);
+    color: var(--text-tag);
+    padding: var(--space-xs);
     font-size: var(--font-tiny);
-    border: 1px solid var(--border-color);
+    font-weight: 700;
+    border: 3px solid var(--border-color);
+    box-shadow: 2px 2px 0px var(--border-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 /* Link Cards */
 .link-card {
-    background: var(--bg-color);
+    background: var(--card-bg-color);
     border: var(--border-width) solid var(--border-color);
-    border-radius: 0;
     box-shadow: var(--shadow-brutal);
-    padding: 6px 16px;
+    padding: var(--space-md) var(--space-lg);
     text-decoration: none;
     color: var(--text-body);
     transition: all 0.2s ease;
-    font-size: var(--font-tag);
-    font-weight: 900;
+    font-size: var(--font-body);
+    font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     white-space: nowrap;
+    display: block;
+    text-align: center;
 }
 
 .link-card:hover {
-    transform: translate(-2px, -2px);
-    background: var(--text-accent);
-    color: var(--bg-color);
+    transform: translate(-3px, -3px);
+    background: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
     box-shadow: var(--shadow-brutal-hover);
     text-decoration: none;
 }
@@ -116,50 +126,50 @@
 
 /* Skill Cards */
 .skill-category {
-    flex: 0 0 200px;
-    min-height: 120px;
-    background: var(--bg-color);
+    flex: 0 0 240px;
+    min-height: 140px;
+    background: var(--card-bg-color);
     border: var(--border-width) solid var(--border-color);
-    border-radius: 0;
     box-shadow: var(--shadow-brutal);
-    padding: 15px;
+    padding: var(--space-md);
     display: flex;
     flex-direction: column;
     transition: all 0.2s ease;
 }
 
 .skill-category:hover {
-    transform: translate(-2px, -2px);
+    transform: translate(-3px, -3px);
     box-shadow: var(--shadow-brutal-hover);
 }
 
 .skill-category h3 {
     color: var(--text-accent);
-    margin: 0 0 10px 0;
-    font-size: 1em;
-    font-weight: bold;
+    margin: 0 0 var(--space-sm) 0;
+    font-size: var(--font-subtitle);
+    font-weight: 800;
     flex-shrink: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .skill-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 6px;
+    gap: var(--space-xs);
     flex-grow: 1;
     align-content: flex-start;
 }
 
 .skill-tag {
-    background: var(--nav-bg-color);
-    color: var(--text-accent);
-    padding: 6px 12px;
-    border-radius: 0;
-    border: 2px solid var(--border-color);
-    box-shadow: 2px 2px 0px var(--border-color);
-    font-size: 0.75em;
-    font-weight: 600;
+    background: var(--color-primary);
+    color: var(--text-tag);
+    padding: var(--space-xs) var(--space-sm);
+    border: 3px solid var(--border-color);
+    box-shadow: var(--shadow-brutal-small);
+    font-size: var(--font-tiny);
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
     transition: all 0.2s ease;
     white-space: nowrap;
     flex-shrink: 0;
@@ -170,51 +180,55 @@
 }
 
 .skill-tag:hover {
-    background: var(--text-accent);
-    color: var(--bg-color);
-    transform: translate(-1px, -1px);
-    box-shadow: 3px 3px 0px var(--border-color);
+    background: var(--color-accent);
+    color: var(--text-tag);
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-brutal);
 }
 
 /* About Stat Cards */
 .about-stat-card {
-    background: var(--nav-bg-color);
-    border: 1px solid var(--border-color);
-    border-radius: 0;
-    padding: 30px;
+    background: var(--card-bg-color);
+    border: var(--border-width) solid var(--border-color);
+    padding: var(--space-xl);
     text-align: center;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
+    box-shadow: var(--shadow-brutal);
 }
 
 .about-stat-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transform: translate(-3px, -3px);
+    box-shadow: var(--shadow-brutal-hover);
 }
 
 .stat-icon {
-    font-size: 3em;
-    margin-bottom: 15px;
+    font-size: 4em;
+    margin-bottom: var(--space-md);
+    color: var(--color-primary);
 }
 
 .stat-number {
-    font-size: 2.2em;
-    font-weight: bold;
+    font-size: 3em;
+    font-weight: 900;
     color: var(--text-accent);
-    margin-bottom: 8px;
+    margin-bottom: var(--space-xs);
     display: block;
+    text-transform: uppercase;
 }
 
 .stat-label {
-    font-size: 1.2em;
-    font-weight: 600;
+    font-size: var(--font-subtitle);
+    font-weight: 800;
     color: var(--text-heading);
-    margin-bottom: 8px;
+    margin-bottom: var(--space-sm);
     display: block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .stat-detail {
-    font-size: 0.9em;
+    font-size: var(--font-body);
     color: var(--text-muted);
-    line-height: 1.4;
+    line-height: 1.6;
 }
 

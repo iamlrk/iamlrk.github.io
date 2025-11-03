@@ -1,52 +1,122 @@
-/* Brutalist Theme System - Bold, Raw, Unapologetic */
+/* Neobrutalist Theme System - Bold, Raw, Unapologetic - Blue Accent v2.0 */
 :root {
-    /* Font Sizes */
-    --font-heading: 3.2em;          /* Main page titles */
-    --font-subheading: 2em;         /* Section headers */
-    --font-subtitle: 1.4em;         /* Subsection titles */
-    --font-body: 1em;               /* Normal body text */
-    --font-small: 0.875em;          /* Tags, captions */
-    --font-tiny: 0.75em;            /* Fine print, labels */
+    /* Font Sizes - Neobrutalist emphasis on strong hierarchy */
+    --font-heading: 3.5em;          /* Main page titles - larger for impact */
+    --font-subheading: 2.2em;       /* Section headers - more pronounced */
+    --font-subtitle: 1.6em;         /* Subsection titles - stronger presence */
+    --font-body: 1.1em;             /* Normal body text - more readable */
+    --font-small: 0.9em;            /* Tags, captions - slightly larger */
+    --font-tiny: 0.8em;             /* Fine print, labels */
     
-    /* Brutalist specific */
-    --shadow-brutal: 6px 6px 0px #1a1a1a;
-    --shadow-brutal-hover: 8px 8px 0px #1a1a1a;
-    --border-width: 4px;
+    /* Neobrutalist specific - stronger shadows and borders */
+    --shadow-brutal: 8px 8px 0px #000000;
+    --shadow-brutal-hover: 12px 12px 0px #000000;
+    --shadow-brutal-small: 4px 4px 0px #000000;
+    --border-width: 5px;
+    --border-width-thick: 8px;
+    
+    /* Neobrutalist spacing system */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
+    --space-xxl: 4rem;
+    
+    /* Neobrutalist color themes - Dynamic color system */
+    --color-warning: #f03e3e;       /* Bold red */
+    --color-success: #51cf66;       /* Success green */
+}
+
+/* ================================
+   COLOR THEME SYSTEM
+   ================================ */
+
+/* Blue Theme (Default) */
+[data-color-theme="blue"] {
+    --color-primary: #1c7ed6;       /* Bold blue */
+    --color-secondary: #4dabf7;     /* Light blue */
+    --color-accent: #0c8599;        /* Dark teal blue */
+    --color-info: #339af0;          /* Info blue */
+}
+
+/* Orange Theme */
+[data-color-theme="orange"] {
+    --color-primary: #ff6b35;       /* Bold orange */
+    --color-secondary: #ff8c42;     /* Light orange */
+    --color-accent: #e55100;        /* Dark orange */
+    --color-info: #ff9800;          /* Info orange */
+}
+
+/* Green Theme */
+[data-color-theme="green"] {
+    --color-primary: #37b24d;       /* Bold green */
+    --color-secondary: #51cf66;     /* Light green */
+    --color-accent: #087f5b;        /* Dark green */
+    --color-info: #20c997;          /* Info green */
+}
+
+/* Purple Theme */
+[data-color-theme="purple"] {
+    --color-primary: #7c3aed;       /* Bold purple */
+    --color-secondary: #a78bfa;     /* Light purple */
+    --color-accent: #5b21b6;        /* Dark purple */
+    --color-info: #8b5cf6;          /* Info purple */
 }
 
 [data-theme="light"] {
-    /* Core Colors - Light Brutalism */
+    /* Core Colors - Light Neobrutalism */
     --bg-color: #ffffff;
-    --nav-bg-color: #f8f8f8;
-    --border-color: #1a1a1a;
+    --nav-bg-color: #f5f5f5;
+    --border-color: #000000;         /* Pure black borders for maximum contrast */
+    --card-bg-color: #fafafa;
     
-    /* Typography */
-    --text-heading: #1a1a1a;
-    --text-subheading: #2d2d2d;
-    --text-subtitle: #2d2d2d;        /* Subsection titles (h3) */
-    --text-body: #333333;
-    --text-muted: #666666;
-    --text-accent: #0066cc;
-    --text-tag: #4a4a4a;
+    /* Typography - High contrast for readability */
+    --text-heading: #000000;         /* Pure black for maximum impact */
+    --text-subheading: #000000;
+    --text-subtitle: #000000;        /* All headings pure black */
+    --text-body: #1a1a1a;           /* Very dark gray for body text */
+    --text-muted: #4a4a4a;          /* Less muted than before */
+    --text-accent: var(--color-primary);
+    --text-tag: #ffffff;            /* White text on colored backgrounds */
+    
+    /* Button and interaction colors */
+    --btn-primary-bg: var(--color-primary);
+    --btn-primary-text: #ffffff;
+    --btn-secondary-bg: var(--color-accent);
+    --btn-secondary-text: #ffffff;
+    --btn-outline-bg: transparent;
+    --btn-outline-text: #000000;
 }
 
 [data-theme="dark"] {
-    /* Core Colors - Dark Brutalism */
-    --bg-color: #0d1117;
-    --nav-bg-color: #161b22;
-    --border-color: #30363d;
+    /* Core Colors - Dark Neobrutalism */
+    --bg-color: #000000;
+    --nav-bg-color: #0f0f0f;
+    --border-color: #ffffff;         /* White borders on dark background */
+    --card-bg-color: #1a1a1a;
     
-    /* Typography */
-    --text-heading: #f0f6fc;
-    --text-subheading: #e6edf3;
-    --text-subtitle: #e6edf3;        /* Subsection titles (h3) */
-    --text-body: #c9d1d9;
-    --text-muted: #8b949e;
-    --text-accent: #58a6ff;
-    --text-tag: #8b949e;
+    /* Typography - High contrast for dark mode */
+    --text-heading: #ffffff;         /* Pure white for maximum impact */
+    --text-subheading: #ffffff;
+    --text-subtitle: #ffffff;        /* All headings pure white */
+    --text-body: #f0f0f0;           /* Very light gray for body text */
+    --text-muted: #cccccc;          /* Less muted than before */
+    --text-accent: var(--color-secondary);
+    --text-tag: #000000;            /* Black text on colored backgrounds */
     
-    /* Dark mode brutal shadows */
-    --shadow-brutal: 6px 6px 0px #21262d;
-    --shadow-brutal-hover: 8px 8px 0px #30363d;
+    /* Button and interaction colors */
+    --btn-primary-bg: var(--color-primary);
+    --btn-primary-text: #000000;
+    --btn-secondary-bg: var(--color-accent);
+    --btn-secondary-text: #000000;
+    --btn-outline-bg: transparent;
+    --btn-outline-text: #ffffff;
+    
+    /* Dark mode brutal shadows - now with white/light colors */
+    --shadow-brutal: 8px 8px 0px #333333;
+    --shadow-brutal-hover: 12px 12px 0px #444444;
+    --shadow-brutal-small: 4px 4px 0px #333333;
 }
 
+/* Blue v2.1 - Sun Nov  2 21:15:11 GMT 2025 */
