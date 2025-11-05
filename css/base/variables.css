@@ -93,7 +93,7 @@
     /* Core Colors - Dark Neobrutalism */
     --bg-color: var(--palette-black);
     --nav-bg-color: var(--palette-rich-black);
-    --border-color: var(--palette-white);         /* White borders on dark background */
+    --border-color: var(--palette-charcoal);      /* Dark grey borders closer to black */
     --card-bg-color: var(--palette-dark-gray);
     
     /* Typography - High contrast for dark mode */
@@ -113,10 +113,10 @@
     --btn-outline-bg: transparent;
     --btn-outline-text: var(--palette-white);
     
-    /* Dark mode brutal shadows - now with white/light colors */
-    --shadow-brutal: 8px 8px 0px var(--palette-charcoal);
-    --shadow-brutal-hover: 12px 12px 0px var(--palette-gunmetal);
-    --shadow-brutal-small: 4px 4px 0px var(--palette-charcoal);
+    /* Dark mode brutal shadows - using accent colors */
+    --shadow-brutal: 8px 8px 0px var(--color-accent);
+    --shadow-brutal-hover: 12px 12px 0px var(--color-accent);
+    --shadow-brutal-small: 4px 4px 0px var(--color-accent);
 }
 
 /* Blue v2.1 - Sun Nov  2 21:15:11 GMT 2025 */

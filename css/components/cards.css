@@ -7,7 +7,12 @@
     box-shadow: var(--shadow-brutal);
     padding: var(--space-lg);
     transition: all 0.2s ease;
-    margin-bottom: var(--space-lg);
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 280px;
+    box-sizing: border-box;
 }
 
 .project-card:hover {
@@ -18,7 +23,7 @@
 .project-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: var(--space-md);
 }
 
@@ -31,6 +36,7 @@
 
 .project-links {
     display: flex;
+    flex-direction: column;
     gap: var(--space-sm);
 }
 
@@ -46,6 +52,8 @@
     transition: all 0.2s ease;
     text-transform: uppercase;
     letter-spacing: 1px;
+    text-align: center;
+    white-space: nowrap;
 }
 
 .project-link:hover {
@@ -55,17 +63,35 @@
     box-shadow: 5px 5px 0px var(--border-color);
 }
 
+.project-subtitle {
+    color: var(--text-muted);
+    margin: 0 0 var(--space-sm) 0;
+    font-size: var(--font-body);
+    font-weight: 400;
+    font-style: italic;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+}
+
 .project-description {
     color: var(--text-body);
     margin-bottom: var(--space-md);
     line-height: 1.7;
     font-size: var(--font-body);
+    flex: 1;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
 }
 
 .project-tech {
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-xs);
+    margin-top: auto;
 }
 
 .tech-tag {
@@ -126,7 +152,10 @@
 
 /* Skill Cards */
 .skill-category {
-    flex: 0 0 240px;
+    flex: 0 0 300px;
+    width: 300px;
+    min-width: 300px;
+    max-width: 300px;
     min-height: 140px;
     background: var(--card-bg-color);
     border: var(--border-width) solid var(--border-color);
@@ -135,6 +164,7 @@
     display: flex;
     flex-direction: column;
     transition: all 0.2s ease;
+    box-sizing: border-box;
 }
 
 .skill-category:hover {

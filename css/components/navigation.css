@@ -3,12 +3,12 @@
 /* Desktop Navigation */
 body > nav {
     background-color: var(--nav-bg-color);
-    padding: 8px 0 3px 0;
+    padding: 5px 0 5px 0;
     width: 100%;
     position: fixed;
     top: 0;
     z-index: 1000;
-    height: 25px;
+    height: 35px;
     border-bottom: var(--border-width) solid var(--border-color);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
@@ -30,6 +30,7 @@ body > nav ul {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    height: 100%;
 }
 
 body > nav ul li {

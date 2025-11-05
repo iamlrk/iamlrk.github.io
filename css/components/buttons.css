@@ -44,6 +44,9 @@
     transition: all 0.2s ease;
     flex-shrink: 0;
     box-shadow: var(--shadow-brutal-small);
+    box-sizing: border-box;
+    line-height: 1;
+    padding: 0;
 }
 
 .carousel-btn:hover {

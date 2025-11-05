@@ -217,15 +217,40 @@ document.addEventListener('DOMContentLoaded', function() {
 	}
 	
 	function calculateDimensions() {
-		const carouselWidth = track.parentElement.offsetWidth;
-		const currentTheme = document.body.getAttribute('data-theme');
+		const carouselContainer = track.parentElement;
 		
-		cardWidth = 200;
-		gap = 20;
+		// Reset max-width to measure the available space
+		carouselContainer.style.maxWidth = '';
+		const availableWidth = carouselContainer.offsetWidth;
+		
+		// Determine card width based on viewport (matching CSS media queries)
+		const isMobile = window.innerWidth <= 480;
+		gap = isMobile ? 10 : 20;
+		
+		// On mobile, always show exactly 1 card at a time
+		let visibleCards;
+		if (isMobile) {
+			visibleCards = 1;
+			// On mobile, card fills the available width (accounting for container padding)
+			cardWidth = availableWidth;
+		} else {
+			// Desktop: uses 300px cards
+			cardWidth = 300;
+			// Desktop: Calculate how many whole cards can fit
+			visibleCards = Math.max(1, Math.floor((availableWidth + gap) / (cardWidth + gap)));
+		}
+		
+		// Calculate the exact width needed for whole cards only
+		// Formula: (number of cards × card width) + ((number of cards - 1) × gap)
+		const exactWidth = (visibleCards * cardWidth) + ((visibleCards - 1) * gap);
+		
+		// Set the carousel to show only whole cards - constrain to exact width
+		carouselContainer.style.width = `${exactWidth}px`;
+		carouselContainer.style.maxWidth = `${exactWidth}px`;
 		
 		return {
-			visibleCards: Math.floor(carouselWidth / (cardWidth + gap)),
-			maxIndex: Math.max(0, totalCards - Math.floor(carouselWidth / (cardWidth + gap)))
+			visibleCards: visibleCards,
+			maxIndex: Math.max(0, totalCards - visibleCards)
 		};
 	}
 	
@@ -345,6 +370,90 @@ document.addEventListener('DOMContentLoaded', function() {
 		resetAutoPlay(); // Reset timer on manual interaction
 	});
 	
+	// Touch and Mouse Drag Support
+	let isDragging = false;
+	let startPos = 0;
+	let currentTranslate = 0;
+	let prevTranslate = 0;
+	let animationID = 0;
+	let startTime = 0;
+	
+	function getPositionX(event) {
+		return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+	}
+	
+	function dragStart(event) {
+		if (isTransitioning) return;
+		
+		isDragging = true;
+		startPos = getPositionX(event);
+		startTime = Date.now();
+		animationID = requestAnimationFrame(animation);
+		track.classList.add('dragging');
+		stopAutoPlay();
+	}
+	
+	function dragMove(event) {
+		if (!isDragging) return;
+		event.preventDefault();
+		
+		const currentPosition = getPositionX(event);
+		currentTranslate = prevTranslate + currentPosition - startPos;
+	}
+	
+	function dragEnd(event) {
+		if (!isDragging) return;
+		
+		isDragging = false;
+		cancelAnimationFrame(animationID);
+		track.classList.remove('dragging');
+		
+		const movedBy = currentTranslate - prevTranslate;
+		const moveTime = Date.now() - startTime;
+		const velocity = Math.abs(movedBy) / moveTime;
+		
+		// Determine if swipe was significant enough (moved > 50px or fast velocity)
+		if (Math.abs(movedBy) > 50 || velocity > 0.5) {
+			if (movedBy > 0) {
+				// Swiped right - go to previous
+				currentIndex--;
+			} else {
+				// Swiped left - go to next
+				currentIndex++;
+			}
+		}
+		
+		currentTranslate = 0;
+		prevTranslate = 0;
+		updateCarousel();
+		startAutoPlay();
+	}
+	
+	function animation() {
+		if (isDragging) {
+			requestAnimationFrame(animation);
+		}
+	}
+	
+	// Touch events
+	track.addEventListener('touchstart', dragStart, { passive: false });
+	track.addEventListener('touchmove', dragMove, { passive: false });
+	track.addEventListener('touchend', dragEnd);
+	track.addEventListener('touchcancel', dragEnd);
+	
+	// Mouse events for desktop
+	track.addEventListener('mousedown', dragStart);
+	track.addEventListener('mousemove', dragMove);
+	track.addEventListener('mouseup', dragEnd);
+	track.addEventListener('mouseleave', () => {
+		if (isDragging) dragEnd();
+	});
+	
+	// Prevent context menu on long press
+	track.addEventListener('contextmenu', (e) => {
+		if (isDragging) e.preventDefault();
+	});
+	
 	let resizeTimeout;
 	window.addEventListener('resize', () => {
 		clearTimeout(resizeTimeout);
@@ -363,10 +472,13 @@ document.addEventListener('DOMContentLoaded', function() {
 	
 	// Initialize infinite scroll
 	setupInfiniteScroll();
+	
+	// Small delay to ensure cards are rendered and styles are computed
+	setTimeout(() => {
 	createDots();
 	updateCarousel(false);
-	
 	// Start auto-play
 	startAutoPlay();
+	}, 50);
 });
 

@@ -2,7 +2,7 @@
 <html data-color-theme="blue">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
 	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 	<meta http-equiv="Pragma" content="no-cache">
 	<meta http-equiv="Expires" content="0">
@@ -104,7 +104,6 @@
 		<section class="skills">
 			<h2>Tech Stack & Skills</h2>
 			<div class="skills-carousel-container">
-				<button class="carousel-btn carousel-btn-prev" id="skills-prev">&laquo;</button>
 				<div class="skills-carousel">
 					<div class="skills-carousel-track" id="skills-track">
 						<div class="skill-category">
@@ -159,15 +158,19 @@
 								<span class="skill-tag">Jupyter Notebook</span>
 								<span class="skill-tag">MATLAB</span>
 								<span class="skill-tag">Solidworks</span>
-								<span class="skill-tag">Catia Part Design and Assembly</span>
-								<span class="skill-tag">STK - Level 1 (Systems Took Kit)</span>
+								<span class="skill-tag">Catia Part Design</span>
+								<span class="skill-tag">Catia Assembly Design</span>
+								<span class="skill-tag" title="Systems Tool Kit">STK - Level 1</span>
 							</div>
 						</div>
 					</div>
 				</div>
+			</div>
+			<div class="carousel-controls">
+				<button class="carousel-btn carousel-btn-prev" id="skills-prev">&laquo;</button>
+				<div class="carousel-dots" id="skills-dots"></div>
 				<button class="carousel-btn carousel-btn-next" id="skills-next">&raquo;</button>
 			</div>
-			<div class="carousel-dots" id="skills-dots"></div>
 			<div class="stats-row">
 				<div class="stat-item">
 					<span class="stat-number">3+</span>
@@ -195,6 +198,7 @@
 							<a href="/" class="project-link shadow-brutal-hover">Demo</a>
 						</div>
 					</div>
+					<p class="project-subtitle">Portfolio & Resume Site</p>
 					<p class="project-description">
 						Personal Website with my skills, projects and CV.
 					</p>
@@ -207,11 +211,12 @@
 
 				<div class="project-card card-brutal-hover">
 					<div class="project-header">
-						<h3>Tuppersat - A Satellite in Tupperware | R2D1</h3>
+						<h3>Tuppersat</h3>
 						<div class="project-links">
 							<a href="https://github.com/iamlrk/tuppersat23-r2d1" class="project-link shadow-brutal-hover">GitHub</a>
 						</div>
 					</div>
+					<p class="project-subtitle"> A Satellite in Tupperware | R2D1</p>
 					<p class="project-description">
 						A satellite project designed to fit within a Tupperware container. 
 						The project has sensors like temperature, humidity, and GPS to monitor environmental conditions 
@@ -231,6 +236,7 @@
 							<a href="https://github.com/Mechanics-of-Orbit/MOPy" class="project-link shadow-brutal-hover">GitHub</a>
 						</div>
 					</div>
+					<p class="project-subtitle">Learning Tool and Simulation</p>
 					<p class="project-description">
 						An interactive python library and desktop app that explains orbital mechanics' concepts.
 					</p>
