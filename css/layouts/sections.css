@@ -2,25 +2,26 @@
 
 /* Skills Section */
 .skills {
-    padding-top: 60px;
-    margin-bottom: 60px;
+    padding-top: var(--space-xl);
+    margin-bottom: var(--space-xl);
     overflow-x: hidden;
     max-width: 100%;
 }
 
 .skills h2 {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: var(--space-md);
     color: var(--text-subheading);
     font-size: var(--font-subheading);
     font-weight: bold;
+    line-height: 1.2;
 }
 
 .stats-row {
     display: flex;
     justify-content: center;
-    gap: 50px;
-    margin-top: 40px;
+    gap: var(--space-xl);
+    margin-top: var(--space-md);
 }
 
 .stat-item {
@@ -29,45 +30,47 @@
 
 /* Projects Section */
 .projects {
-    padding-top: 60px;
-    margin-bottom: 60px;
+    padding-top: var(--space-xl);
+    margin-bottom: var(--space-xl);
     overflow-x: hidden;
     max-width: 100%;
 }
 
 .projects h2 {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: var(--space-md);
     color: var(--text-subheading);
     font-size: var(--font-subheading);
     font-weight: bold;
+    line-height: 1.2;
 }
 
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: var(--space-xl);
 }
 
 /* Quick Links Section */
 .quick-links {
-    padding-top: 60px;
-    margin-bottom: 60px;
+    padding-top: var(--space-xl);
+    margin-bottom: var(--space-xl);
     overflow-x: hidden;
     max-width: 100%;
 }
 
 .quick-links h2 {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: var(--space-md);
     font-size: var(--font-heading);
     color: var(--text-heading);
+    line-height: 1.2;
 }
 
 .links-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 8px;
+    gap: var(--space-xs);
 }
 

@@ -27,7 +27,7 @@ body {
 .container {
     margin: 50px auto 50px auto;
     width: 70%;
-    max-width: min(800px, 100vw);
+    max-width: min(1000px, 100vw);
     padding-top: 25px;
     overflow-x: hidden;
 }
@@ -48,7 +48,7 @@ footer {
     font-size: .8em;
     margin: 0 auto;
     width: 70%;
-    max-width: 800px;
+    max-width: 1000px;
     transition: border-color 0.3s ease;
 }
 

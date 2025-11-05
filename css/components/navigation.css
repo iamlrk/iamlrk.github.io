@@ -82,7 +82,6 @@ body > nav ul li a:hover {
 }
 
 .hamburger-toggle::after {
-    content: '📅';
     position: absolute;
     top: -8px;
     right: -8px;
@@ -97,10 +96,6 @@ body > nav ul li a:hover {
     font-size: 10px;
     font-weight: bold;
     border: 2px solid var(--bg-primary);
-}
-
-body.timeline-page .hamburger-toggle::after {
-    display: flex;
 }
 
 .hamburger-toggle span {
