@@ -12,6 +12,8 @@ body > nav {
     border-bottom: var(--border-width) solid var(--border-color);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 body > nav::after {

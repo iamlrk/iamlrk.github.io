@@ -4,6 +4,8 @@
     text-align: center;
     padding: 80px 0 40px 0;
     margin-bottom: 60px;
+    overflow-x: hidden;
+    max-width: 100%;
 }
 
 .hero-title {
@@ -35,6 +37,7 @@
     margin: 0 auto;
     max-width: fit-content;
     border: 1px solid var(--border-color);
+    box-sizing: border-box;
 }
 
 .status-indicator {

@@ -21,6 +21,8 @@
         width: 90%;
         margin: 40px auto 40px auto;
         padding: 0 20px;
+        box-sizing: border-box;
+        overflow-x: hidden;
     }
     
     /* Mobile navigation */
@@ -63,6 +65,8 @@
         text-align: center;
         padding: 12px 15px;
         gap: 8px;
+        max-width: 100%;
+        box-sizing: border-box;
     }
     
     .status-text {
@@ -72,6 +76,7 @@
     /* Skills section mobile */
     .skills, .projects, .quick-links {
         padding-top: 40px;
+        text-align: center;
     }
     
     .skills h2, .projects h2, .quick-links h2 {
@@ -87,6 +92,8 @@
     
     .carousel-controls {
         gap: 12px;
+        padding: 0 10px;
+        max-width: 100%;
     }
     
     .skills-carousel-track {
@@ -98,16 +105,51 @@
         width: 100%;
         min-width: auto;
         max-width: 100%;
-        height: 180px;
-        min-height: 180px;
-        max-height: 180px;
+        height: 250px;
+        min-height: 250px;
+        max-height: 250px;
         padding: 12px;
-        overflow: hidden;
+        overflow-y: auto;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+        position: relative;
+    }
+    
+    .skill-category::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 30px;
+        background: linear-gradient(transparent, var(--card-bg-color));
+        pointer-events: none;
+    }
+    
+    .skill-category::-webkit-scrollbar {
+        width: 4px;
+    }
+    
+    .skill-category::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    
+    .skill-category::-webkit-scrollbar-thumb {
+        background: var(--border-color);
+        border-radius: 0;
+    }
+    
+    .skill-category {
+        text-align: center;
     }
     
     .skill-category h3 {
         font-size: 0.9em;
         margin-bottom: 8px;
+    }
+    
+    .skill-tags {
+        justify-content: center;
     }
     
     .carousel-btn {
@@ -173,16 +215,18 @@
     .projects-grid {
         grid-template-columns: 1fr;
         gap: 20px;
+        max-width: 100%;
     }
     
     .project-card {
         padding: 20px 15px;
         min-height: 240px;
+        text-align: center;
     }
     
     .project-header {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         gap: 10px;
     }
     
@@ -196,17 +240,24 @@
     }
     
     .project-links {
-        align-self: stretch;
-        width: 100%;
+        align-self: center;
+        width: auto;
     }
     
     .project-link {
-        width: 100%;
+        width: auto;
+        min-width: 100px;
+        padding: var(--space-xs) var(--space-md);
+    }
+    
+    .project-tech {
+        justify-content: center;
     }
     
     /* Quick links mobile */
     .links-grid {
         gap: 6px;
+        max-width: 100%;
     }
     
     .link-card {
@@ -281,6 +332,8 @@
     .container {
         width: 90%;
         margin: 45px auto 45px auto;
+        box-sizing: border-box;
+        overflow-x: hidden;
     }
     
     .hero-title {
@@ -319,6 +372,8 @@
 @media (min-width: 769px) and (max-width: 1024px) {
     .container {
         width: 85%;
+        box-sizing: border-box;
+        overflow-x: hidden;
     }
     
     .hero-title {
@@ -343,6 +398,8 @@
     .container {
         width: 75%;
         max-width: 1200px;
+        box-sizing: border-box;
+        overflow-x: hidden;
     }
     
     .hero-title {

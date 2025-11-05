@@ -156,7 +156,11 @@
     width: 300px;
     min-width: 300px;
     max-width: 300px;
+    height: auto;
     min-height: 140px;
+    max-height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
     background: var(--card-bg-color);
     border: var(--border-width) solid var(--border-color);
     box-shadow: var(--shadow-brutal);
@@ -165,11 +169,29 @@
     flex-direction: column;
     transition: all 0.2s ease;
     box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
 }
 
 .skill-category:hover {
     transform: translate(-3px, -3px);
     box-shadow: var(--shadow-brutal-hover);
+}
+
+.skill-category::-webkit-scrollbar {
+    width: 6px;
+}
+
+.skill-category::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.skill-category::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 0;
+}
+
+.skill-category::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent);
 }
 
 .skill-category h3 {

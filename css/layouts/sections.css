@@ -4,6 +4,8 @@
 .skills {
     padding-top: 60px;
     margin-bottom: 60px;
+    overflow-x: hidden;
+    max-width: 100%;
 }
 
 .skills h2 {
@@ -29,6 +31,8 @@
 .projects {
     padding-top: 60px;
     margin-bottom: 60px;
+    overflow-x: hidden;
+    max-width: 100%;
 }
 
 .projects h2 {
@@ -49,6 +53,8 @@
 .quick-links {
     padding-top: 60px;
     margin-bottom: 60px;
+    overflow-x: hidden;
+    max-width: 100%;
 }
 
 .quick-links h2 {
