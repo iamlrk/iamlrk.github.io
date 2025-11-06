@@ -53,6 +53,27 @@
     --palette-purple-accent: #5b21b6;
     --palette-purple-accent-dark: #431884;
     --palette-purple-info: #8b5cf6;
+
+    /* Pink family */
+    --palette-pink-primary: #ec4899;
+    --palette-pink-secondary: #f472b6;
+    --palette-pink-accent: #be185d;
+    --palette-pink-accent-dark: #831843;
+    --palette-pink-info: #f06292;
+
+    /* Neon Blue family */
+    --palette-neon-blue-primary: #00d9ff;
+    --palette-neon-blue-secondary: #33e0ff;
+    --palette-neon-blue-accent: #00a8cc;
+    --palette-neon-blue-accent-dark: #007a99;
+    --palette-neon-blue-info: #1ad1ff;
+
+    /* Neon Green family */
+    --palette-neon-green-primary: #39ff14;
+    --palette-neon-green-secondary: #5aff3d;
+    --palette-neon-green-accent: #2ecc11;
+    --palette-neon-green-accent-dark: #1f8a0a;
+    --palette-neon-green-info: #4dff2a;
 }
 
 /* Light theme mappings */
@@ -120,5 +141,29 @@
     --color-accent: var(--palette-purple-accent);
     --color-accent-dark: var(--palette-purple-accent-dark);
     --color-info: var(--palette-purple-info);
+}
+
+[data-color-theme="pink"] {
+    --color-primary: var(--palette-pink-primary);
+    --color-secondary: var(--palette-pink-secondary);
+    --color-accent: var(--palette-pink-accent);
+    --color-accent-dark: var(--palette-pink-accent-dark);
+    --color-info: var(--palette-pink-info);
+}
+
+[data-color-theme="neon-blue"] {
+    --color-primary: var(--palette-neon-blue-primary);
+    --color-secondary: var(--palette-neon-blue-secondary);
+    --color-accent: var(--palette-neon-blue-accent);
+    --color-accent-dark: var(--palette-neon-blue-accent-dark);
+    --color-info: var(--palette-neon-blue-info);
+}
+
+[data-color-theme="neon-green"] {
+    --color-primary: var(--palette-neon-green-primary);
+    --color-secondary: var(--palette-neon-green-secondary);
+    --color-accent: var(--palette-neon-green-accent);
+    --color-accent-dark: var(--palette-neon-green-accent-dark);
+    --color-info: var(--palette-neon-green-info);
 }
 
