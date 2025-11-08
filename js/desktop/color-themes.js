@@ -25,6 +25,7 @@ class DesktopColorThemeManager {
         // Get desktop DOM elements
         this.picker = document.getElementById('color-picker');
         this.options = document.getElementById('color-options');
+        this.toggle = document.getElementById('color-picker-toggle');
         
         // Load saved theme
         this.loadSavedTheme();
@@ -34,6 +35,14 @@ class DesktopColorThemeManager {
     }
     
     setupEventListeners() {
+        // Handle toggle button click
+        if (this.toggle) {
+            this.toggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                this.togglePicker();
+            });
+        }
+        
         // Handle desktop color option clicks
         if (this.options) {
             const colorOptions = this.options.querySelectorAll('.color-option');
@@ -46,6 +55,31 @@ class DesktopColorThemeManager {
                     }
                 });
             });
+        }
+        
+        // Close picker when clicking outside
+        document.addEventListener('click', (e) => {
+            if (this.picker && !this.picker.contains(e.target) && this.picker.classList.contains('expanded')) {
+                this.collapsePicker();
+            }
+        });
+    }
+    
+    togglePicker() {
+        if (this.picker) {
+            this.picker.classList.toggle('expanded');
+            if (this.toggle) {
+                this.toggle.classList.toggle('expanded');
+            }
+        }
+    }
+    
+    collapsePicker() {
+        if (this.picker) {
+            this.picker.classList.remove('expanded');
+            if (this.toggle) {
+                this.toggle.classList.remove('expanded');
+            }
         }
     }
     

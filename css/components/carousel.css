@@ -34,6 +34,45 @@
     cursor: grabbing;
 }
 
+/* Projects Carousel Component */
+
+.projects-carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+    overflow-x: hidden;
+    overflow-y: visible;
+}
+
+.projects-carousel {
+    overflow-x: hidden;
+    overflow-y: visible;
+    border-radius: 0;
+    position: relative;
+    /* Will be constrained by JavaScript to show only whole cards */
+    box-sizing: border-box;
+    touch-action: pan-y pinch-zoom;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.projects-carousel-track {
+    display: flex;
+    gap: 20px;
+    /* Transition will be controlled by JavaScript for infinite scroll */
+    cursor: grab;
+    overflow-y: visible;
+}
+
+.projects-carousel-track.dragging {
+    cursor: grabbing;
+}
+
 .carousel-clone {
     /* Cloned items should look identical to originals */
     opacity: 1;

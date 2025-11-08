@@ -55,7 +55,65 @@ document.addEventListener('DOMContentLoaded', () => {
 		if (!entryId) return;
 		const target = document.getElementById(entryId);
 		if (!target) return;
-		target.scrollIntoView({ behavior, block: 'start' });
+		
+		// Get the timeline content container (scrollable area)
+		const timelineContent = document.querySelector('.timeline-content');
+		if (!timelineContent) {
+			// Fallback to default behavior if container not found
+			target.scrollIntoView({ behavior, block: 'start' });
+			updateNavState(entryId);
+			return;
+		}
+		
+		// Get the sidebar to determine its top position
+		const sidebar = document.querySelector('.timeline-sidebar');
+		if (!sidebar) {
+			target.scrollIntoView({ behavior, block: 'start' });
+			updateNavState(entryId);
+			return;
+		}
+		
+		// Get the sidebar's top position (sticky top value)
+		const sidebarRect = sidebar.getBoundingClientRect();
+		const sidebarTop = sidebarRect.top;
+		
+		// Get the timeline content container's position
+		const containerRect = timelineContent.getBoundingClientRect();
+		
+		// Calculate the offset needed: we want the card's top to align with sidebar's top
+		// The card's position relative to the container's top edge
+		const targetOffsetTop = target.offsetTop;
+		
+		// Calculate scroll position:
+		// Card's visual position = containerRect.top + targetOffsetTop - scrollTop
+		// We want: containerRect.top + targetOffsetTop - scrollTop = sidebarTop
+		// Therefore: scrollTop = containerRect.top + targetOffsetTop - sidebarTop
+		const desiredScrollTop = containerRect.top + targetOffsetTop - sidebarTop;
+		
+		// Calculate maximum possible scroll (content height - container height)
+		const maxScrollTop = timelineContent.scrollHeight - timelineContent.clientHeight;
+		
+		// Ensure we scroll to align the card top with sidebar top
+		// Special case: if this is the first entry (offsetTop is 0 or very small), scroll to top
+		// This ensures the "Born" entry can always reach the top
+		let finalScrollTop;
+		if (targetOffsetTop <= 10) {
+			// First entry - scroll to top
+			finalScrollTop = 0;
+		} else if (desiredScrollTop > maxScrollTop) {
+			// Not enough content - scroll to maximum to align card as close to top as possible
+			finalScrollTop = maxScrollTop;
+		} else {
+			// Normal case - scroll to align card top with sidebar top
+			finalScrollTop = Math.max(0, desiredScrollTop);
+		}
+		
+		// Scroll the timeline-content container
+		timelineContent.scrollTo({
+			top: finalScrollTop,
+			behavior: behavior
+		});
+		
 		updateNavState(entryId);
 	}
 

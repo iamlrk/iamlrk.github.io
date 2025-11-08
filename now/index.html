@@ -83,6 +83,7 @@
 	
 	<!-- Color Picker - Left Side -->
 	<div class="color-picker" id="color-picker">
+		<button class="color-picker-toggle" id="color-picker-toggle" aria-label="Toggle color picker"></button>
 		<div class="color-options" id="color-options">
 			<button class="color-option active" data-color="blue" aria-label="Blue theme"></button>
 			<button class="color-option" data-color="orange" aria-label="Orange theme"></button>
@@ -102,7 +103,7 @@
 
 		<section class="now-section">
 			<h2>Current Work Focus</h2>
-			<div class="focus-card card-brutal shadow-brutal-hover">
+			<div class="card card-nav-bg focus-card card-hover">
 				<h3>Flight Modeling  and Analysisat Manna Drones</h3>
 				<p>I'm currently deep in the world of autonomous drone delivery , working as a Flight Analysis Engineer. My main focus areas include:</p>
 				<ul>
@@ -126,7 +127,7 @@
 		<section class="now-section">
 			<h2>Learning Goals</h2>
 			<div class="learning-grid grid-brutal grid-brutal-3">
-				<div class="learning-card card-brutal card-brutal-hover">
+				<div class="card card-nav-bg learning-card card-hover-sm">
 					<h3>C++</h3>
 					<p>Learning C++ to improve my skills in low-level programming and system programming.</p>
 					<div class="progress-indicator">
@@ -134,7 +135,7 @@
 					</div>
 				</div>
 				
-				<div class="learning-card card-brutal card-brutal-hover">
+				<div class="card card-nav-bg learning-card card-hover-sm">
 					<h3>Flight Control Systems</h3>
 					<p>Improving my understanding of flight control systems.</p>
 					<div class="progress-indicator">
@@ -142,7 +143,7 @@
 					</div>
 				</div>
 				
-				<div class="learning-card card-brutal card-brutal-hover">
+				<div class="card card-nav-bg learning-card card-hover-sm">
 					<h3>Embedded Programming</h3>
 					<p>Using my knowledge of C++ to program embedded systems for myriad of applications.</p>
 					<div class="progress-indicator">
@@ -155,21 +156,21 @@
 		<section class="now-section">
 			<h2>Currently Reading & Resources</h2>
 			<div class="resources-grid grid-brutal grid-brutal-3">
-				<div class="resource-card card-brutal card-brutal-hover book">
+				<div class="card card-nav-bg resource-card card-hover-sm book">
 					<div class="resource-type tag-brutal">Book</div>
 					<h3>The Pragmatic Programmer</h3>
 					<p class="author">by Andrew Hunt and Dave Thomas</p>
 					<p>Expanding my understanding of the software development process and best practices.</p>
 				</div>
 				
-				<div class="resource-card card-brutal card-brutal-hover course">
+				<div class="card card-nav-bg resource-card card-hover-sm course">
 					<div class="resource-type tag-brutal">Book</div>
 					<h3>The Wheel of Time - Book 2</h3>
 					<p class="author">by Robert Jordan</p>
 					<p>Reading the second book in the Wheel of Time series.</p>
 				</div>
 				
-				<div class="resource-card card-brutal card-brutal-hover paper">
+				<div class="card card-nav-bg resource-card card-hover-sm paper">
 					<div class="resource-type tag-brutal">Research</div>
 					<h3>Memory Efficient Algorithms to calculate Flight Intent Error</h3>
 					<p class="author">Various Sources</p>
@@ -181,7 +182,7 @@
 		<section class="now-section">
 			<h2>Personal Projects</h2>
 			<div class="projects-list">	
-				<div class="project-item card-brutal card-brutal-hover">
+				<div class="card card-nav-bg project-item card-hover-sm">
 					<h3>Using Cloudflare R2 buckets and D1 SQL database</h3>
 					<p>Building a simple web application to store and host my notes and bookmarks.</p>
 					<div class="skill-tags">
@@ -199,7 +200,7 @@
 		<section class="now-section">
 			<h2>Life Beyond Code</h2>
 			<div class="life-activities grid-brutal grid-brutal-2">
-				<div class="activity-item card-brutal card-brutal-hover">
+				<div class="card card-nav-bg activity-item card-hover-sm">
 					<h3>Coffee and Tea Nerd</h3>
 					<p>I have the collection of coffee and tea gear in my apartment.
 						I own a Aeropress, V60, V60 Switch, Venus Moka Pot and a KingGrinder for coffee beans. 
@@ -207,7 +208,7 @@
 					</p>
 				</div>
 
-				<div class="activity-item card-brutal card-brutal-hover">
+				<div class="card card-nav-bg activity-item card-hover-sm">
 					<h3>Air Dryed Clay Modeling</h3>
 					<p>I love to model in air dryed clay. 
 						I am currently working on a house modelled after my own house.
@@ -217,7 +218,7 @@
 			</div>
 		</section>
 
-		<div class="now-footer">
+		<div class="card card-nav-bg now-footer">
 			<p>This page is updated regularly to reflect my current focus and activities. The concept is inspired by Derek Sivers' <a href="https://nownownow.com/about" target="_blank">"Now" page movement</a>.</p>
 		</div>
 	</div><!-- /.container -->

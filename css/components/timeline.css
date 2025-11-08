@@ -19,14 +19,14 @@
     display: flex;
     flex-direction: column;
     gap: var(--space-lg);
-    max-height: calc(100vh - var(--space-xxl));
-    overflow-y: auto;
+    height: fit-content;
+    overflow: visible;
     align-items: stretch;
 }
 
 .timeline-sidebar::after {
     content: '';
-    flex: 1;
+    height: 40px;
     min-height: 40px;
     background: repeating-linear-gradient(
         -45deg,
@@ -51,17 +51,19 @@
     box-sizing: border-box;
 }
 
-.timeline-sidebar::-webkit-scrollbar {
+.timeline-content::-webkit-scrollbar {
     width: 6px;
 }
 
-.timeline-sidebar::-webkit-scrollbar-thumb {
-    background: var(--border-color);
+.timeline-content::-webkit-scrollbar-track {
+    background: transparent;
 }
 
-.timeline-sidebar::-webkit-scrollbar-thumb:hover {
-    background: var(--text-accent);
+.timeline-content::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 0;
 }
+
 
 .timeline-sidebar-header {
     display: flex;
@@ -142,13 +144,8 @@
     transition: opacity 0.2s ease;
 }
 
-.timeline-nav-link:hover::before,
 .timeline-nav-link:focus-visible::before {
     opacity: 1;
-}
-
-.timeline-nav-link:hover {
-    background: var(--nav-bg-color);
 }
 
 .timeline-nav-link:focus-visible {
@@ -201,6 +198,13 @@
     flex-direction: column;
     gap: var(--space-xl);
     padding-bottom: var(--space-xl);
+    padding-right: var(--space-md);
+    max-height: calc(100vh - var(--space-xxl) - 80px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: sticky;
+    top: calc(var(--space-xl) + 80px);
+    align-self: flex-start;
 }
 
 .timeline-entry {
@@ -271,6 +275,18 @@
 .timeline-skills {
     border-top: 2px solid var(--border-color);
     padding-top: var(--space-sm);
+}
+
+/* Full-page timeline entry (for "Born" entry) */
+.timeline-entry-fullpage {
+    min-height: calc(100vh - var(--space-xxl) - 80px);
+    display: flex;
+    flex-direction: column;
+}
+
+.timeline-entry-spacer {
+    flex: 1;
+    min-height: calc(100vh - var(--space-xxl) - 200px);
 }
 
 /* Mobile Timeline - New Design */

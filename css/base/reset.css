@@ -22,14 +22,20 @@ body {
     color: var(--text-body);
     font-size: var(--font-body);
     transition: background-color 0.3s ease, color 0.3s ease;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .container {
-    margin: 50px auto 50px auto;
+    margin: 50px auto auto auto;
     width: 70%;
     max-width: min(1000px, 100vw);
     padding-top: 25px;
     overflow-x: hidden;
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
 }
 
 a {
@@ -38,10 +44,6 @@ a {
     transition: color 0.3s ease;
 }
 
-a:hover {
-    text-decoration: underline;
-    color: var(--text-accent);
-}
 
 footer {
     border-top: 1px solid var(--border-color);
@@ -50,6 +52,8 @@ footer {
     width: 70%;
     max-width: 1000px;
     transition: border-color 0.3s ease;
+    padding: 20px 0;
+    flex-shrink: 0;
 }
 
 footer ul {

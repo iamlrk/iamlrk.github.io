@@ -29,10 +29,6 @@
 			transition: all 0.2s ease;
 		}
 		
-		.error-image:hover {
-			transform: translate(-2px, -2px);
-			box-shadow: var(--shadow-brutal-hover);
-		}
 		
 		.error-message {
 			font-size: 1.5em;
@@ -72,10 +68,6 @@
 			font-family: 'Fira Code', monospace;
 		}
 		
-		.error-button:hover {
-			transform: translate(-2px, -2px);
-			box-shadow: var(--shadow-brutal-hover);
-		}
 		
 		.error-button.secondary {
 			background: var(--nav-bg-color);

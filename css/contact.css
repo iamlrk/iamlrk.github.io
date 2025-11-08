@@ -97,10 +97,6 @@
 	font-family: 'Fira Code', monospace;
 }
 
-.submit-button:hover:not(:disabled) {
-	transform: translate(-2px, -2px);
-	box-shadow: 6px 6px 0px var(--border-color);
-}
 
 .submit-button:disabled {
 	opacity: 0.6;

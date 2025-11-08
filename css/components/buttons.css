@@ -21,12 +21,6 @@
     appearance: none !important;
 }
 
-#theme-toggle:hover {
-    background: var(--color-secondary) !important;
-    color: var(--btn-secondary-text);
-    transform: translate(-3px, -3px);
-    box-shadow: var(--shadow-brutal);
-}
 
 /* Carousel Buttons */
 .carousel-btn {
@@ -49,12 +43,6 @@
     padding: 0;
 }
 
-.carousel-btn:hover {
-    background: var(--btn-secondary-bg);
-    color: var(--btn-secondary-text);
-    transform: translate(-2px, -2px);
-    box-shadow: var(--shadow-brutal);
-}
 
 .carousel-btn:disabled {
     background: var(--text-muted);
@@ -93,12 +81,6 @@
     margin-right: var(--space-lg);
 }
 
-.timeline-nav-btn:hover:not(:disabled) {
-    background: var(--btn-secondary-bg);
-    color: var(--btn-secondary-text);
-    transform: translate(-3px, -3px);
-    box-shadow: var(--shadow-brutal);
-}
 
 .timeline-nav-btn:disabled {
     background: var(--text-muted);

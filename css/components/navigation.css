@@ -53,12 +53,6 @@ body > nav ul li a {
     transition: all 0.2s ease;
 }
 
-body > nav ul li a:hover {
-    background-color: var(--text-accent);
-    color: var(--bg-color);
-    transform: translate(-1px, -1px);
-    box-shadow: 3px 3px 0px var(--border-color);
-}
 
 /* Mobile Hamburger Menu */
 .hamburger-toggle {
@@ -106,14 +100,6 @@ body > nav ul li a:hover {
     border-radius: 0;
 }
 
-.hamburger-toggle:hover {
-    background: var(--text-accent);
-    border-color: var(--text-accent);
-}
-
-.hamburger-toggle:hover span {
-    background: var(--bg-color);
-}
 
 .hamburger-toggle.active span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
@@ -190,9 +176,6 @@ body > nav ul li a:hover {
     transition: color 0.3s ease;
 }
 
-.mobile-menu-close:hover {
-    color: var(--text-accent);
-}
 
 .mobile-menu-section {
     margin-bottom: 30px;
@@ -226,7 +209,6 @@ body > nav ul li a:hover {
     font-weight: 500;
 }
 
-.mobile-nav-links a:hover,
 .mobile-nav-links a:focus {
     background: var(--bg-secondary);
     color: var(--text-accent);
@@ -262,7 +244,6 @@ body > nav ul li a:hover {
     text-align: left;
 }
 
-.mobile-timeline-item:hover,
 .mobile-timeline-item.active {
     background: var(--text-accent);
     color: var(--bg-color);
@@ -285,8 +266,7 @@ body > nav ul li a:hover {
     letter-spacing: 0.06em;
 }
 
-.mobile-timeline-item.active .mobile-timeline-period,
-.mobile-timeline-item:hover .mobile-timeline-period {
+.mobile-timeline-item.active .mobile-timeline-period {
     color: inherit;
 }
 
@@ -304,9 +284,4 @@ body > nav ul li a:hover {
     transition: all 0.3s ease;
 }
 
-.mobile-theme-toggle:hover {
-    background: var(--text-accent);
-    color: var(--bg-color);
-    border-color: var(--text-accent);
-}
 

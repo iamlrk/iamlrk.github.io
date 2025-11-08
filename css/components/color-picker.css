@@ -15,12 +15,52 @@
     display: flex;
     flex-direction: column;
     gap: var(--space-xs);
+    align-items: flex-start;
+}
+
+.color-picker-toggle {
+    width: 40px;
+    height: 40px;
+    border: var(--border-width) solid var(--border-color);
+    box-shadow: var(--shadow-brutal-small);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    padding: 0;
+    position: relative;
+}
+
+
+.color-picker-toggle::before {
+    content: '';
+    width: 24px;
+    height: 24px;
+    background-image: url('/images/paint-bucket.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
 }
 
 .color-options {
     display: flex;
     flex-direction: column;
     gap: var(--space-xs);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+
+.color-picker.expanded .color-options {
+    max-height: 500px;
+    opacity: 1;
 }
 
 .color-option {
@@ -36,10 +76,6 @@
     justify-content: center;
 }
 
-.color-option:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: var(--shadow-brutal);
-}
 
 .color-option.active {
     transform: translate(-2px, -2px);
@@ -92,7 +128,6 @@
     box-shadow: 4px 4px 0px var(--palette-blue-accent-dark);
 }
 
-[data-theme="dark"] .color-option[data-color="blue"]:hover,
 [data-theme="dark"] .color-option[data-color="blue"].active {
     box-shadow: 8px 8px 0px var(--palette-blue-accent-dark);
 }
@@ -101,7 +136,6 @@
     box-shadow: 4px 4px 0px var(--palette-orange-accent-dark);
 }
 
-[data-theme="dark"] .color-option[data-color="orange"]:hover,
 [data-theme="dark"] .color-option[data-color="orange"].active {
     box-shadow: 8px 8px 0px var(--palette-orange-accent-dark);
 }
@@ -110,7 +144,6 @@
     box-shadow: 4px 4px 0px var(--palette-green-accent-dark);
 }
 
-[data-theme="dark"] .color-option[data-color="green"]:hover,
 [data-theme="dark"] .color-option[data-color="green"].active {
     box-shadow: 8px 8px 0px var(--palette-green-accent-dark);
 }
@@ -119,7 +152,6 @@
     box-shadow: 4px 4px 0px var(--palette-purple-accent-dark);
 }
 
-[data-theme="dark"] .color-option[data-color="purple"]:hover,
 [data-theme="dark"] .color-option[data-color="purple"].active {
     box-shadow: 8px 8px 0px var(--palette-purple-accent-dark);
 }
@@ -128,7 +160,6 @@
     box-shadow: 4px 4px 0px var(--palette-pink-accent-dark);
 }
 
-[data-theme="dark"] .color-option[data-color="pink"]:hover,
 [data-theme="dark"] .color-option[data-color="pink"].active {
     box-shadow: 8px 8px 0px var(--palette-pink-accent-dark);
 }
@@ -137,7 +168,6 @@
     box-shadow: 4px 4px 0px var(--palette-neon-blue-accent-dark);
 }
 
-[data-theme="dark"] .color-option[data-color="neon-blue"]:hover,
 [data-theme="dark"] .color-option[data-color="neon-blue"].active {
     box-shadow: 8px 8px 0px var(--palette-neon-blue-accent-dark);
 }
@@ -146,7 +176,6 @@
     box-shadow: 4px 4px 0px var(--palette-neon-green-accent-dark);
 }
 
-[data-theme="dark"] .color-option[data-color="neon-green"]:hover,
 [data-theme="dark"] .color-option[data-color="neon-green"].active {
     box-shadow: 8px 8px 0px var(--palette-neon-green-accent-dark);
 }
@@ -190,12 +219,6 @@
         transition: all 0.2s ease;
     }
     
-    .mobile-theme-toggle:hover {
-        background: var(--btn-secondary-bg);
-        color: var(--btn-secondary-text);
-        transform: translate(-1px, -1px);
-        box-shadow: var(--shadow-brutal);
-    }
     
     .mobile-color-options {
         display: grid;
@@ -215,10 +238,6 @@
         justify-content: center;
     }
     
-    .mobile-color-option:hover {
-        transform: translate(-1px, -1px);
-        box-shadow: var(--shadow-brutal);
-    }
     
     .mobile-color-option.active {
         transform: translate(-1px, -1px);
@@ -271,7 +290,6 @@
         box-shadow: 4px 4px 0px var(--palette-blue-accent-dark);
     }
     
-    [data-theme="dark"] .mobile-color-option[data-color="blue"]:hover,
     [data-theme="dark"] .mobile-color-option[data-color="blue"].active {
         box-shadow: 8px 8px 0px var(--palette-blue-accent-dark);
     }
@@ -280,7 +298,6 @@
         box-shadow: 4px 4px 0px var(--palette-orange-accent-dark);
     }
     
-    [data-theme="dark"] .mobile-color-option[data-color="orange"]:hover,
     [data-theme="dark"] .mobile-color-option[data-color="orange"].active {
         box-shadow: 8px 8px 0px var(--palette-orange-accent-dark);
     }
@@ -289,7 +306,6 @@
         box-shadow: 4px 4px 0px var(--palette-green-accent-dark);
     }
     
-    [data-theme="dark"] .mobile-color-option[data-color="green"]:hover,
     [data-theme="dark"] .mobile-color-option[data-color="green"].active {
         box-shadow: 8px 8px 0px var(--palette-green-accent-dark);
     }
@@ -298,7 +314,6 @@
         box-shadow: 4px 4px 0px var(--palette-purple-accent-dark);
     }
     
-    [data-theme="dark"] .mobile-color-option[data-color="purple"]:hover,
     [data-theme="dark"] .mobile-color-option[data-color="purple"].active {
         box-shadow: 8px 8px 0px var(--palette-purple-accent-dark);
     }
@@ -307,7 +322,6 @@
         box-shadow: 4px 4px 0px var(--palette-pink-accent-dark);
     }
     
-    [data-theme="dark"] .mobile-color-option[data-color="pink"]:hover,
     [data-theme="dark"] .mobile-color-option[data-color="pink"].active {
         box-shadow: 8px 8px 0px var(--palette-pink-accent-dark);
     }
@@ -316,7 +330,6 @@
         box-shadow: 4px 4px 0px var(--palette-neon-blue-accent-dark);
     }
     
-    [data-theme="dark"] .mobile-color-option[data-color="neon-blue"]:hover,
     [data-theme="dark"] .mobile-color-option[data-color="neon-blue"].active {
         box-shadow: 8px 8px 0px var(--palette-neon-blue-accent-dark);
     }
@@ -325,7 +338,6 @@
         box-shadow: 4px 4px 0px var(--palette-neon-green-accent-dark);
     }
     
-    [data-theme="dark"] .mobile-color-option[data-color="neon-green"]:hover,
     [data-theme="dark"] .mobile-color-option[data-color="neon-green"].active {
         box-shadow: 8px 8px 0px var(--palette-neon-green-accent-dark);
     }

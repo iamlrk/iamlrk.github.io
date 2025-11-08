@@ -16,11 +16,6 @@
     transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
-.shadow-brutal-hover:hover {
-    box-shadow: var(--shadow-brutal-hover);
-    transform: translate(-2px, -2px);
-}
-
 .shadow-brutal-small {
     box-shadow: var(--shadow-brutal-small);
 }
@@ -178,10 +173,6 @@
     text-align: center;
 }
 
-.btn-brutal:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: var(--shadow-brutal);
-}
 
 .btn-brutal:active {
     transform: translate(0, 0);
@@ -212,22 +203,24 @@
    CARD UTILITIES
    ================================ */
 
+/* Note: These utilities include base card styles for standalone use.
+   For new code, prefer using .card with modifiers from cards.css */
 .card-brutal {
-    background-color: var(--card-bg-color);
+    /* Includes base card styles - kept for backward compatibility */
+    background: var(--card-bg-color);
     border: var(--border-width) solid var(--border-color);
     box-shadow: var(--shadow-brutal);
     padding: var(--space-lg);
     margin-bottom: var(--space-lg);
-}
-
-.card-brutal-hover {
+    box-sizing: border-box;
     transition: all 0.2s ease;
 }
 
-.card-brutal-hover:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: var(--shadow-brutal-hover);
+.card-brutal-hover {
+    /* Alias for card-hover-sm - kept for backward compatibility */
+    transition: all 0.2s ease;
 }
+
 
 .card-brutal-small {
     padding: var(--space-md);
@@ -386,7 +379,8 @@
 }
 
 @media (max-width: 480px) {
-    .card-brutal {
+    .card-brutal,
+    .card {
         padding: var(--space-md);
     }
     

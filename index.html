@@ -84,6 +84,7 @@
 	
 	<!-- Color Picker - Left Side -->
 	<div class="color-picker" id="color-picker">
+		<button class="color-picker-toggle" id="color-picker-toggle" aria-label="Toggle color picker"></button>
 		<div class="color-options" id="color-options">
 			<button class="color-option active" data-color="blue" aria-label="Blue theme"></button>
 			<button class="color-option" data-color="orange" aria-label="Orange theme"></button>
@@ -111,7 +112,7 @@
 			<div class="skills-carousel-container">
 				<div class="skills-carousel">
 					<div class="skills-carousel-track" id="skills-track">
-						<div class="skill-category">
+						<div class="card skill-category card-hover">
 							<h3>Languages</h3>
 							<div class="skill-tags">
 								<span class="skill-tag">Python</span>
@@ -121,20 +122,20 @@
 								<span class="skill-tag">HTML/CSS</span>
 							</div>
 						</div>
-						<div class="skill-category">
+						<div class="card skill-category card-hover">
 							<h3>Development Tools</h3>
 							<div class="skill-tags">
 								<span class="skill-tag">Git</span>
 								<span class="skill-tag">Docker</span>
 							</div>
 						</div>
-						<div class="skill-category">
+						<div class="card skill-category card-hover">
 							<h3>Frameworks</h3>
 							<div class="skill-tags">
 								<span class="skill-tag">FastAPI</span>
 							</div>
 						</div>
-						<div class="skill-category">
+						<div class="card skill-category card-hover">
 							<h3>Python Libraries</h3>
 							<div class="skill-tags">
 								<span class="skill-tag">NumPy</span>
@@ -147,7 +148,7 @@
 								<span class="skill-tag">Scikit-learn</span>
 							</div>
 						</div>
-						<div class="skill-category">
+						<div class="card skill-category card-hover">
 							<h3>Focus Areas</h3>
 							<div class="skill-tags">
 								<span class="skill-tag">Flight Modelling</span>
@@ -156,7 +157,7 @@
 								<span class="skill-tag">Data Engineering</span>
 							</div>
 						</div>
-						<div class="skill-category">
+						<div class="card skill-category card-hover">
 							<h3>Softwares</h3>
 							<div class="skill-tags">
 								<span class="skill-tag">VS Code</span>
@@ -165,7 +166,10 @@
 								<span class="skill-tag">Solidworks</span>
 								<span class="skill-tag">Catia Part Design</span>
 								<span class="skill-tag">Catia Assembly Design</span>
-								<span class="skill-tag" title="Systems Tool Kit">STK - Level 1</span>
+								<span class="skill-tag hover-card-trigger">
+									STK - Level 1
+									<span class="hover-card-content">Systems Tool Kit</span>
+								</span>
 							</div>
 						</div>
 					</div>
@@ -194,75 +198,131 @@
 
 		<section class="projects">
 			<h2>Featured Projects</h2>
-			<div class="projects-grid grid-brutal">
-				<div class="project-card card-brutal-hover">
-					<div class="project-header">
-						<h3>Personal Website</h3>
-						<div class="project-links">
-							<a href="https://github.com/iamlrk/iamlrk.github.io" target="_blank" class="project-link shadow-brutal-hover">GitHub</a>
-							<a href="/" class="project-link shadow-brutal-hover">Demo</a>
+			<div class="projects-carousel-container">
+				<div class="projects-carousel">
+					<div class="projects-carousel-track" id="projects-track">
+						<div class="card project-card card-hover">
+							<div class="project-header">
+								<h3>Personal Website</h3>
+							</div>
+							<div class="project-card-content">
+								<p class="project-subtitle">Portfolio & Resume Site</p>
+								<p class="project-description">
+									Personal Website with my skills, projects and CV.
+								</p>
+								<div class="project-tech">
+									<span class="tech-tag tag-brutal">HTML5</span>
+									<span class="tech-tag tag-brutal-secondary">CSS3</span>
+									<span class="tech-tag tag-brutal-accent">JavaScript</span>
+								</div>
+							</div>
+							<div class="project-links">
+								<a href="https://github.com/iamlrk/iamlrk.github.io" target="_blank" class="project-link shadow-brutal-hover hover-card-trigger" aria-label="Details">
+									<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<!-- U-shaped container (open at top) -->
+										<path d="M4 20V6C4 5.44772 4.44772 5 5 5H19C19.5523 5 20 5.44772 20 6V20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+										<!-- Left column lines -->
+										<line x1="7" y1="9" x2="10" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+										<line x1="7" y1="12" x2="10" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+										<line x1="7" y1="15" x2="10" y2="15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+										<!-- Right column lines -->
+										<line x1="14" y1="9" x2="17" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+										<line x1="14" y1="12" x2="17" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+										<line x1="14" y1="15" x2="17" y2="15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+									</svg>
+									<span class="hover-card-content">More Details</span>
+								</a>
+							</div>
 						</div>
-					</div>
-					<p class="project-subtitle">Portfolio & Resume Site</p>
-					<p class="project-description">
-						Personal Website with my skills, projects and CV.
-					</p>
-					<div class="project-tech">
-						<span class="tech-tag tag-brutal">HTML5</span>
-						<span class="tech-tag tag-brutal-secondary">CSS3</span>
-						<span class="tech-tag tag-brutal-accent">JavaScript</span>
-					</div>
-				</div>
 
-				<div class="project-card card-brutal-hover">
-					<div class="project-header">
-						<h3>Tuppersat</h3>
-						<div class="project-links">
-							<a href="https://github.com/iamlrk/tuppersat23-r2d1" class="project-link shadow-brutal-hover">GitHub</a>
+						<div class="card project-card card-hover">
+							<div class="project-header">
+								<h3>Tuppersat</h3>
+							</div>
+							<div class="project-card-content">
+								<p class="project-subtitle"> A Satellite in Tupperware | R2D1</p>
+								<p class="project-description">
+									A satellite project designed to fit within a Tupperware container. 
+									The project has sensors like temperature, humidity, and GPS to monitor environmental conditions 
+									during high-altitude balloon flights.
+								</p>
+								<div class="project-tech">
+									<span class="tech-tag tag-brutal">MicroPython</span>
+									<span class="tech-tag tag-brutal-info">NumPy</span>
+									<span class="tech-tag tag-brutal-accent">Matplotlib</span>
+								</div>
+							</div>
+							<div class="project-links">
+								<a href="https://github.com/iamlrk/tuppersat23-r2d1" class="project-link shadow-brutal-hover hover-card-trigger" aria-label="Details">
+									<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<!-- U-shaped container (open at top) -->
+										<path d="M4 20V6C4 5.44772 4.44772 5 5 5H19C19.5523 5 20 5.44772 20 6V20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+										<!-- Left column lines -->
+										<line x1="7" y1="9" x2="10" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+										<line x1="7" y1="12" x2="10" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+										<line x1="7" y1="15" x2="10" y2="15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+										<!-- Right column lines -->
+										<line x1="14" y1="9" x2="17" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+										<line x1="14" y1="12" x2="17" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+										<line x1="14" y1="15" x2="17" y2="15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+									</svg>
+									<span class="hover-card-content">More Details</span>
+								</a>
+							</div>
 						</div>
-					</div>
-					<p class="project-subtitle"> A Satellite in Tupperware | R2D1</p>
-					<p class="project-description">
-						A satellite project designed to fit within a Tupperware container. 
-						The project has sensors like temperature, humidity, and GPS to monitor environmental conditions 
-						during high-altitude balloon flights.
-					</p>
-					<div class="project-tech">
-						<span class="tech-tag tag-brutal">MicroPython</span>
-						<span class="tech-tag tag-brutal-info">NumPy</span>
-						<span class="tech-tag tag-brutal-accent">Matplotlib</span>
-					</div>
-				</div>
 
-				<div class="project-card card-brutal-hover">
-					<div class="project-header">
-						<h3>Mechanics of Orbit using Python</h3>
-						<div class="project-links">
-							<a href="https://github.com/Mechanics-of-Orbit/MOPy" class="project-link shadow-brutal-hover">GitHub</a>
+						<div class="card project-card card-hover">
+							<div class="project-header">
+								<h3>Mechanics of Orbit using Python</h3>
+							</div>
+							<div class="project-card-content">
+								<p class="project-subtitle">Learning Tool and Simulation</p>
+								<p class="project-description">
+									An interactive python library and desktop app that explains orbital mechanics' concepts.
+								</p>
+								<div class="project-tech">
+									<span class="tech-tag tag-brutal">Python</span>
+									<span class="tech-tag tag-brutal-secondary">PyQt5</span>
+									<span class="tech-tag tag-brutal-accent">PySide6</span>
+									<span class="tech-tag tag-brutal-info">SQLite</span>
+								</div>
+							</div>
+							<div class="project-links">
+								<a href="https://github.com/Mechanics-of-Orbit/MOPy" class="project-link shadow-brutal-hover hover-card-trigger" aria-label="Details">
+									<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<!-- U-shaped container (open at top) -->
+										<path d="M4 20V6C4 5.44772 4.44772 5 5 5H19C19.5523 5 20 5.44772 20 6V20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+										<!-- Left column lines -->
+										<line x1="7" y1="9" x2="10" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+										<line x1="7" y1="12" x2="10" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+										<line x1="7" y1="15" x2="10" y2="15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+										<!-- Right column lines -->
+										<line x1="14" y1="9" x2="17" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+										<line x1="14" y1="12" x2="17" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+										<line x1="14" y1="15" x2="17" y2="15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+									</svg>
+									<span class="hover-card-content">More Details</span>
+								</a>
+							</div>
 						</div>
 					</div>
-					<p class="project-subtitle">Learning Tool and Simulation</p>
-					<p class="project-description">
-						An interactive python library and desktop app that explains orbital mechanics' concepts.
-					</p>
-					<div class="project-tech">
-						<span class="tech-tag tag-brutal">Python</span>
-						<span class="tech-tag tag-brutal-secondary">PyQt5</span>
-						<span class="tech-tag tag-brutal-accent">PySide6</span>
-						<span class="tech-tag tag-brutal-info">SQLite</span>
-					</div>
 				</div>
+			</div>
+			<div class="carousel-controls">
+				<button class="carousel-btn carousel-btn-prev" id="projects-prev">&laquo;</button>
+				<div class="carousel-dots" id="projects-dots"></div>
+				<button class="carousel-btn carousel-btn-next" id="projects-next">&raquo;</button>
 			</div>
 		</section>
 
 		<section class="quick-links">
 			<h2>Quick Links</h2>
 			<div class="links-grid grid-brutal grid-brutal-2">
-				<a href="/about" class="link-card card-brutal-hover">About Me</a>
-				<a href="/now" class="link-card card-brutal-hover">What I'm Doing Now</a>
-				<a href="/cv" class="link-card card-brutal-hover">Resume/CV</a>
-				<a href="https://github.com/iamlrk" target="_blank" class="link-card card-brutal-hover">GitHub</a>
-				<a href="mailto:lepakshiramkiran@duck.com" class="link-card card-brutal-hover">Contact</a>
+				<a href="/about" class="card link-card card-hover">About Me</a>
+				<a href="/now" class="card link-card card-hover">What I'm Doing Now</a>
+				<a href="/cv" class="card link-card card-hover">Resume/CV</a>
+				<a href="https://github.com/iamlrk" target="_blank" class="card link-card card-hover">GitHub</a>
+				<a href="mailto:lepakshiramkiran@duck.com" class="card link-card card-hover">Contact</a>
 			</div>
 		</section>
 	</div><!-- /.container -->
@@ -283,5 +343,6 @@
 	<script src="/js/desktop/theme-toggle.js"></script>
 	<script src="/js/desktop/color-themes.js"></script>
 	<script src="/js/desktop/skills-carousel.js"></script>
+	<script src="/js/desktop/projects-carousel.js"></script>
 </body>
 </html>

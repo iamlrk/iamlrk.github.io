@@ -24,10 +24,7 @@
 
 /* Focus card */
 .focus-card {
-    background: var(--nav-bg-color);
-    border: 3px solid var(--border-color);
-    box-shadow: var(--shadow-brutal);
-    padding: var(--space-xl);
+    /* Extends base .card */
     margin-bottom: var(--space-xl);
 }
 
@@ -70,17 +67,10 @@
 }
 
 .learning-card {
-    background: var(--nav-bg-color);
-    border: 3px solid var(--border-color);
-    box-shadow: var(--shadow-brutal);
-    padding: var(--space-xl);
+    /* Extends base .card */
     transition: all 0.3s ease;
 }
 
-.learning-card:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: var(--shadow-brutal-hover);
-}
 
 .learning-card h3 {
     color: var(--text-subheading);
@@ -119,18 +109,11 @@
 }
 
 .resource-card {
-    background: var(--nav-bg-color);
-    border: 3px solid var(--border-color);
-    box-shadow: var(--shadow-brutal);
-    padding: var(--space-xl);
+    /* Extends base .card */
     position: relative;
     transition: all 0.3s ease;
 }
 
-.resource-card:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: var(--shadow-brutal-hover);
-}
 
 .resource-type {
     position: absolute;
@@ -176,17 +159,10 @@
 }
 
 .project-item {
-    background: var(--nav-bg-color);
-    border: 3px solid var(--border-color);
-    box-shadow: var(--shadow-brutal);
-    padding: var(--space-xl);
+    /* Extends base .card */
     transition: all 0.3s ease;
 }
 
-.project-item:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: var(--shadow-brutal-hover);
-}
 
 .project-item h3 {
     color: var(--text-subheading);
@@ -210,17 +186,10 @@
 }
 
 .activity-item {
-    background: var(--nav-bg-color);
-    border: 3px solid var(--border-color);
-    box-shadow: var(--shadow-brutal);
-    padding: var(--space-xl);
+    /* Extends base .card */
     transition: all 0.3s ease;
 }
 
-.activity-item:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: var(--shadow-brutal-hover);
-}
 
 .activity-item h3 {
     color: var(--text-subheading);
@@ -238,11 +207,8 @@
 
 /* Now footer */
 .now-footer {
+    /* Extends base .card */
     margin-top: var(--space-xl);
-    padding: var(--space-xl);
-    background: var(--nav-bg-color);
-    border: 3px solid var(--border-color);
-    box-shadow: var(--shadow-brutal);
     text-align: center;
 }
 
@@ -259,9 +225,6 @@
     font-weight: 600;
 }
 
-.now-footer a:hover {
-    text-decoration: underline;
-}
 
 /* Responsive design */
 @media (max-width: 768px) {

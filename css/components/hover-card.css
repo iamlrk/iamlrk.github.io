@@ -1,0 +1,98 @@
+/* ================================
+   HOVER CARD COMPONENT
+   ================================ */
+
+.hover-card-trigger {
+    position: relative;
+    cursor: pointer;
+}
+
+.hover-card-content {
+    position: absolute;
+    bottom: calc(100% + 12px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-accent);
+    color: var(--palette-white);
+    padding: var(--space-sm) var(--space-md);
+    border: 3px solid var(--border-color);
+    box-shadow: 4px 4px 0px var(--border-color);
+    font-size: var(--font-small);
+    font-weight: 700;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+    z-index: 10000;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    min-width: max-content;
+    width: max-content;
+    word-break: keep-all;
+}
+
+.hover-card-content::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid var(--border-color);
+}
+
+.hover-card-content::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid var(--color-accent);
+    margin-top: -3px;
+}
+
+/* Position variants */
+.hover-card-trigger.hover-card-bottom .hover-card-content {
+    bottom: auto;
+    top: calc(100% + 12px);
+    transform: translateX(-50%);
+}
+
+
+.hover-card-trigger.hover-card-bottom .hover-card-content::after {
+    top: auto;
+    bottom: 100%;
+    border-top: none;
+    border-bottom: 8px solid var(--border-color);
+}
+
+.hover-card-trigger.hover-card-bottom .hover-card-content::before {
+    top: auto;
+    bottom: 100%;
+    border-top: none;
+    border-bottom: 6px solid var(--color-accent);
+    margin-top: 0;
+    margin-bottom: -3px;
+}
+
+.hover-card-trigger.hover-card-left .hover-card-content {
+    left: auto;
+    right: 0;
+    transform: none;
+}
+
+
+.hover-card-trigger.hover-card-right .hover-card-content {
+    left: 0;
+    right: auto;
+    transform: none;
+}
+
